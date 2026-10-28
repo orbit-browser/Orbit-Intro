@@ -1,0 +1,92 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { readFile, stat } from "node:fs/promises";
+const root = new URL("../src/", import.meta.url);
+const html = await readFile(new URL("index.html", root), "utf8");
+const css = await readFile(new URL("styles.css", root), "utf8");
+const js = await readFile(new URL("main.js", root), "utf8");
+const provenance = JSON.parse(
+  await readFile(new URL("assets/provenance.json", root), "utf8"),
+);
+
+test("all HTML and font assets resolve under the GitHub Pages project path", async () => {
+  for (const [, path] of html.matchAll(/(?:src|href)="(\.\/[^"#]+)"/g)) {
+    assert.ok((await stat(new URL(path, root))).isFile(), path);
+  }
+  const fonts = await readFile(new URL("assets/fonts/fonts.css", root), "utf8");
+  for (const [, path] of fonts.matchAll(/url\(['"]?([^)'" ]+)/g)) {
+    assert.ok(
+      (await stat(new URL(path, new URL("assets/fonts/", root)))).isFile(),
+      path,
+    );
+  }
+  assert.doesNotMatch(
+    html,
+    /(?:src|href)="\/(?!\/)/,
+    "root-relative assets break project Pages",
+  );
+});
+
+test("navigation and the three product tabs have valid, unique targets", () => {
+  const ids = [...html.matchAll(/id="([^"]+)"/g)].map((m) => m[1]);
+  assert.equal(ids.length, new Set(ids).size);
+  for (const [, id] of html.matchAll(/(?:href="#|aria-controls=")([^" ]+)/g))
+    assert.ok(ids.includes(id), id);
+  assert.equal([...html.matchAll(/role="tab"/g)].length, 3);
+  assert.equal([...html.matchAll(/role="tabpanel"/g)].length, 3);
+  assert.equal([...html.matchAll(/aria-selected="true"/g)].length, 1);
+});
+
+test("public copy keeps verified identities, consent and sharing boundaries", () => {
+  for (const copy of [
+    "전준",
+    "임동건",
+    "팀대표",
+    "수집은 사용자가 켠 뒤",
+    "내가 고른 세션만",
+    "Orbit AI",
+    "Team AI",
+  ])
+    assert.ok(html.includes(copy), copy);
+  for (const name of ["김오르빗", "박지은", "이도현"])
+    assert.ok(!html.includes(name), "demo users are not team profiles");
+  assert.ok(html.includes("https://youtu.be/vDcOPbC3ntU"));
+  assert.doesNotMatch(
+    html,
+    /href="(?:#|javascript:)["]/,
+    "no inert fake calls to action",
+  );
+});
+
+test("real image provenance and lightweight web formats are preserved", async () => {
+  let imageBytes = 0;
+  for (const image of provenance.screens) {
+    const info = await stat(new URL("assets/" + image.file, root));
+    assert.equal(info.size, image.bytes, image.file);
+    assert.ok(info.size < 250000, "screen image must stay below 250 kB");
+    assert.match(image.sourceSha256, /^[0-9a-f]{64}$/);
+    imageBytes += info.size;
+  }
+  assert.ok(
+    imageBytes < 1000000,
+    "all product and hero images stay below 1 MB",
+  );
+  for (const [, file, width, height] of html.matchAll(
+    /src="\.\/assets\/([^"]+)"[^>]*width="(\d+)" height="(\d+)"/g,
+  )) {
+    const record = provenance.screens.find((x) => x.file === file);
+    if (record) {
+      assert.equal(Number(width), record.width);
+      assert.equal(Number(height), record.height);
+    }
+  }
+});
+
+test("motion and keyboard alternatives are present with no third-party runtime scripts", () => {
+  assert.ok(css.includes("prefers-reduced-motion"));
+  for (const key of ["ArrowRight", "ArrowLeft", "Home", "End"])
+    assert.ok(js.includes(key));
+  assert.ok(html.includes("motion-toggle"));
+  assert.ok(html.includes("skip-link"));
+  assert.doesNotMatch(html, /<script[^>]+src="https?:/);
+});

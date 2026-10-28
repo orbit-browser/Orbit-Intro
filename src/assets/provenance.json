@@ -1,0 +1,161 @@
+{
+  "screens": [
+    {
+      "file": "pages/seongsan.webp",
+      "source": "extension/preview/exhibition/assets/main03-v12/seongsan-page.png",
+      "sourceSha256": "15200c19888dc35ecdf16b72f6f6361bebd07b9c3fb7d1b0290bb49093369b79",
+      "width": 520,
+      "height": 624,
+      "bytes": 36874,
+      "processing": "Resize for web; top crop only",
+      "content": "Existing real public capture"
+    },
+    {
+      "file": "pages/dining.webp",
+      "source": "extension/preview/exhibition/assets/main03-v12/dining-page.png",
+      "sourceSha256": "a27b7d892125f228b80f4351fd2a000b68b6a9a0d9ee350a626a7f6cff99a786",
+      "width": 520,
+      "height": 624,
+      "bytes": 55252,
+      "processing": "Resize for web; top crop only",
+      "content": "Existing real public capture"
+    },
+    {
+      "file": "pages/flight.webp",
+      "source": "extension/preview/exhibition/assets/main03-v12/flight-page.png",
+      "sourceSha256": "774e2a467ccfdcbe3a1f625eafc4b4d0f8458d3b8514accc6de57d8c574cd780",
+      "width": 520,
+      "height": 624,
+      "bytes": 23824,
+      "processing": "Resize for web; top crop only",
+      "content": "Existing real public capture"
+    },
+    {
+      "file": "pages/saebyeol.webp",
+      "source": "extension/preview/exhibition/assets/main03-v12/saebyeol-page.png",
+      "sourceSha256": "0e7ff9e59788c83a407e1beddf76ac74ca5a9f04e455c1e5e0329e8dbdd4d62a",
+      "width": 520,
+      "height": 624,
+      "bytes": 43414,
+      "processing": "Resize for web; top crop only",
+      "content": "Existing real public capture"
+    },
+    {
+      "file": "pages/udo.webp",
+      "source": "extension/preview/exhibition/assets/main03-v12/udo-page.png",
+      "sourceSha256": "e535e9634d3a2239981ac3f95f0e3369843febf5b552a7b21b6e07b39340f387",
+      "width": 520,
+      "height": 624,
+      "bytes": 35258,
+      "processing": "Resize for web; top crop only",
+      "content": "Existing real public capture"
+    },
+    {
+      "file": "pages/hallasan.webp",
+      "source": "extension/preview/exhibition/assets/main03-v12/hallasan-page.png",
+      "sourceSha256": "be510012d6334a8ee64fe88d0c044e75c083eaaed3d6982387ed2907e33bf67b",
+      "width": 520,
+      "height": 624,
+      "bytes": 52806,
+      "processing": "Resize for web; top crop only",
+      "content": "Existing real public capture"
+    },
+    {
+      "file": "pages/route.webp",
+      "source": "extension/preview/exhibition/assets/main03-v12/route-page.png",
+      "sourceSha256": "ce00f0539764a983dff87a745843c25aa963eedddea2314c8bd1338e577faaa2",
+      "width": 520,
+      "height": 624,
+      "bytes": 42284,
+      "processing": "Resize for web; top crop only",
+      "content": "Existing real public capture"
+    },
+    {
+      "file": "pages/seopjikoji.webp",
+      "source": "extension/preview/exhibition/assets/main03-v12/seopjikoji-page.png",
+      "sourceSha256": "bb97481b657f7e701d853bc8d042d8678ee01c3910c801cd7294f2b03c865019",
+      "width": 520,
+      "height": 624,
+      "bytes": 46796,
+      "processing": "Resize for web; top crop only",
+      "content": "Existing real public capture"
+    },
+    {
+      "file": "screens/home.webp",
+      "source": "extension/preview/exhibition/assets/main01-v1/newtab-keep-exploring.png",
+      "sourceSha256": "80ee1e9834c5c29942921bd8c8cbf5511e87773230466b96bc40ad515e35dc87",
+      "width": 1600,
+      "height": 997,
+      "bytes": 58510,
+      "processing": "Resize for web only",
+      "content": "Real Orbit product screen with demonstration fixtures"
+    },
+    {
+      "file": "screens/timeline.webp",
+      "source": "extension/preview/exhibition/assets/main01-v2/timeline-landed.png",
+      "sourceSha256": "c4e7a1973ca85234249d99fac2fc8510f6247e13815140c77cee211cca137f2d",
+      "width": 760,
+      "height": 398,
+      "bytes": 18802,
+      "processing": "Resize for web only",
+      "content": "Real Orbit product screen with demonstration fixtures"
+    },
+    {
+      "file": "screens/orbit-ai.webp",
+      "source": "extension/preview/exhibition/assets/main03-v12/retrieval-ui.png",
+      "sourceSha256": "7665a8bf40ae97e0f5e1dcfb57d2e7187cfc9f68b71116cf839aa6e1f68030aa",
+      "width": 1500,
+      "height": 816,
+      "bytes": 44464,
+      "processing": "Resize for web only",
+      "content": "Real Orbit product screen with demonstration fixtures"
+    },
+    {
+      "file": "screens/restore-before.webp",
+      "source": "extension/preview/exhibition/assets/main03-v32/restore-before.png",
+      "sourceSha256": "a3624d3dea77981c8c871e184a86d510c5d9e86221ebdf0bb943c124f3757d6e",
+      "width": 1000,
+      "height": 295,
+      "bytes": 11418,
+      "processing": "Resize for web only",
+      "content": "Real Orbit product screen with demonstration fixtures"
+    },
+    {
+      "file": "screens/restore-after.webp",
+      "source": "extension/preview/exhibition/assets/main03-v32/restore-after.png",
+      "sourceSha256": "0f26946d3ee8e1029ef8d3e0bdddd101e84f23b1de207c13fe9578f15f10ffd8",
+      "width": 1500,
+      "height": 193,
+      "bytes": 15962,
+      "processing": "Resize for web only",
+      "content": "Real Orbit product screen with demonstration fixtures"
+    },
+    {
+      "file": "screens/team-sessions.webp",
+      "source": "extension/preview/exhibition/assets/main05-v2/team-sessions.png",
+      "sourceSha256": "bb6716f7bfc212175774be082531e1c525f39a4916e8d54e1ed5ffbb3cc5ca0d",
+      "width": 850,
+      "height": 968,
+      "bytes": 40252,
+      "processing": "Resize for web only",
+      "content": "Real Orbit product screen with demonstration fixtures"
+    },
+    {
+      "file": "screens/team-ai.webp",
+      "source": "extension/preview/exhibition/assets/main05-v2/team-ask.png",
+      "sourceSha256": "d402302bcc6727278db85654496e37e0b74e417094163c55bf45572e882f2a80",
+      "width": 850,
+      "height": 1057,
+      "bytes": 51716,
+      "processing": "Resize for web only",
+      "content": "Real Orbit product screen with demonstration fixtures"
+    }
+  ],
+  "notice": "Product screens use demonstration fixture data. Named demo users are not real Orbit team member profiles.",
+  "symbol": "Original orbit_icon.png silhouette, vectorised by existing exhibition source.",
+  "colours": [
+    "#fefaf6",
+    "#2b2521",
+    "#f07550"
+  ]
+}

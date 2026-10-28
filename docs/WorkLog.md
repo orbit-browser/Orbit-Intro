@@ -12,4 +12,12 @@
 - Browser verification initially waited on hidden lazy-loaded images. Fixed the verification harness to request every image before decoding; this was a harness issue, not an application-loading change.
 - Local checks: JavaScript syntax, five content/asset/structure tests, static build. Real Chrome checks at 320, 390, 768 and 1440 px, keyboard tab selection, missing images, resource status, overflow, reduced-motion and pause/resume. Rendered desktop and mobile screenshots were visually reviewed.
 
-Deployment and final live verification will be recorded after publication.
+## Publication and final verification
+
+- Published the initial verified feature commit `f282403` to the empty repository's `main` branch; retained the implementation branch. Set the public Pages source to GitHub Actions and enabled HTTPS.
+- Deployment run `40654491940` passed both build and deployment. Verified HTTP 200 at https://orbit-browser.github.io/Orbit-Intro/.
+- Repeated the real-browser suite against the public URL: all four viewport sizes passed, 35 requested local resources returned 200, no broken images, no JavaScript errors, no horizontal overflow. Confirmed inactive panels compute to display:none, keyboard navigation, pause → offscreen → onscreen → resume, automatic offscreen suspension, and reduced-motion preference changes.
+- Final font audit found 10 new Hangul syllables absent from the exhibition-only font subsets. Added a 3,192-byte official Noto Sans KR subset served locally, with source/license documentation and a regression check covering every Hangul syllable in the website copy. Existing font files remain unchanged.
+- No application/banner files or report PDF were committed. No live product installer or signup is implied. Actual public destinations are GitHub and the verified demonstration video.
+
+Browser screenshots/results are in ignored `artifacts/`. The checked source and deployment workflow are versioned; screenshots are review artifacts, not website assets.

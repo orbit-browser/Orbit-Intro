@@ -90,3 +90,27 @@ test("motion and keyboard alternatives are present with no third-party runtime s
   assert.ok(html.includes("skip-link"));
   assert.doesNotMatch(html, /<script[^>]+src="https?:/);
 });
+
+test("every Korean copy character is covered by a locally served font subset", async () => {
+  const fonts =
+    (await readFile(new URL("assets/fonts/fonts.css", root), "utf8")) +
+    (await readFile(new URL("assets/fonts/additional.css", root), "utf8"));
+  const ranges = [];
+  for (const block of fonts.split("@font-face")) {
+    if (!block.includes("'Noto Sans KR'")) continue;
+    for (const match of block.matchAll(/U\+([0-9A-F]+)(?:-([0-9A-F]+))?/gi))
+      ranges.push([parseInt(match[1], 16), parseInt(match[2] || match[1], 16)]);
+  }
+  const chars = [
+    ...new Set([...(html + js)].filter((c) => c >= "가" && c <= "힣")),
+  ];
+  const missing = chars.filter(
+    (c) =>
+      !ranges.some(([a, b]) => c.codePointAt(0) >= a && c.codePointAt(0) <= b),
+  );
+  assert.deepEqual(
+    missing,
+    [],
+    "website copy must not silently fall back to a system Korean face",
+  );
+});

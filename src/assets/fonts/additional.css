@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url(./noto-kr-additional.woff2) format('woff2');
+  unicode-range: U+ADA4, U+B3D5, U+B4ED, U+BA48, U+C12F, U+C313, U+C90D, U+C9DA, U+CF20, U+D3B4;
+}

@@ -1,0 +1,161 @@
+{
+  "notice": "Synthetic fixture records, actual Orbit UI. No real users, private snapshots, or recorded audio.",
+  "videos": [
+    {
+      "name": "team",
+      "file": "team.mp4",
+      "poster": "team.webp",
+      "recordedAt": "2026-10-28T11:34:05.022Z",
+      "previewUrl": "http://127.0.0.1:5187/preview/newtab.html?scope=w-team-stream&theme=light&teamStoryFrame=6#/orbit-atlas?session=s-team-stream-u-me",
+      "content": "Actual Orbit preview components with synthetic demonstration records; public page captures only.",
+      "capture": {
+        "width": 1600,
+        "height": 760,
+        "frames": 96,
+        "fps": 30,
+        "seconds": 3.2,
+        "pageCount": 6,
+        "fullRotations": 1,
+        "navigatorOpen": false,
+        "method": "Actual AtlasGallery pointer drag; reduced-motion interpolation disabled only in capture browser.",
+        "spacingPx": 220,
+        "dragGain": 1.5
+      },
+      "encoding": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "crf": 18,
+        "keyframeInterval": 8,
+        "faststart": true,
+        "audioStreams": 0
+      },
+      "bytes": 2085278,
+      "sha256": "e6e8d23c7ad9052df5c3b6e93ef0ddfc4a4e82dc21efcb93227d84859e40b4d0",
+      "posterSha256": "25bbd9d1a326075a25ad72c8d3544c402cc3377c692e5db35c8753dfcc3e608d",
+      "sourceCaptures": [
+        {
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events",
+          "file": "mdn-sse.jpg",
+          "recorded_at": "2026-10-28T11:05:08.783Z",
+          "sha256": "9c599fb38fce359b52df7e830c98e7030fc9103a9ce7d7a767605c5aa724b5fa"
+        },
+        {
+          "url": "https://platform.openai.com/docs/guides/structured-outputs",
+          "file": "openai-structured.jpg",
+          "recorded_at": "2026-10-28T11:05:08.788Z",
+          "sha256": "284b113c08cd70a1c93b94bc73ce051c9f47aee983d43d7a2b7f1e6874c3ed7e"
+        },
+        {
+          "url": "https://fastapi.tiangolo.com/tutorial/dependencies/dependencies-with-yield/",
+          "final_url": "https://fastapi.tiangolo.com/tutorial/dependencies/dependencies-with-yield/",
+          "file": "fastapi-dependencies.jpg",
+          "recorded_at": "2026-10-28T11:05:16.675Z",
+          "sha256": "21aa24741dd3150bd35c01dc10e2c1f992e8eeca2f048ec3af68246ebefb2b2f"
+        },
+        {
+          "url": "https://platform.openai.com/docs/guides/streaming-responses",
+          "final_url": "https://developers.openai.com/api/docs/guides/streaming-responses?api-mode=responses",
+          "file": "openai-streaming.jpg",
+          "recorded_at": "2026-10-28T11:05:22.280Z",
+          "sha256": "a99b403845ab675d67cb284bb6e1050c43e98f971d9bb0cc1d69fb74e11e9ca6"
+        },
+        {
+          "url": "https://fastapi.tiangolo.com/advanced/custom-response/#streamingresponse",
+          "final_url": "https://fastapi.tiangolo.com/advanced/custom-response/#streamingresponse",
+          "file": "fastapi-streaming.jpg",
+          "recorded_at": "2026-10-28T11:05:27.516Z",
+          "sha256": "0ac88683a15b5e0fe5b7239e789c6a7bbb2dd616b801830b9b6cb9803b5374b4"
+        },
+        {
+          "url": "https://fastapi.tiangolo.com/tutorial/background-tasks/",
+          "final_url": "https://fastapi.tiangolo.com/tutorial/background-tasks/",
+          "file": "fastapi-background.jpg",
+          "recorded_at": "2026-10-28T11:05:32.751Z",
+          "sha256": "9627679680da11a0c530be175bb6529a8049350d79ebf2692edf0a5f1849e042"
+        }
+      ]
+    },
+    {
+      "name": "personal",
+      "file": "personal.mp4",
+      "poster": "personal.webp",
+      "recordedAt": "2026-10-28T11:35:48.732Z",
+      "previewUrl": "http://127.0.0.1:5187/preview/newtab.html?scope=&theme=light&personalAtlasStory=1#/orbit-atlas?session=s-jeju",
+      "content": "Actual Orbit preview components with synthetic demonstration records; public page captures only.",
+      "capture": {
+        "width": 1600,
+        "height": 760,
+        "frames": 96,
+        "fps": 30,
+        "seconds": 3.2,
+        "pageCount": 8,
+        "fullRotations": 1,
+        "navigatorOpen": true,
+        "method": "Actual AtlasGallery pointer drag; reduced-motion interpolation disabled only in capture browser.",
+        "spacingPx": 220,
+        "dragGain": 1.5
+      },
+      "encoding": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "crf": 18,
+        "keyframeInterval": 8,
+        "faststart": true,
+        "audioStreams": 0
+      },
+      "bytes": 2020747,
+      "sha256": "3a45ef1d54e565fc929e866fcf5eb9088c9f785449f27d4e5601219029c80734",
+      "posterSha256": "b1954c840c6047ef7edb9042073e08e80c65f6d394991ef484528fd8a3d443b6",
+      "sourceCaptures": [
+        {
+          "url": "https://m.visitjeju.net/kr/detail/view?contentsid=CONT_000000000500349&menuId=DOM_700000000010795",
+          "file": "seongsan.webp",
+          "recorded_at": "2026-10-28T11:28:52.115315+00:00",
+          "sha256": "5e6d7ad0869950c70dc37cefe28779cc5fa318861ffbe5052deec49a3599ec2d"
+        },
+        {
+          "url": "https://www.diningcode.com/list.dc?query=%EC%95%A0%EC%9B%94%EC%B9%B4%ED%8E%98",
+          "file": "dining.webp",
+          "recorded_at": "2026-10-28T11:28:52.117438+00:00",
+          "sha256": "62dbfd91a7bd3ae3756ff93d07a2642ba4873df2ac50b94d9fd38a31709f1242"
+        },
+        {
+          "url": "https://flight.naver.com/",
+          "file": "flight.webp",
+          "recorded_at": "2026-10-28T11:28:52.119190+00:00",
+          "sha256": "a6650099cd9e5da04cddeb4e716c5ff0526f185f2d1be4e58f86c98cff2ee55e"
+        },
+        {
+          "url": "https://m.visitjeju.net/kr/detail/view?contentsid=CONT_000000000500309",
+          "file": "saebyeol.webp",
+          "recorded_at": "2026-10-28T11:28:52.121317+00:00",
+          "sha256": "08d428ed81df4865eb831981642c6e339de84ca80696d5c27ff365cd44c3b61e"
+        },
+        {
+          "url": "https://m.visitjeju.net/kr/detail/view?contentsid=CONT_000000000500477&menuId=undefined",
+          "file": "udo.webp",
+          "recorded_at": "2026-10-28T11:28:52.123780+00:00",
+          "sha256": "6ea724d7f3c00ba35aedb44eaed0ca96c01e65292065b703ae28645599b949bd"
+        },
+        {
+          "url": "https://m.visitjeju.net/kr/detail/view?contentsid=CONT_000000000500685&menuId=DOM_000002000000000081",
+          "file": "hallasan.webp",
+          "recorded_at": "2026-10-28T11:28:52.124950+00:00",
+          "sha256": "c256548bed2136c78118349454e5676faf226f9eacb907c13b3bf11418ab3d55"
+        },
+        {
+          "url": "https://m.blog.naver.com/SectionPostSearch.naver?orderType=sim&searchValue=%EC%A0%9C%EC%A3%BC%203%EB%B0%95%204%EC%9D%BC%20%EB%8F%99%EC%84%A0",
+          "file": "route.webp",
+          "recorded_at": "2026-10-28T11:28:52.126317+00:00",
+          "sha256": "8248eeb37be2edbdba5ccdd4f0106409d3689210d9685ed6ffc88b685ae23244"
+        },
+        {
+          "url": "https://m.visitjeju.net/kr/detail/view?contentsid=CONT_000000000500343&menuId=DOM_000002016002000000",
+          "file": "seopjikoji.webp",
+          "recorded_at": "2026-10-28T11:28:52.128585+00:00",
+          "sha256": "01bd1b7efb783a8afc2dc6a3bc2c46157067422adf5838d298c92b7b09a555f9"
+        }
+      ]
+    }
+  ]
+}

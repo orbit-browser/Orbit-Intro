@@ -38,3 +38,8 @@ The earlier aggregate 1 MB image budget is superseded by a 5 MB base-image budge
 ## 2026-10-28 — Show shared exploration, remove Team AI promotion
 
 Use the separately implemented product Atlas read model as the source of the public scroll story, not fabricated participant labels over an old screenshot. Keep the website dependency-free: seven actual rendered frames, three public-document browser windows, and scroll-controlled page arrivals. At reduced motion show the final frame. The draggable eight-page personal Atlas scene remains labelled as a demonstration. Remove Team AI copy/screens per the user's request while retaining personal Orbit AI. FAQ retains native details/summary semantics with interruptible measured-height animation.
+
+
+## 2026-10-28 — Scroll through the actual Atlas
+
+Following the user's correction, replace the independently styled draggable gallery with a recording of the real internal product UI. Native document scroll controls one complete revolution; the team story completes collection before rotating. Short seekable recordings preserve the exact product composition without publishing the private application bundle or introducing a new runtime dependency. Keep the existing peach background. Reduced motion uses real static captures; failed video loads retain their poster.

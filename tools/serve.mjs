@@ -13,6 +13,7 @@ const mime = {
   ".woff2": "font/woff2",
   ".ttf": "font/ttf",
   ".json": "application/json",
+  ".mp4": "video/mp4",
 };
 createServer(async (req, res) => {
   try {
@@ -26,11 +27,24 @@ createServer(async (req, res) => {
     }
     if ((await stat(file)).isDirectory()) file = resolve(file, "index.html");
     const body = await readFile(file);
+    const headers = {
+      "Content-Type": mime[extname(file)] || "application/octet-stream",
+      "Cache-Control": "no-cache",
+      "Accept-Ranges": "bytes",
+    };
+    const range = req.headers.range?.match(/^bytes=(\d+)-(\d*)$/);
+    if (range) {
+      const start = Number(range[1]);
+      const end = Math.min(body.length - 1, range[2] ? Number(range[2]) : body.length - 1);
+      if (start > end || start >= body.length) {
+        res.writeHead(416, { "Content-Range": `bytes */${body.length}` }).end();
+        return;
+      }
+      res.writeHead(206, { ...headers, "Content-Length": end - start + 1, "Content-Range": `bytes ${start}-${end}/${body.length}` }).end(body.subarray(start, end + 1));
+      return;
+    }
     res
-      .writeHead(200, {
-        "Content-Type": mime[extname(file)] || "application/octet-stream",
-        "Cache-Control": "no-cache",
-      })
+      .writeHead(200, { ...headers, "Content-Length": body.length })
       .end(body);
   } catch {
     res.writeHead(404).end("Not found");

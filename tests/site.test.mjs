@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { readFile, stat, readdir } from "node:fs/promises";
 const root = new URL("../src/", import.meta.url);
 const html = await readFile(new URL("index.html", root), "utf8");
@@ -181,7 +182,7 @@ test("product tour covers real Atlas, extension and collection without presentin
     assert.ok(js.includes(key));
 });
 
-test("the requested team story replaces Team AI and the overview supports hands-on exploration", () => {
+test("the requested team story replaces Team AI and the overview follows scrolling through the actual Atlas", () => {
   assert.doesNotMatch(html, /Team AI/);
   for (const name of ["atlas-demo", "team-story"])
     assert.ok(html.includes(`class="${name}"`));
@@ -211,5 +212,22 @@ test("scroll story frames and member browsers use the same six verified public d
       frame.bytes,
     );
     assert.match(frame.sourceSha256, /^[0-9a-f]{64}$/);
+  }
+});
+
+test("actual Atlas recordings match their public capture provenance", async () => {
+  const directory = new URL("assets/atlas-orbits/", root);
+  const { videos } = JSON.parse(await readFile(new URL("provenance.json", directory), "utf8"));
+  assert.deepEqual(videos.map((video) => video.name).sort(), ["personal", "team"]);
+  for (const video of videos) {
+    const bytes = await readFile(new URL(video.file, directory));
+    assert.equal(bytes.length, video.bytes);
+    assert.ok(bytes.length < 3000000, "each seekable recording stays below 3 MB");
+    assert.equal(createHash("sha256").update(bytes).digest("hex"), video.sha256);
+    assert.equal(createHash("sha256").update(await readFile(new URL(video.poster, directory))).digest("hex"), video.posterSha256);
+    assert.equal(video.encoding.audioStreams, 0);
+    assert.equal(video.capture.fullRotations, 1);
+    assert.equal(video.sourceCaptures.length, video.capture.pageCount);
+    for (const page of video.sourceCaptures) assert.ok(page.url.startsWith("https://"));
   }
 });

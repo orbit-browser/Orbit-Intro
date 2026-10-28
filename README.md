@@ -42,13 +42,13 @@ Do not commit `dist/`, browser profiles, screenshots, credentials or the private
 - Actual public-page captures form a CSS 3D orbit; scrolling changes the camera angle.
 - Product panels use actual Orbit demonstration screens, not recreated or invented UI.
 - The team is 전준 (team representative) and 임동건 (team member). Individual development specialisms are not inferred.
-- Capture is opt-in. Each member enables team collection on their own device; subsequent browsing becomes automatically shared sessions. Existing manual sharing remains available. Cross-member consolidation into a single co-authored session is not implemented.
-- Chapters cover the Atlas, extension session list, Orbit AI, restore, team collection controls, team Atlas and Team AI. Click any product image for the original-derived detailed view.
+- Capture is opt-in. Each member enables team collection on their own device; subsequent browsing accumulates in the team Atlas. The local implementation combines related collected source sessions with contributor attribution; original records remain owned by their authors. Existing manual sharing remains available.
+- Chapters cover the Atlas, extension session list, Orbit AI, restore, team collection controls, team Atlas. Click any product image for the original-derived detailed view.
 - This is an introduction site; no public installer, account registration or interactive product backend is represented as available.
 
 See [content evidence](docs/ContentEvidence.md), [design and motion decisions](docs/DecisionLog.md), and [work log](docs/WorkLog.md). Font licenses are bundled in `src/assets/fonts/licenses/`.
 
 
-The Atlas chapter supports direct dragging through eight approved public pages. The team chapter is a scroll-controlled, labelled demonstration: three member browsers feed seven frames captured from the implemented product's joint Atlas. Team AI promotion has been removed; past-session sharing, opt-in storage and Atlas are the focus.
+The Atlas chapter follows native vertical scrolling through one full revolution recorded from the actual internal UI. The team chapter first collects six visits from three member browsers into the real joint Atlas, then scrolls through its full revolution. Both are labelled demonstrations using synthetic sessions and approved public pages. Team AI promotion has been removed; past-session sharing, opt-in storage and Atlas are the focus.
 
-Additional checks: `node tools/check-interactions.mjs` for drag/keyboard/FAQ, `node tools/check-browser.mjs` for responsive browser/layout/details. Actual two-account collaboration requires signing in to the local test profiles and is not inferred from preview footage.
+Additional checks: `node tools/check-interactions.mjs` for FAQ expansion/reversal, `node tools/check-team-story.mjs` for native scroll/keyboard/touch, video seeking, collection before rotation, rewind, section release and reduced motion, `node tools/check-browser.mjs` for responsive browser/layout/details. Actual two-account collaboration requires signing in to the local test profiles and is not inferred from preview footage.

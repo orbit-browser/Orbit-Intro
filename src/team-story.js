@@ -73,13 +73,13 @@ const clamp = (value) => Math.max(0, Math.min(1, value));
 const ease = (value) => value * value * (3 - 2 * value);
 const ARROW =
   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 4v15m-6-6 6 6 6-6"/></svg>';
-const PHASES = [0, 0.21, 0.43, 0.62, 0.81, 1];
+const PHASES = [0, 0.22, 0.33, 0.52, 0.7, 0.82, 1];
 
 /**
  * Scroll-driven editorial stage. No timer, automatic playback or fabricated Atlas.
- * renderAtlasFrame({ slot, progress, frame, arrivedPages, members, reducedMotion })
+ * renderAtlasFrame({ slot, progress, frame, rotation, arrivedPages, members, reducedMotion })
  * connects the real product projection to the permanent .team-story__atlas-mount.
- * It is called only on a changed integer frame (0–6), resize or motion preference.
+ * Visits finish before the recorded gallery advances through one full revolution.
  * Return a cleanup function from mountTeamStory to remove listeners and observers.
  */
 export function mountTeamStory(element, { renderAtlasFrame } = {}) {
@@ -129,6 +129,9 @@ export function mountTeamStory(element, { renderAtlasFrame } = {}) {
   const state = {
     progress: 0,
     frame: -1,
+    rotationFrame: -1,
+    phase: "",
+    destroyAtlas: undefined,
     requested: 0,
     inView: false,
     disposed: false,
@@ -177,19 +180,25 @@ export function mountTeamStory(element, { renderAtlasFrame } = {}) {
       ? 1
       : clamp((stickyTop - rect.top) / travel);
     state.progress = progress;
-    const arrived = arrivals.filter((visit) => progress >= visit.end);
+    const collection = clamp(progress / 0.6);
+    const rotation = reduced.matches ? 0 : clamp((progress - 0.58) / 0.36);
+    const rotationFrame = Math.round(rotation * 95);
+    const phase = rotation >= 1 ? "complete" : rotation > 0 ? "rotate" : "collect";
+    const arrived = arrivals.filter((visit) => collection >= visit.end);
     const frame = arrived.length;
     if (state.dirty) measure();
     element.classList.toggle("is-complete", progress > 0.94);
     element.classList.toggle("is-reduced", reduced.matches);
     element.dataset.progress = progress.toFixed(4);
+    element.dataset.rotation = rotation.toFixed(4);
+    element.dataset.phase = phase;
     for (const [index, view] of memberViews.entries()) {
-      const second = progress >= 0.49 + index * 0.055;
+      const second = collection >= 0.49 + index * 0.055;
       const item = TEAM_STORY_DEMO[index];
       const ownArrived = arrived.filter(
         (visit) => visit.memberIndex === index,
       ).length;
-      const exploring = progress > 0.04 + index * 0.025 && ownArrived < 2;
+      const exploring = collection > 0.04 + index * 0.025 && ownArrived < 2;
       const key = `${second}-${ownArrived}-${exploring}`;
       if (view.key !== key) {
         view.key = key;
@@ -208,7 +217,7 @@ export function mountTeamStory(element, { renderAtlasFrame } = {}) {
       const visit = arrivals.find(
         (item) => item.memberIndex === owner && item.pageIndex === page,
       );
-      const t = clamp((progress - visit.start) / (visit.end - visit.start));
+      const t = clamp((collection - visit.start) / (visit.end - visit.start));
       const path = state.paths[index];
       const motion = ease(t);
       const visible = !reduced.matches && t > 0 && t < 1;
@@ -221,8 +230,9 @@ export function mountTeamStory(element, { renderAtlasFrame } = {}) {
     query(".team-story__previous").disabled =
       reduced.matches || progress < 0.005;
     query(".team-story__next").disabled = reduced.matches || progress > 0.995;
-    if (frame !== state.frame || state.dirty) {
+    if (frame !== state.frame || phase !== state.phase || state.dirty) {
       state.frame = frame;
+      state.phase = phase;
       query(".team-story__arrived-count").textContent = String(frame).padStart(
         2,
         "0",
@@ -235,18 +245,30 @@ export function mountTeamStory(element, { renderAtlasFrame } = {}) {
         ? "동작 줄이기 설정으로 마지막 장면을 보여드립니다."
         : frame === 0
           ? "아래로 스크롤해 세 사람의 탐색을 따라가 보세요."
+          : phase === "complete"
+            ? "한 바퀴를 돌아, 팀의 탐색을 함께 살펴봤습니다."
+          : phase === "rotate"
+            ? "모인 페이지를 한 바퀴 살펴보세요."
           : frame === 6
             ? "세 사람의 방문 페이지가 팀 아틀라스에 모였습니다."
             : `${arrived.at(-1).memberName}의 페이지가 더해졌습니다. 위로 스크롤하면 되돌아갑니다.`;
+    }
+    if (frame !== Number(slot.dataset.frame) || rotationFrame !== state.rotationFrame || state.dirty) {
+      slot.dataset.frame = String(frame);
+      state.rotationFrame = rotationFrame;
       const detail = {
         slot,
         progress,
         frame,
+        rotation,
         arrivedPages: arrived,
         members: TEAM_STORY_DEMO,
         reducedMotion: reduced.matches,
       };
-      if (typeof renderAtlasFrame === "function") renderAtlasFrame(detail);
+      if (typeof renderAtlasFrame === "function") {
+        const destroy = renderAtlasFrame(detail);
+        if (typeof destroy === "function") state.destroyAtlas = destroy;
+      }
       element.dispatchEvent(new CustomEvent("teamstory:frame", { detail }));
     }
     state.dirty = false;
@@ -307,6 +329,7 @@ export function mountTeamStory(element, { renderAtlasFrame } = {}) {
     reduced.removeEventListener("change", onResize);
     query(".team-story__previous").removeEventListener("click", previous);
     query(".team-story__next").removeEventListener("click", next);
+    state.destroyAtlas?.();
     mounts.delete(element);
   };
   mounts.set(element, cleanup);

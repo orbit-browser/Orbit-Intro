@@ -1,3 +1,11 @@
+# 2026-10-28 — Actual Atlas with one scroll-driven revolution
+
+- User correction: replace the free-drag imitation with the real internal Atlas screen. Scroll advances one full revolution before the page continues. In the team section, all six visits must arrive first; then its actual gallery makes one full revolution. Preserve the current team background color and all banners.
+- Implementation: capture actual product component motion from isolated public demo fixtures, export short seekable MP4 assets plus posters/provenance, and scrub them with native scroll inside sticky sections. No autoplay, wheel interception, private application bundle exposure, new runtime libraries or product behavior changes.
+- Ownership: root owns website JS/CSS/tests/docs. Existing product/capture agent owns isolated preview fixture preparation and new capture script/media only. No file overlap or nested delegation.
+- Scope: atlas-demo.js/css, shared scroll-video helper, team-story progress phases and team-atlas-frames renderer, local server media MIME, media provenance and interaction tests. Keep header/FAQ/copy/background/banners unchanged.
+- Verify: actual UI composition and correct first-to-first revolution, arrival-to-rotation continuity, wheel/keyboard/touch-scroll progression, reverse scrolling, section release, reduced-motion static fallback, seek/asset failures and mobile/desktop bounds. Check build/font/content and published asset hashes before completion.
+
 # 2026-10-28 — Interactive Atlas and accumulating team sessions
 
 - Goal: replace the large static Atlas overview with draggable multi-page session exploration; replace cramped Team AI proof with a dynamic team-session accumulation story. Rename retrieval/return headings and animate FAQ expansion.

@@ -6,7 +6,7 @@
   grid-column: 1 / -1;
   position: relative;
   min-width: 0;
-  height: calc(100svh + 2100px);
+  height: calc(100svh + 2900px);
   margin-top: 30px;
   color: var(--story-ink);
 }
@@ -432,7 +432,7 @@
   .team-story {
     --story-sticky-top: 86px;
     margin-top: 10px;
-    height: calc(100svh + 1700px);
+    height: calc(100svh + 2400px);
   }
   .team-story__pin {
     height: calc(100svh - 105px);
@@ -682,5 +682,20 @@
     height: 100%;
     object-fit: cover;
     transform: translateX(-22%);
+  }
+}
+
+.team-story__atlas-orbit {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: var(--story-paper);
+  pointer-events: none;
+}
+.team-story__atlas-orbit.is-active { opacity: 1; }
+@media (max-width: 700px) {
+  .team-story__atlas-orbit .scroll-video {
+    object-fit: cover;
+    object-position: 42% center;
   }
 }

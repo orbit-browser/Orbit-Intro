@@ -50,6 +50,11 @@ Locally served Inter, Noto Sans KR, JetBrains Mono and Oswald. Their upstream SI
 
 ## Interactive exploration and team story, 2026-10-28
 
-The introduction no longer exposes Team AI text or its answer screen. The personal Orbit AI section remains. The eight-page Atlas demonstration uses approved real webpage images, with mouse/touch dragging, keyboard navigation and reduced-motion support. It is labelled as a demonstration.
+The introduction no longer exposes Team AI text or its answer screen. The personal Orbit AI section remains. The eight-page Atlas demonstration is a recording of the real internal product UI, operated with pointer dragging during capture and scrubbed by native page scrolling on this introduction site. It makes one complete revolution and returns to its starting page. It is labelled as a demonstration; reduced motion keeps a static real screen.
 
-The team story shows three synthetic members and their six actual public documentation captures. Scrolling selects frames 0–6 captured from the real product preview and reverse scrolling rewinds them. `assets/team-atlas-frames/provenance.json` records the product base/branch, exact route, source checksums and public page URLs. No private application source, secrets, report PDF, user browsing records or API access is published. This scene is not a live authenticated multi-account integration test.
+The team story shows three synthetic members and their six actual public documentation captures. Scrolling first selects frames 0–6 captured from the real product preview, then advances a full revolution of that same six-page gallery. Reverse scrolling rewinds both phases. `assets/team-atlas-frames/provenance.json` records the product base/branch, exact route, source checksums and public page URLs. No private application source, secrets, report PDF, user browsing records or API access is published. This scene is not a live authenticated multi-account integration test.
+
+
+## Actual Atlas revolutions, 2026-10-28
+
+`assets/atlas-orbits/provenance.json` records the actual preview routes, public page mappings and recording metadata. The MP4 files have no audio and no automatic playback; the website seeks the recording to native scroll position. These are public demonstration recordings, not a live embedded application. Personal Atlas retains the product's page-preview permission notice. The original peach team background and the seven exhibition banners are unchanged.

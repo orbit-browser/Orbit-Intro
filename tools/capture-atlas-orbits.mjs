@@ -36,6 +36,15 @@ for (const mode of modes.filter((item) => !only || item.name === only)) {
   if (!process.argv.includes('--encode-only')) {
   const browser = await openChrome({ width: WIDTH, height: HEIGHT, scale: 1 });
   try {
+    // Capture the explicitly requested enabled state in this isolated demo only.
+    // Real extension settings and browser permissions are never changed here.
+    await browser.send('Page.addScriptToEvaluateOnNewDocument', { source: `
+      if (location.hostname === '127.0.0.1') {
+        const state = JSON.parse(localStorage.getItem('orbit-preview:storage:local') || '{}');
+        state['orbit:settings'] = { ...(state['orbit:settings'] || {}), tabSnapshotsEnabled: true };
+        localStorage.setItem('orbit-preview:storage:local', JSON.stringify(state));
+      }
+    ` });
     // Input positions still use the actual AtlasGallery handlers and transforms. Reduced motion
     // removes interpolation between sampled positions; no component, DOM or visual style is replaced.
     await browser.send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'reduce' }] });

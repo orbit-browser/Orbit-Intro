@@ -79,7 +79,7 @@
       "name": "personal",
       "file": "personal.mp4",
       "poster": "personal.webp",
-      "recordedAt": "2026-10-28T11:35:48.732Z",
+      "recordedAt": "2026-10-28T11:43:14.501Z",
       "previewUrl": "http://127.0.0.1:5187/preview/newtab.html?scope=&theme=light&personalAtlasStory=1#/orbit-atlas?session=s-jeju",
       "content": "Actual Orbit preview components with synthetic demonstration records; public page captures only.",
       "capture": {
@@ -103,9 +103,9 @@
         "faststart": true,
         "audioStreams": 0
       },
-      "bytes": 2020747,
-      "sha256": "3a45ef1d54e565fc929e866fcf5eb9088c9f785449f27d4e5601219029c80734",
-      "posterSha256": "b1954c840c6047ef7edb9042073e08e80c65f6d394991ef484528fd8a3d443b6",
+      "bytes": 1944401,
+      "sha256": "e1e54cdf8baf506d0fb9ffd5a5c2fb2a963e916f170916adf3ee876b878e6603",
+      "posterSha256": "5003c020048a080d17d8f4be1e94a94e3e16401812e8de3c7e3e3c1f5f63ef17",
       "sourceCaptures": [
         {
           "url": "https://m.visitjeju.net/kr/detail/view?contentsid=CONT_000000000500349&menuId=DOM_700000000010795",

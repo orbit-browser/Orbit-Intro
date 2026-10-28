@@ -1,4 +1,4 @@
-# 2026-10-28 — Full product tour and team collection (active)
+# 2026-10-28 — Full product tour and team collection (published)
 
 - Goal: introduce the real Atlas, Chrome sidepanel, capture, session context, Orbit AI, restoration and team collection. Set document/OG title to `Orbit - 소개 페이지`.
 - Evidence: latest product main `059aa45` already implements opt-in team collection, automatic per-member sessionisation and auto-sharing. Cross-member consolidation into one session is not implemented. Earlier exhibition captures showed only manual sharing.

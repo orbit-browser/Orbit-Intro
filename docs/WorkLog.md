@@ -42,3 +42,6 @@ Browser screenshots/results are in ignored `artifacts/`. The checked source and 
 
 - Final review replaced an uninformative empty-orbit Atlas shot with the already captured personal development session showing real page previews, folders and summary. A new alternate capture was blocked by disk ENOSPC; only a closed task-created temporary Chrome profile was cleaned. Source and deliverable artifacts were retained.
 - The 320 px hero now displays its intended two lines. An initial height assertion did not account for mixed Korean/Latin font line boxes; the rendered screenshot confirmed the correction and the focused check accounts for that difference.
+
+- Publication: c84a4c1 pushed normally to main; Pages run 40668172596 passed. Public HTML returns 200 with the new title and team collection copy. Seven representative deployed images/font/JS/CSS match local files byte-for-byte. Published site and seven-panel preview opened in actual Chrome.
+- Final 320/390 px focused checks confirm two mixed-font heading lines without overflow. Local source checks: 9/9 plus successful build. Disk ENOSPC recurred during the final documentation write; only the reproducible local dist build was removed, preserving all sources and print deliverables.

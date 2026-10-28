@@ -61,3 +61,6 @@ Browser screenshots/results are in ignored `artifacts/`. The checked source and 
 - Mobile touch verification exposed implicit pointer capture moving from a card to its viewport: the child’s bubbling `lostpointercapture` prematurely ended the drag. Restricted cancellation to capture lost by the viewport itself, preserving native vertical scrolling. Added actual touch dispatch to the interaction verification.
 
 - Final scroll test: real mouse wheel advances; frames 0→6→1→0 and decoded image source match at desktop/mobile; reduced motion selects frame6. Touch drag passed after the capture fix. `node tools/check-team-story.mjs` passed.
+
+- Published commit `0b93fd0` through Pages workflow 40678898883 (build/deploy success). Native Chrome hard-refresh confirmed the new draggable Atlas, joint scroll story, renamed steps and absence of Team AI. Existing browser tabs needed refresh because changing only the URL hash reused the old document.
+- Live frame checks wait for the requested decoded image rather than the previous frame retained during network loading. Source content hashes and public asset responses are checked separately.

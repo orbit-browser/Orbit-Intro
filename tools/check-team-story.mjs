@@ -32,6 +32,17 @@ for (const [width, height] of [
     assert.ok((await frame()) > 0);
     await place(0.9);
     assert.equal(await frame(), 6);
+    // Published frames decode asynchronously; keep testing the requested frame,
+    // not a previous frame retained while the network request is in flight.
+    for (let i = 0; i < 80; i++) {
+      if (
+        await c.evaluate(
+          `document.querySelector('.team-story__atlas-mount img').src.endsWith('frame-6.webp')`,
+        )
+      )
+        break;
+      await sleep(100);
+    }
     await c.evaluate(
       `document.querySelector('.team-story__atlas-mount img').decode()`,
     );

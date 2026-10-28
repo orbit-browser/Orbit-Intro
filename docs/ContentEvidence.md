@@ -11,7 +11,11 @@ Primary source: the Orbit application repository, its README and current exhibit
 - Collaboration: chosen sessions can be shared to a team space and queried with Team AI.
 - Stack: Chrome MV3, WXT, React, TypeScript; FastAPI, PostgreSQL and Qdrant.
 
-The shared-session scenario is deliberately scoped to user-selected sharing. The product also has an explicitly consented team collection mode; the site does not imply all browsing is automatically public.
+Latest application main `059aa45` confirms team collection windows, per-device opt-in, selected duration, pause/stop, exclusions and automatic sharing of each member’s sessions. `sync_pipeline` partitions records by user and workspace; `session_updater` rejects cross-owner appends. Different members’ records are not yet consolidated into a single co-authored session. The FAQ states this limit.
+
+The product tour now covers the Atlas session/page design, folders and restore, Chrome sidepanel expanded sessions, personal AI retrieval, team Atlas and collection controls. Actual application preview was launched and operated to capture these screens. It uses demo fixtures and approved page-image mappings; it is not evidence of a two-account shared-backend test. Personal Atlas captures retain the real page-preview permission notice; no UI was removed to imply consent.
+
+Collection-control base images crop the actual time selector; their detail view retains the full consent sheet. Editorial author labels and connecting graphics sit outside screenshots. No fabricated contributor badges or merged sessions appear inside the UI.
 
 ## Team and project status
 

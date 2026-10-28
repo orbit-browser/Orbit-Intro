@@ -22,7 +22,6 @@
 
 Browser screenshots/results are in ignored `artifacts/`. The checked source and deployment workflow are versioned; screenshots are review artifacts, not website assets.
 
-
 ## 2026-10-28 — Requested navigation, depth and screenshot refinement
 
 - Removed header GitHub, Team Orbit on GitHub and closing project CTA; linked verified individual profiles; removed school attribution. Confirmed the original repository is Public and left it unchanged as explicitly requested.
@@ -31,3 +30,15 @@ Browser screenshots/results are in ignored `artifacts/`. The checked source and 
 - npm run check: eight tests and build pass. Four-width Chrome checks pass for fixed header, links, detail viewer, focus restoration, resource loading, overflow, tabs and motion preferences. Native Escape test required an actual virtual-key code; no application change needed.
 - Chrome's elementsFromPoint order differs from preserve-3d paint order. Added raster colour-plane checks for actual foreground/background occlusion, ignoring only a measured two-pixel antialias band at transformed edges.
 - User subsequently requested a clearer team collaboration composition; verified capture/evidence work is ongoing independently. Current requested link removal and navigation improvements are published first.
+
+## 2026-10-28 — Full product tour and team collection
+
+- Inspected latest product main 059aa45; corrected the earlier assumption that team collection was absent. Automatic per-member team collection/sharing exists; cross-member merged sessions do not. No fabricated feature, result or collaborator stack is presented as implemented.
+- Added substantial Atlas, extension and team collection chapters, source-based pipeline/control explanations and an explicit implementation-status FAQ. Updated browser/OG title to Orbit - 소개 페이지. Kept actual people, fixed header, individual profile links, animation depth and accessible detail viewer.
+- Captured the actual application preview with demo data, approved existing page images and no external AI calls. Added lossless responsive screenshots, full consent-sheet detail, source hashes and local Noto glyph coverage. Private report and raw capture artifacts remain outside the public repository.
+- Verification: 9 content/asset/font tests and build pass; browser checks at 320/390/768/1440 px show no horizontal overflow, missing images, console errors or text-width clipping. Six new gallery groups pass 18 open/decode/zoom/Escape/focus checks. All four navigation anchors clear the fixed header. Motion controls and reduced motion pass.
+- Visual review prompted larger mobile navigation labels, a correction to the expanded-session screenshot alt text and a narrower-phone heading adjustment. Actual PDF/banner production is in the separate exhibition worktree.
+- Dedicated Chrome profiles Orbit 체험 A/B have the latest extension installed against the healthy local backend at 127.0.0.1:8076. Both are at Google sign-in; no accounts, browsing consent or shared workspace were fabricated. Actual two-account collaboration still awaits user login and is not claimed as verified.
+
+- Final review replaced an uninformative empty-orbit Atlas shot with the already captured personal development session showing real page previews, folders and summary. A new alternate capture was blocked by disk ENOSPC; only a closed task-created temporary Chrome profile was cleaned. Source and deliverable artifacts were retained.
+- The 320 px hero now displays its intended two lines. An initial height assertion did not account for mixed Korean/Latin font line boxes; the rendered screenshot confirmed the correction and the focused check accounts for that difference.

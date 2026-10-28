@@ -49,7 +49,13 @@ test("public copy keeps verified identities, consent and sharing boundaries", ()
   ])
     assert.ok(html.includes(copy), copy);
   for (const name of ["김오르빗", "박지은", "이도현"])
-    assert.ok(!html.includes(name), "demo users are not team profiles");
+    assert.ok(
+      !html
+        .split('class="team-members"')[1]
+        .split('class="craft-list"')[0]
+        .includes(name),
+      "demo users are not team profiles",
+    );
   assert.ok(html.includes("https://youtu.be/vDcOPbC3ntU"));
   assert.doesNotMatch(
     html,
@@ -79,8 +85,8 @@ test("real image provenance and lightweight web formats are preserved", async ()
     }
   }
   assert.ok(
-    imageBytes < 2500000,
-    "all default product and hero images stay below 2.5 MB",
+    imageBytes < 5000000,
+    "complete product tour default images stay below 5 MB; high-resolution details load on demand",
   );
   for (const [, file, width, height] of html.matchAll(
     /src="\.\/assets\/([^"]+)"[^>]*width="(\d+)" height="(\d+)"/g,
@@ -147,5 +153,21 @@ test("product detail sources resolve to higher-resolution original derivatives",
     assert.ok(image);
     assert.ok(image.variants[1].width >= image.width);
   }
-  assert.equal([...html.matchAll(/data-detail=/g)].length, 7);
+  assert.ok([...html.matchAll(/data-detail=/g)].length >= 14);
+});
+
+test("product tour covers real Atlas, extension and collection without presenting the roadmap as shipped", () => {
+  assert.ok(html.includes("<title>Orbit - 소개 페이지</title>"));
+  for (const id of ["atlas", "experience", "together", "team"])
+    assert.ok(html.includes(`id="${id}"`));
+  for (const copy of [
+    "팀 저장 켜기",
+    "함께 탐색하기",
+    "현재는 각 팀원의 탐색",
+    "다음 확장으로 준비",
+    "시연 데이터",
+  ])
+    assert.ok(html.includes(copy), copy);
+  for (const key of ["atlas", "extension", "collection", "team-atlas"])
+    assert.ok(js.includes(key));
 });

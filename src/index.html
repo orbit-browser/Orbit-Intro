@@ -8,10 +8,7 @@
       name="description"
       content="흩어진 Pages를, 하나의 Memory로. 웹 탐색을 기록하고 맥락으로 연결해 다시 찾을 수 있도록 돕는 Personal Exploration Memory, Orbit을 소개합니다."
     />
-    <meta
-      property="og:title"
-      content="Orbit — 흩어진 Pages를, 하나의 Memory로."
-    />
+    <meta property="og:title" content="Orbit - 소개 페이지" />
     <meta
       property="og:description"
       content="탐색은 그대로. 기록은 기억으로. Team Orbit이 만드는 새로운 웹 탐색 경험."
@@ -21,7 +18,7 @@
       property="og:url"
       content="https://orbit-browser.github.io/Orbit-Intro/"
     />
-    <title>Orbit — 흩어진 Pages를, 하나의 Memory로.</title>
+    <title>Orbit - 소개 페이지</title>
     <link rel="icon" type="image/png" href="./assets/favicon.png" />
     <link
       rel="preload"
@@ -42,8 +39,8 @@
         >Orbit<span>.</span></a
       >
       <nav aria-label="주요 메뉴">
-        <a href="#experience">경험</a><a href="#together">함께</a
-        ><a href="#team">Team Orbit</a>
+        <a href="#atlas">아틀라스</a><a href="#experience">익스텐션</a
+        ><a href="#together">팀 공간</a><a href="#team">Team Orbit</a>
       </nav>
     </header>
     <main id="main">
@@ -123,6 +120,101 @@
         </div>
       </section>
 
+      <section class="atlas-tour wrap" id="atlas" aria-labelledby="atlas-title">
+        <div class="tour-heading">
+          <div>
+            <p class="section-index">02 / ORBIT ATLAS</p>
+            <h2 id="atlas-title" class="reveal">
+              탐색의 맥락을,<br /><em>눈앞에 펼치다.</em>
+            </h2>
+          </div>
+          <p>
+            Orbit의 새 탭은 탐색의 지도입니다.<br />세션을 고르고, 궤도 위의
+            페이지를 살펴보며<br />그때의 흐름으로 돌아갑니다.
+          </p>
+        </div>
+        <figure class="tour-screen atlas-wide">
+          <img
+            src="./assets/screens/atlas-overview.webp"
+            data-detail="./assets/screens/atlas-overview-detail.webp"
+            alt="Orbit Atlas의 세션 궤도와 웹페이지 미리보기"
+            width="1920"
+            height="1333"
+            srcset="
+              ./assets/screens/atlas-overview-small.webp  960w,
+              ./assets/screens/atlas-overview.webp       1920w
+            "
+            sizes="(max-width:700px) 90vw, 80vw"
+            loading="lazy"
+          />
+          <figcaption>
+            <span>새 탭에서 만나는 Orbit Atlas</span
+            ><button class="screen-detail" type="button" data-gallery="atlas">
+              아틀라스 크게 보기 ↗
+            </button>
+          </figcaption>
+        </figure>
+        <div class="atlas-reading">
+          <ol class="tour-notes">
+            <li>
+              <span>01</span>
+              <div>
+                <h3>하나의 세션, 하나의 흐름.</h3>
+                <p>
+                  관련 있는 페이지가 모인 세션을 선택합니다. 탐색 주제를 한눈에
+                  확인하고 이어갈 기록을 고르세요.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span>02</span>
+              <div>
+                <h3>주소보다 먼저, 페이지의 모습.</h3>
+                <p>
+                  궤도를 따라 페이지를 살펴보고 내용을 확인합니다. 기억 속
+                  화면에서 다시 찾는 길이 시작됩니다.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span>03</span>
+              <div>
+                <h3>폴더로 정리하고, 다시 열기.</h3>
+                <p>
+                  필요한 세션을 폴더에 모으고 페이지들을 함께 엽니다. 흩어진
+                  탭을 다시 모으는 수고를 줄입니다.
+                </p>
+              </div>
+            </li>
+          </ol>
+          <figure class="tour-screen atlas-close">
+            <img
+              src="./assets/screens/atlas-detail.webp"
+              data-detail="./assets/screens/atlas-detail-detail.webp"
+              alt="아틀라스에서 세션을 선택한 뒤 페이지와 탐색 맥락을 확인하는 상세 화면"
+              width="1600"
+              height="1111"
+              srcset="
+                ./assets/screens/atlas-detail-small.webp  800w,
+                ./assets/screens/atlas-detail.webp       1600w
+              "
+              sizes="(max-width:700px) 90vw, 80vw"
+              loading="lazy"
+            />
+            <figcaption>
+              <span>선택한 세션을 더 가까이</span
+              ><button
+                class="screen-detail"
+                type="button"
+                data-gallery="atlas-detail"
+              >
+                상세 화면 보기 ↗
+              </button>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
       <section
         class="experience section-dark"
         id="experience"
@@ -131,7 +223,7 @@
         <div class="wrap">
           <div class="section-heading">
             <div>
-              <p class="section-index">02 / THE EXPERIENCE</p>
+              <p class="section-index">03 / CHROME EXTENSION</p>
               <h2 id="experience-title" class="reveal">
                 평소처럼 탐색하고.<br /><span>필요할 때 돌아오세요.</span>
               </h2>
@@ -139,6 +231,44 @@
             <p class="heading-note">
               기록에서 다시 탐색하기까지,<br />하나의 자연스러운 흐름.
             </p>
+          </div>
+          <div class="extension-intro">
+            <div>
+              <span class="mono">ALWAYS WITH YOUR BROWSER</span>
+              <h3>보고 있는 페이지 옆에,<br />탐색의 기억을.</h3>
+              <p>
+                익스텐션의 사이드패널에서 방문 흐름을 보고,<br />세션을 찾고,
+                다시 엽니다.<br />지금 하던 탐색을 떠날 필요가 없습니다.
+              </p>
+              <p class="extension-hint">
+                새 탭에서는 넓게. 사이드패널에서는 가까이.
+              </p>
+            </div>
+            <figure class="tour-screen extension-live">
+              <img
+                src="./assets/screens/extension-timeline.webp"
+                data-detail="./assets/screens/extension-timeline-detail.webp"
+                alt="Orbit 사이드패널에서 펼친 세션의 방문 페이지 목록과 요약·복원"
+                width="1000"
+                height="2045"
+                srcset="
+                  ./assets/screens/extension-timeline-small.webp  500w,
+                  ./assets/screens/extension-timeline.webp       1000w
+                "
+                sizes="(max-width:700px) 90vw, 80vw"
+                loading="lazy"
+              />
+              <figcaption>
+                <span>Orbit 사이드패널</span
+                ><button
+                  class="screen-detail"
+                  type="button"
+                  data-gallery="extension"
+                >
+                  화면 크게 보기 ↗
+                </button>
+              </figcaption>
+            </figure>
           </div>
           <div class="feature-tabs" role="tablist" aria-label="Orbit 사용 경험">
             <button
@@ -358,14 +488,18 @@
       <section class="together" id="together" aria-labelledby="together-title">
         <div class="wrap together-grid">
           <div class="together-copy">
-            <p class="section-index">03 / BETTER TOGETHER</p>
+            <p class="section-index">04 / TEAM ATLAS</p>
             <h2 id="together-title" class="reveal">
               각자의 탐색이,<br /><span>팀의 기록으로.</span>
             </h2>
-            <p>공유하고 싶은 탐색 세션을 골라<br />팀의 공간으로 가져오세요.</p>
             <p>
-              팀원이 모은 기록을 한곳에서 보고,<br /><strong>Team AI</strong>로
-              함께 찾습니다.
+              <strong>팀 저장을 켜고, 함께 탐색하세요.</strong><br />그때부터
+              모인 탐색이 세션으로 정리되어<br />팀 아틀라스에 쌓입니다.
+            </p>
+            <p>
+              서로 다른 사람이 찾은 자료를 한곳에서.<br /><strong
+                >Team AI</strong
+              >가 팀에 모인 기록에서 필요한 내용을 찾습니다.
             </p>
             <div class="share-principle">
               <img
@@ -373,52 +507,191 @@
                 alt=""
                 width="43"
                 height="36"
-              /><span>내가 고른 세션만.<br />공유의 범위는 내가 정합니다.</span>
+              /><span
+                >팀 저장은 각자 켜고 끕니다.<br />과거 기록은 내가 고른 세션만
+                공유합니다.</span
+              >
             </div>
           </div>
-          <div class="team-showcase scroll-window">
-            <div class="team-screen-pair">
-              <figure class="team-list">
+          <div class="team-collection-story">
+            <ol class="collection-journey">
+              <li>
+                <span>01</span><b>팀 저장 켜기</b>
+                <p>팀을 선택하고<br />이 기기의 수집을 시작합니다.</p>
+              </li>
+              <li>
+                <span>02</span><b>함께 탐색하기</b>
+                <p>각자의 방문이 세션으로<br />정리되어 팀에 쌓입니다.</p>
+              </li>
+              <li>
+                <span>03</span><b>팀의 기억 찾기</b>
+                <p>아틀라스에서 살펴보고<br />Team AI로 질문합니다.</p>
+              </li>
+            </ol>
+            <figure class="tour-screen team-atlas-screen">
+              <img
+                src="./assets/screens/team-atlas.webp"
+                data-detail="./assets/screens/team-atlas-detail.webp"
+                alt="팀을 선택한 Orbit Atlas에서 함께 모인 탐색 세션을 확인하는 화면"
+                width="1920"
+                height="1333"
+                srcset="
+                  ./assets/screens/team-atlas-small.webp  960w,
+                  ./assets/screens/team-atlas.webp       1920w
+                "
+                sizes="(max-width:700px) 90vw, 80vw"
+                loading="lazy"
+              />
+              <figcaption>
+                <span>우리 팀의 탐색이 쌓이는 공간</span
+                ><button
+                  class="screen-detail"
+                  type="button"
+                  data-gallery="team-atlas"
+                >
+                  팀 아틀라스 보기 ↗
+                </button>
+              </figcaption>
+            </figure>
+            <div class="collect-controls">
+              <figure class="tour-screen">
                 <img
-                  src="./assets/screens/team-sessions.webp"
+                  src="./assets/screens/team-collect-start.webp"
+                  data-detail="./assets/screens/team-collect-start-detail.webp"
+                  alt="팀 수집의 안내를 확인하고 시간을 정해 시작하는 실제 화면"
+                  width="1000"
+                  height="281"
                   srcset="
-                    ./assets/screens/team-sessions-small.webp  640w,
-                    ./assets/screens/team-sessions.webp       1280w
+                    ./assets/screens/team-collect-start-small.webp  500w,
+                    ./assets/screens/team-collect-start.webp       1000w
                   "
-                  sizes="(max-width: 700px) 75vw, 42vw"
-                  data-detail="./assets/screens/team-sessions-detail.webp"
-                  alt="팀원들이 선택해 공유한 세션이 모인 실제 팀 공간"
-                  width="1280"
-                  height="1457"
+                  sizes="(max-width:700px) 90vw, 80vw"
                   loading="lazy"
                 />
                 <figcaption>
-                  <span class="screen-dot"></span> TEAM SPACE
+                  <span>원하는 시간만 함께 기록</span
+                  ><button
+                    class="screen-detail"
+                    type="button"
+                    data-gallery="collection"
+                  >
+                    수집 화면 보기 ↗
+                  </button>
                 </figcaption>
               </figure>
-              <figure class="team-ai">
+              <div>
+                <h3>모으는 시작도,<br />멈추는 순간도 직접.</h3>
+                <p>
+                  팀 수집이 허용된 공간에서 각자 동의한 뒤 시작합니다. 남은
+                  시간을 확인하고 언제든 일시 정지하거나 끝낼 수 있습니다.
+                </p>
+                <p>
+                  민감한 사이트와 제외한 주소는 팀 수집에서 빠집니다. 예전에
+                  찾았던 자료는 기존의 <strong>세션 공유</strong>로 더할 수
+                  있습니다.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="team-showcase team-proof scroll-window">
+            <p class="team-proof-label mono">TEAM SPACE</p>
+            <div class="shared-records">
+              <figure class="shared-record" style="--member-ink: #ef6f47">
+                <figcaption>
+                  <i>김</i><span>김오르빗<small>공유한 기록</small></span>
+                </figcaption>
                 <img
-                  src="./assets/screens/team-ai.webp"
+                  src="./assets/screens/team-shared-kim.webp"
                   srcset="
-                    ./assets/screens/team-ai-small.webp  640w,
-                    ./assets/screens/team-ai.webp       1280w
+                    ./assets/screens/team-shared-kim-small.webp  500w,
+                    ./assets/screens/team-shared-kim.webp       1000w
                   "
-                  sizes="(max-width: 700px) 75vw, 42vw"
-                  data-detail="./assets/screens/team-ai-detail.webp"
-                  alt="팀에 공유된 세션을 근거로 질문에 답하는 Team AI 시연 화면"
-                  width="1280"
-                  height="1591"
+                  sizes="(max-width:700px) 75vw, 18vw"
+                  data-detail="./assets/screens/team-shared-kim-detail.webp"
+                  width="1000"
+                  height="181"
+                  alt="김오르빗 님이 공유 표시가 있는 실제 세션"
                   loading="lazy"
                 />
+              </figure>
+              <figure class="shared-record" style="--member-ink: #727bcb">
                 <figcaption>
-                  <span class="screen-dot"></span> TEAM AI
+                  <i>박</i><span>박지은<small>공유한 기록</small></span>
                 </figcaption>
+                <img
+                  src="./assets/screens/team-shared-park.webp"
+                  srcset="
+                    ./assets/screens/team-shared-park-small.webp  500w,
+                    ./assets/screens/team-shared-park.webp       1000w
+                  "
+                  sizes="(max-width:700px) 75vw, 18vw"
+                  data-detail="./assets/screens/team-shared-park-detail.webp"
+                  width="1000"
+                  height="181"
+                  alt="박지은 님이 공유 표시가 있는 실제 세션"
+                  loading="lazy"
+                />
+              </figure>
+              <figure class="shared-record" style="--member-ink: #c06aa2">
+                <figcaption>
+                  <i>이</i><span>이도현<small>공유한 기록</small></span>
+                </figcaption>
+                <img
+                  src="./assets/screens/team-shared-lee.webp"
+                  srcset="
+                    ./assets/screens/team-shared-lee-small.webp  500w,
+                    ./assets/screens/team-shared-lee.webp       1000w
+                  "
+                  sizes="(max-width:700px) 75vw, 18vw"
+                  data-detail="./assets/screens/team-shared-lee-detail.webp"
+                  width="1000"
+                  height="181"
+                  alt="이도현 님이 공유 표시가 있는 실제 세션"
+                  loading="lazy"
+                />
               </figure>
             </div>
-            <span class="team-connector" aria-hidden="true">↗</span>
+            <svg class="shared-join" viewBox="0 0 600 74" aria-hidden="true">
+              <path
+                d="M100 0V20Q100 36 118 36H282Q300 36 300 54V68"
+                stroke="#ef6f47"
+              />
+              <path d="M300 0V68" stroke="#727bcb" />
+              <path
+                d="M500 0V20Q500 36 482 36H318Q300 36 300 54V68"
+                stroke="#c06aa2"
+              />
+              <path d="m292 60 8 8 8-8" stroke="#2b2521" />
+            </svg>
+            <div class="team-proof-heading">
+              <strong>Team AI</strong
+              ><span>서로 다른 팀원의 기록을, 한 번에.</span>
+            </div>
+            <figure class="shared-answer">
+              <img
+                src="./assets/screens/team-shared-answer.webp"
+                srcset="
+                  ./assets/screens/team-shared-answer-small.webp  960w,
+                  ./assets/screens/team-shared-answer.webp       1920w
+                "
+                sizes="(max-width:700px) 85vw, 50vw"
+                data-detail="./assets/screens/team-shared-answer-detail.webp"
+                width="1920"
+                height="846"
+                alt="팀에 공유된 FastAPI와 프롬프트 기록을 질문하고 김오르빗·박지은의 관련 세션을 찾은 실제 화면"
+                loading="lazy"
+              />
+              <figcaption>
+                <span class="source-kim">김오르빗의 기록</span
+                ><span class="source-park">박지은의 기록</span>
+              </figcaption>
+            </figure>
             <p class="demo-caption">
-              시연 데이터로 구성한 실제 제품 화면
-              <button type="button" class="screen-detail" data-gallery="team">
+              실제 제품의 시연 데이터<button
+                type="button"
+                class="screen-detail"
+                data-gallery="team"
+              >
                 화면 크게 보기 <span aria-hidden="true">↗</span>
               </button>
             </p>
@@ -426,9 +699,91 @@
         </div>
       </section>
 
+      <section class="memory-explained wrap" aria-labelledby="memory-title">
+        <div class="tour-heading">
+          <div>
+            <p class="section-index">05 / BEHIND THE MEMORY</p>
+            <h2 id="memory-title">
+              방문 기록에서,<br />다시 찾을 수 있는 <em>맥락으로.</em>
+            </h2>
+          </div>
+          <p>
+            Orbit은 페이지를 저장하는 데서 끝나지 않습니다.<br />탐색의 순서와
+            내용을 연결하고,<br />질문에 필요한 기록을 되찾습니다.
+          </p>
+        </div>
+        <ol class="memory-pipeline">
+          <li>
+            <span>01 / CAPTURE</span>
+            <h3>방문을 기록</h3>
+            <p>수집을 켠 동안 방문한 페이지와 체류 흐름을 기록합니다.</p>
+          </li>
+          <li>
+            <span>02 / CONTEXT</span>
+            <h3>세션으로 연결</h3>
+            <p>
+              모인 기록을 함께 분석해 관련 페이지를 묶고 탐색 맥락을 요약합니다.
+            </p>
+          </li>
+          <li>
+            <span>03 / RETRIEVAL</span>
+            <h3>기억나는 말로 검색</h3>
+            <p>
+              질문과 관련 있는 기록을 찾고, 근거가 된 세션과 페이지를 함께
+              보여줍니다.
+            </p>
+          </li>
+          <li>
+            <span>04 / RETURN</span>
+            <h3>그때의 탐색 재개</h3>
+            <p>발견한 세션의 페이지들을 다시 열어 이어서 탐색합니다.</p>
+          </li>
+        </ol>
+        <div class="product-questions">
+          <div>
+            <span class="mono">YOUR MEMORY. YOUR CONTROL.</span>
+            <h3>기억할 범위는,<br />내가 정합니다.</h3>
+          </div>
+          <div>
+            <details>
+              <summary>설치하면 바로 모든 탐색을 기록하나요?</summary>
+              <p>
+                수집은 기본으로 꺼져 있습니다. 로그인한 계정에서 수집을 켠 뒤
+                시작하며, 시크릿 창은 기록하지 않습니다. 필요할 때 수집을 멈추고
+                제외할 사이트를 정할 수 있습니다.
+              </p>
+            </details>
+            <details>
+              <summary>개인 기록과 팀 기록은 어떻게 나뉘나요?</summary>
+              <p>
+                팀을 선택하는 것만으로 개인 기록이 공유되지는 않습니다. 팀
+                수집을 직접 시작한 동안의 대상 방문이 팀 세션으로 정리됩니다.
+                과거 기록은 원하는 세션을 골라 공유할 수 있습니다.
+              </p>
+            </details>
+            <details>
+              <summary>팀 아틀라스에는 어떻게 쌓이나요?</summary>
+              <p>
+                현재는 각 팀원의 탐색을 세션으로 정리해 팀에 자동 공유합니다.
+                여러 팀원의 관련 탐색을 하나의 팀 세션으로 모으고 참여자를 함께
+                표시하는 기능은 다음 확장으로 준비하고 있습니다.
+              </p>
+            </details>
+            <details>
+              <summary>화면에 보이는 기록은 실제 사용자 데이터인가요?</summary>
+              <p>
+                소개에 사용한 화면은 Orbit 앱을 실행해 촬영했습니다. 제품의
+                동작을 설명하기 위한 시연 데이터이며, 실제 사용자의 비공개 탐색
+                기록을 공개하지 않습니다.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
       <section class="team-section wrap" id="team" aria-labelledby="team-title">
         <div class="section-heading">
-          <p class="section-index">04 / THE PEOPLE BEHIND ORBIT</p>
+          <p class="section-index">06 / THE PEOPLE BEHIND ORBIT</p>
           <span class="mono team-tag">TEAM ORBIT ↗</span>
         </div>
         <h2 id="team-title" class="reveal">

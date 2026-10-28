@@ -42,7 +42,8 @@ Do not commit `dist/`, browser profiles, screenshots, credentials or the private
 - Actual public-page captures form a CSS 3D orbit; scrolling changes the camera angle.
 - Product panels use actual Orbit demonstration screens, not recreated or invented UI.
 - The team is 전준 (team representative) and 임동건 (team member). Individual development specialisms are not inferred.
-- Capture is opt-in. The shared-session example only exposes the sessions a user chooses to share.
+- Capture is opt-in. Each member enables team collection on their own device; subsequent browsing becomes automatically shared sessions. Existing manual sharing remains available. Cross-member consolidation into a single co-authored session is not implemented.
+- Chapters cover the Atlas, extension session list, Orbit AI, restore, team collection controls, team Atlas and Team AI. Click any product image for the original-derived detailed view.
 - This is an introduction site; no public installer, account registration or interactive product backend is represented as available.
 
 See [content evidence](docs/ContentEvidence.md), [design and motion decisions](docs/DecisionLog.md), and [work log](docs/WorkLog.md). Font licenses are bundled in `src/assets/fonts/licenses/`.

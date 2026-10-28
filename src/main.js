@@ -159,7 +159,12 @@ const gallerySelectors = {
   capture: ".capture-composition img",
   search: ".search-composition img",
   restore: ".restore-composition img",
-  team: ".team-screen-pair img",
+  team: ".team-proof img[data-detail]",
+  atlas: ".atlas-wide img[data-detail]",
+  "atlas-detail": ".atlas-close img[data-detail]",
+  extension: ".extension-live img[data-detail]",
+  "team-atlas": ".team-atlas-screen img[data-detail]",
+  collection: ".collect-controls img[data-detail]",
 };
 function resetZoom() {
   viewerViewport.classList.remove("is-zoomed");

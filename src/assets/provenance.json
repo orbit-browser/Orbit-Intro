@@ -247,6 +247,265 @@
           "bytes": 184938
         }
       ]
+    },
+    {
+      "file": "screens/team-shared-kim.webp",
+      "width": 1000,
+      "height": 181,
+      "bytes": 20692,
+      "source": "extension/preview/exhibition/assets/main05-v3/shared-kim-header.png",
+      "sourceSha256": "1cb7977d0307fa6df31091789a1fe77fbbc4cb1312c39a75e7a2db57f0403ceb",
+      "processing": "Lossless derivative of unmodified product crop; editorial author labels outside UI",
+      "content": "Real Orbit team demo, shared workspace w-capstone",
+      "variants": [
+        {
+          "file": "screens/team-shared-kim-small.webp",
+          "width": 500,
+          "height": 91,
+          "bytes": 10056,
+          "source": "extension/preview/exhibition/assets/main05-v3/shared-kim-header.png",
+          "sourceSha256": "1cb7977d0307fa6df31091789a1fe77fbbc4cb1312c39a75e7a2db57f0403ceb"
+        },
+        {
+          "file": "screens/team-shared-kim-detail.webp",
+          "width": 2838,
+          "height": 1440,
+          "bytes": 47248,
+          "source": "extension/preview/exhibition/assets/main05-v3/shared-kim-row.png",
+          "sourceSha256": "cb38699a113d6eaac8bd714bebf00c0e5d2cb36ccea93ae0d542e13b162be20f"
+        }
+      ]
+    },
+    {
+      "file": "screens/team-shared-park.webp",
+      "width": 1000,
+      "height": 181,
+      "bytes": 18916,
+      "source": "extension/preview/exhibition/assets/main05-v3/shared-park-header.png",
+      "sourceSha256": "f2d7acf1435daf5a35fe4d82f88d6b074bdb2f75c466a901b7b5c52451ef131f",
+      "processing": "Lossless derivative of unmodified product crop; editorial author labels outside UI",
+      "content": "Real Orbit team demo, shared workspace w-capstone",
+      "variants": [
+        {
+          "file": "screens/team-shared-park-small.webp",
+          "width": 500,
+          "height": 91,
+          "bytes": 9362,
+          "source": "extension/preview/exhibition/assets/main05-v3/shared-park-header.png",
+          "sourceSha256": "f2d7acf1435daf5a35fe4d82f88d6b074bdb2f75c466a901b7b5c52451ef131f"
+        },
+        {
+          "file": "screens/team-shared-park-detail.webp",
+          "width": 2838,
+          "height": 1248,
+          "bytes": 31982,
+          "source": "extension/preview/exhibition/assets/main05-v3/shared-park-row.png",
+          "sourceSha256": "100c0026b84a699a80108f3f84fc94d2a7e8fddc4710ab3723938f85f70790b1"
+        }
+      ]
+    },
+    {
+      "file": "screens/team-shared-lee.webp",
+      "width": 1000,
+      "height": 181,
+      "bytes": 17622,
+      "source": "extension/preview/exhibition/assets/main05-v3/shared-lee-header.png",
+      "sourceSha256": "3e02fc1850b507401f6f047475e31934592800dc7b0337847b92587512187ae0",
+      "processing": "Lossless derivative of unmodified product crop; editorial author labels outside UI",
+      "content": "Real Orbit team demo, shared workspace w-capstone",
+      "variants": [
+        {
+          "file": "screens/team-shared-lee-small.webp",
+          "width": 500,
+          "height": 91,
+          "bytes": 8740,
+          "source": "extension/preview/exhibition/assets/main05-v3/shared-lee-header.png",
+          "sourceSha256": "3e02fc1850b507401f6f047475e31934592800dc7b0337847b92587512187ae0"
+        },
+        {
+          "file": "screens/team-shared-lee-detail.webp",
+          "width": 2838,
+          "height": 1248,
+          "bytes": 30594,
+          "source": "extension/preview/exhibition/assets/main05-v3/shared-lee-row.png",
+          "sourceSha256": "9fe49b72bd07e7cb6d306db28092485844fda3c2bf5c93f420c8f582126a16df"
+        }
+      ]
+    },
+    {
+      "file": "screens/team-shared-answer.webp",
+      "width": 1920,
+      "height": 846,
+      "bytes": 130426,
+      "source": "extension/preview/exhibition/assets/main05-v3/team-ask-conversation.png",
+      "sourceSha256": "92607a74f56c08a60bdb7d38509e4d4a6865b45435d937a97e58975c011763ab",
+      "processing": "Lossless derivative of unmodified product crop; editorial author labels outside UI",
+      "content": "Real Orbit team demo, shared workspace w-capstone",
+      "variants": [
+        {
+          "file": "screens/team-shared-answer-small.webp",
+          "width": 960,
+          "height": 423,
+          "bytes": 49406,
+          "source": "extension/preview/exhibition/assets/main05-v3/team-ask-conversation.png",
+          "sourceSha256": "92607a74f56c08a60bdb7d38509e4d4a6865b45435d937a97e58975c011763ab"
+        },
+        {
+          "file": "screens/team-shared-answer-detail.webp",
+          "width": 3600,
+          "height": 2250,
+          "bytes": 274360,
+          "source": "extension/preview/exhibition/assets/main05-v3/team-ask-focused-with-scope.png",
+          "sourceSha256": "37fff4b476c12142d8829382095aef4d35ae5c17604cb866cf4afba1146925b1"
+        }
+      ]
+    },
+    {
+      "file": "screens/atlas-overview.webp",
+      "width": 1920,
+      "height": 1333,
+      "bytes": 320480,
+      "source": "artifacts/product-tour-2026-10-28/atlas-development.png",
+      "sourceSha256": "210da1f2bb81f848bd0bacccdb7e4021ff332833711f383f1887e73bdd86cf44",
+      "variants": [
+        {
+          "file": "screens/atlas-overview-small.webp",
+          "width": 960,
+          "height": 667,
+          "bytes": 114162,
+          "source": "artifacts/product-tour-2026-10-28/atlas-development.png",
+          "sourceSha256": "210da1f2bb81f848bd0bacccdb7e4021ff332833711f383f1887e73bdd86cf44"
+        },
+        {
+          "file": "screens/atlas-overview-detail.webp",
+          "width": 2880,
+          "height": 2000,
+          "bytes": 377556,
+          "source": "artifacts/product-tour-2026-10-28/atlas-development.png",
+          "sourceSha256": "210da1f2bb81f848bd0bacccdb7e4021ff332833711f383f1887e73bdd86cf44"
+        }
+      ],
+      "processing": "Lossless responsive resize; no UI text, controls or member data composited into the capture.",
+      "backend": "Latest application 059aa45 preview fixtures, not live user data."
+    },
+    {
+      "file": "screens/atlas-detail.webp",
+      "width": 1600,
+      "height": 1111,
+      "bytes": 248222,
+      "source": "artifacts/product-tour-2026-10-28/atlas-detail.png",
+      "sourceSha256": "6a27e040d42cbd1c15d56f167412fa6b337b4a2a37ca155399423d18b5002072",
+      "variants": [
+        {
+          "file": "screens/atlas-detail-small.webp",
+          "width": 800,
+          "height": 556,
+          "bytes": 87464,
+          "source": "artifacts/product-tour-2026-10-28/atlas-detail.png",
+          "sourceSha256": "6a27e040d42cbd1c15d56f167412fa6b337b4a2a37ca155399423d18b5002072"
+        },
+        {
+          "file": "screens/atlas-detail-detail.webp",
+          "width": 2880,
+          "height": 2000,
+          "bytes": 361656,
+          "source": "artifacts/product-tour-2026-10-28/atlas-detail.png",
+          "sourceSha256": "6a27e040d42cbd1c15d56f167412fa6b337b4a2a37ca155399423d18b5002072"
+        }
+      ],
+      "processing": "Lossless responsive resize; no UI text, controls or member data composited into the capture.",
+      "backend": "Latest application 059aa45 preview fixtures, not live user data."
+    },
+    {
+      "file": "screens/extension-timeline.webp",
+      "width": 1000,
+      "height": 2045,
+      "bytes": 244978,
+      "source": "artifacts/product-tour-2026-10-28/extension-sessions.png",
+      "sourceSha256": "d6e5b1bc1b4ff07918b1857df30c620b0c5413e31fee33019def71cdf0f0b68d",
+      "variants": [
+        {
+          "file": "screens/extension-timeline-small.webp",
+          "width": 500,
+          "height": 1023,
+          "bytes": 99630,
+          "source": "artifacts/product-tour-2026-10-28/extension-sessions.png",
+          "sourceSha256": "d6e5b1bc1b4ff07918b1857df30c620b0c5413e31fee33019def71cdf0f0b68d"
+        },
+        {
+          "file": "screens/extension-timeline-detail.webp",
+          "width": 2640,
+          "height": 5400,
+          "bytes": 354404,
+          "source": "artifacts/product-tour-2026-10-28/extension-sessions.png",
+          "sourceSha256": "d6e5b1bc1b4ff07918b1857df30c620b0c5413e31fee33019def71cdf0f0b68d"
+        }
+      ],
+      "processing": "Lossless responsive resize; no UI text, controls or member data composited into the capture.",
+      "backend": "Latest application 059aa45 preview fixtures, not live user data."
+    },
+    {
+      "file": "screens/team-atlas.webp",
+      "width": 1920,
+      "height": 1333,
+      "bytes": 332556,
+      "source": "artifacts/product-tour-2026-10-28/team-atlas.png",
+      "sourceSha256": "8733d53478fd313fa8b4912ee1cbb5d95ac5a8fcf1d5b1c210fbe6d5dcfe58fb",
+      "variants": [
+        {
+          "file": "screens/team-atlas-small.webp",
+          "width": 960,
+          "height": 667,
+          "bytes": 119772,
+          "source": "artifacts/product-tour-2026-10-28/team-atlas.png",
+          "sourceSha256": "8733d53478fd313fa8b4912ee1cbb5d95ac5a8fcf1d5b1c210fbe6d5dcfe58fb"
+        },
+        {
+          "file": "screens/team-atlas-detail.webp",
+          "width": 3600,
+          "height": 2500,
+          "bytes": 799442,
+          "source": "artifacts/product-tour-2026-10-28/team-atlas.png",
+          "sourceSha256": "8733d53478fd313fa8b4912ee1cbb5d95ac5a8fcf1d5b1c210fbe6d5dcfe58fb"
+        }
+      ],
+      "processing": "Lossless responsive resize; no UI text, controls or member data composited into the capture.",
+      "backend": "Latest application 059aa45 preview fixtures, not live user data."
+    },
+    {
+      "file": "screens/team-collect-start.webp",
+      "width": 1000,
+      "height": 281,
+      "bytes": 19228,
+      "source": "artifacts/product-tour-2026-10-28/team-collect-start-sheet.png",
+      "sourceSha256": "77c9aa3a5bc22f5a33a8a2625c82ed752af11745ec3fbaf14b1594262a512bb9",
+      "variants": [
+        {
+          "file": "screens/team-collect-start-small.webp",
+          "width": 500,
+          "height": 140,
+          "bytes": 8484,
+          "source": "artifacts/product-tour-2026-10-28/team-collect-start-sheet.png",
+          "sourceSha256": "77c9aa3a5bc22f5a33a8a2625c82ed752af11745ec3fbaf14b1594262a512bb9"
+        },
+        {
+          "file": "screens/team-collect-start-detail.webp",
+          "width": 2085,
+          "height": 1748,
+          "bytes": 332182,
+          "source": "artifacts/product-tour-2026-10-28/team-collect-start-sheet.png",
+          "sourceSha256": "77c9aa3a5bc22f5a33a8a2625c82ed752af11745ec3fbaf14b1594262a512bb9"
+        }
+      ],
+      "processing": "Lossless responsive resize; no UI text, controls or member data composited into the capture.",
+      "backend": "Latest application 059aa45 preview fixtures, not live user data.",
+      "crop": [
+        45,
+        1190,
+        2130,
+        1775
+      ],
+      "detailUncropped": true
     }
   ],
   "notice": "Product screens use demonstration fixture data. Named demo users are not real Orbit team member profiles.",
@@ -255,5 +514,20 @@
     "#fefaf6",
     "#2b2521",
     "#f07550"
-  ]
+  ],
+  "teamEvidence": {
+    "query": "팀에 공유된 FastAPI 프롬프트 기록 찾아줘",
+    "resultIds": [
+      "s-fastapi",
+      "s-prompt"
+    ],
+    "authors": {
+      "s-fastapi": "김오르빗",
+      "s-prompt": "박지은",
+      "s-sse": "이도현"
+    },
+    "uiModified": false,
+    "scope": "w-capstone",
+    "backend": "preview-mock"
+  }
 }

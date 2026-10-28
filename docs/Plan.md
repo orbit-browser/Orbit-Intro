@@ -1,4 +1,15 @@
-# 2026-10-28 — Introduction refinement (active)
+# 2026-10-28 — Full product tour and team collection (active)
+
+- Goal: introduce the real Atlas, Chrome sidepanel, capture, session context, Orbit AI, restoration and team collection. Set document/OG title to `Orbit - 소개 페이지`.
+- Evidence: latest product main `059aa45` already implements opt-in team collection, automatic per-member sessionisation and auto-sharing. Cross-member consolidation into one session is not implemented. Earlier exhibition captures showed only manual sharing.
+- Scope: extend the existing editorial site; emphasize team collection → shared Atlas → Team AI. Keep manual sharing as a separate complementary path, real member profiles and no repository CTA. Preserve working hero depth/fixed header/detail viewer.
+- Files: index.html/styles.css/main.js, lossless responsive screenshots with provenance, asset preparation/checks, content evidence and work log.
+- Steps: inspect current code; launch isolated latest-product preview; capture real rendered Atlas/sidepanel/team controls; add a substantial Atlas chapter, extension explanation, team collection sequence, grounded system/data-control explanation; inspect all supported widths, viewer and navigation; publish and verify.
+- Verification: no invented UI, contributors or results; label demo data accurately; local font coverage, source resolution, image budget, keyboard/overflow/mobile tests, live content and asset checks.
+- Risks: preview uses fixtures and is not a live shared backend. Never claim two-profile collaboration was tested from isolated previews. No additional paid calls or production data changes. Current product collection exclusions and per-device consent remain explicit.
+- Completion: deployed product tour with inspected desktop/mobile screenshots and reviewable evidence. Cross-member session consolidation remains a product implementation task, not a marketing claim.
+
+# 2026-10-28 — Introduction refinement
 
 - Goal: fixed navigation, no project/organisation repository CTAs, verified individual GitHub links, no school attribution, real front/behind occlusion between Orbit and the orbiting pages, sharper readable screenshots with clearer usage guidance.
 - Evidence: the hero wordmark is currently an external z-index:3 overlay, so all pages pass behind it. Product screenshots were downsampled and compressed for the first delivery. The header is absolute rather than fixed. The user explicitly says to leave the product repository Public; do not change any repository visibility.

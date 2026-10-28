@@ -18,7 +18,6 @@ Names and documented roles come from the user and the final report. Team lead an
 
 Optimise individual approved screenshots as WebP. Do not serve the print carousel PNGs or huge print halftone SVGs. Keep all hero/product images under 1 MB combined, local fonts under 1 MB, and no third-party analytics, embeds or runtime scripts. Clicking the video opens YouTube rather than loading an embed on first render.
 
-
 ## 2026-10-28 — Public profile links and shared 3D depth
 
 At the user's request, remove project and organisation GitHub calls to action from the public site. Only the supplied individual profile links remain: 전준 / 06-month and 임동건 / WhiteJbb. Omit school affiliation. The product repository stays Public by the user's explicit instruction; no repository-visibility changes are made.
@@ -26,3 +25,11 @@ At the user's request, remove project and organisation GitHub calls to action fr
 The Orbit wordmark now shares the CSS 3D perspective context with the rotating page ring, so foreground pages occlude it and background pages pass behind. Preserve the logo's apparent size/anchor across the scaled mobile scene. No new animation dependency.
 
 Product screenshot derivatives are lossless WebP with responsive sizes; larger original-derived images load on demand in a native dialog with keyboard navigation, zoom and focus restoration. The new read-through steps use actual product actions. Header stays fixed with anchor spacing.
+
+## 2026-10-28 — Full product tour, actual UI and accurate team scope
+
+Expand the existing site into Atlas, extension, team collection, memory pipeline and controls chapters. Use screenshots from the latest running product preview, with high-resolution lossless derivatives and source hashes. Keep demonstration identities separate from the verified two-person team. Document the per-member automatic sharing implementation and explicitly distinguish future cross-member consolidation.
+
+Retain fixed navigation and depth animation. Navigation is 12 px on narrow phones and 11 px at 360 px and below, with 44 px touch height. Reduce the hero heading only on the narrowest viewports to keep the intended two lines. The document and Open Graph title are Orbit - 소개 페이지.
+
+The earlier aggregate 1 MB image budget is superseded by a 5 MB base-image budget for the expanded tour; individual bases remain below 700 KB and details below 2 MB. Responsive images are lazy-loaded and detail assets load on demand. No new runtime dependencies.

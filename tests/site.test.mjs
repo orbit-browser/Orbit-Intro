@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { readFile, stat } from "node:fs/promises";
+import { readFile, stat, readdir } from "node:fs/promises";
 const root = new URL("../src/", import.meta.url);
 const html = await readFile(new URL("index.html", root), "utf8");
 const css = await readFile(new URL("styles.css", root), "utf8");
@@ -45,7 +45,6 @@ test("public copy keeps verified identities, consent and sharing boundaries", ()
     "수집은 사용자가 켠 뒤",
     "내가 고른 세션만",
     "Orbit AI",
-    "Team AI",
   ])
     assert.ok(html.includes(copy), copy);
   for (const name of ["김오르빗", "박지은", "이도현"])
@@ -119,7 +118,18 @@ test("every Korean copy character is covered by a locally served font subset", a
       ranges.push([parseInt(match[1], 16), parseInt(match[2] || match[1], 16)]);
   }
   const chars = [
-    ...new Set([...(html + js)].filter((c) => c >= "가" && c <= "힣")),
+    ...new Set(
+      [
+        ...(html +
+          (
+            await Promise.all(
+              (await readdir(root))
+                .filter((n) => n.endsWith(".js"))
+                .map((n) => readFile(new URL(n, root), "utf8")),
+            )
+          ).join("")),
+      ].filter((c) => c >= "가" && c <= "힣"),
+    ),
   ];
   const missing = chars.filter(
     (c) =>
@@ -153,7 +163,7 @@ test("product detail sources resolve to higher-resolution original derivatives",
     assert.ok(image);
     assert.ok(image.variants[1].width >= image.width);
   }
-  assert.ok([...html.matchAll(/data-detail=/g)].length >= 14);
+  assert.ok([...html.matchAll(/data-detail=/g)].length >= 10);
 });
 
 test("product tour covers real Atlas, extension and collection without presenting the roadmap as shipped", () => {
@@ -163,11 +173,43 @@ test("product tour covers real Atlas, extension and collection without presentin
   for (const copy of [
     "팀 저장 켜기",
     "함께 탐색하기",
-    "현재는 각 팀원의 탐색",
-    "다음 확장으로 준비",
+    "참여한 팀원과 페이지의 출처",
     "시연 데이터",
   ])
     assert.ok(html.includes(copy), copy);
   for (const key of ["atlas", "extension", "collection", "team-atlas"])
     assert.ok(js.includes(key));
+});
+
+test("the requested team story replaces Team AI and the overview supports hands-on exploration", () => {
+  assert.doesNotMatch(html, /Team AI/);
+  for (const name of ["atlas-demo", "team-story"])
+    assert.ok(html.includes(`class="${name}"`));
+  assert.ok(html.includes("키워드로 검색</h3>"));
+  assert.ok(html.includes("이어서 서칭</h3>"));
+});
+
+test("scroll story frames and member browsers use the same six verified public documents", async () => {
+  const { TEAM_STORY_DEMO } = await import("../src/team-story.js");
+  const evidence = JSON.parse(
+    await readFile(
+      new URL("assets/team-atlas-frames/provenance.json", root),
+      "utf8",
+    ),
+  );
+  assert.deepEqual(
+    TEAM_STORY_DEMO.flatMap((m) => m.pages.map((p) => p.url)).sort(),
+    evidence.pages.map((p) => p.url).sort(),
+  );
+  assert.deepEqual(
+    evidence.frames.map((f) => f.frame),
+    [0, 1, 2, 3, 4, 5, 6],
+  );
+  for (const frame of evidence.frames) {
+    assert.equal(
+      (await stat(new URL("assets/" + frame.file, root))).size,
+      frame.bytes,
+    );
+    assert.match(frame.sourceSha256, /^[0-9a-f]{64}$/);
+  }
 });

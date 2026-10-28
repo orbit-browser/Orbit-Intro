@@ -45,3 +45,19 @@ Browser screenshots/results are in ignored `artifacts/`. The checked source and 
 
 - Publication: c84a4c1 pushed normally to main; Pages run 40668172596 passed. Public HTML returns 200 with the new title and team collection copy. Seven representative deployed images/font/JS/CSS match local files byte-for-byte. Published site and seven-panel preview opened in actual Chrome.
 - Final 320/390 px focused checks confirm two mixed-font heading lines without overflow. Local source checks: 9/9 plus successful build. Disk ENOSPC recurred during the final documentation write; only the reproducible local dist build was removed, preserving all sources and print deliverables.
+
+
+## 2026-10-28 — Interactive Atlas, joint team story, Team AI removal
+
+- Removed the cramped Team AI answer composition and all visible Team AI copy; kept personal Orbit AI. Renamed steps to 키워드로 검색 and 이어서 서칭.
+- Added eight real public pages with perspective drag/inertial snapping, keyboard/controls, touch intent and reduced-motion handling.
+- Added three member browsers and actual product Atlas captures for 0–6 arriving visits. All six public document URLs match the product fixture. Frames total 1.08 MB; original joint Atlas detail is available on demand.
+- Added interruptible FAQ animation; verified intermediate measured height, reversal and reduced-motion behavior.
+- Browser layout/detail/header/keyboard check passed at 1440,768,390,320 px; no overflow, broken images or console errors. Actual multi-account authentication is separate and not claimed from preview fixtures.
+- The companion product branch passed 1311 backend tests (25 existing PG-only skips) and 791 extension tests, TypeScript and build. Local backend is healthy on 8076; both Chrome test profiles have been refreshed and remain at sign-in. No product remote push/merge.
+
+- `npm run check`: 11 tests and static build passed. `node tools/check-interactions.mjs`: mouse drag, End key, intermediate FAQ height (76.2→119.6→147.4px), rapid reversal, reduced motion passed. The initial high-velocity test could wrap all eight pages; the drag check now waits before release so it tests pointer movement deterministically.
+
+- Mobile touch verification exposed implicit pointer capture moving from a card to its viewport: the child’s bubbling `lostpointercapture` prematurely ended the drag. Restricted cancellation to capture lost by the viewport itself, preserving native vertical scrolling. Added actual touch dispatch to the interaction verification.
+
+- Final scroll test: real mouse wheel advances; frames 0→6→1→0 and decoded image source match at desktop/mobile; reduced motion selects frame6. Touch drag passed after the capture fix. `node tools/check-team-story.mjs` passed.

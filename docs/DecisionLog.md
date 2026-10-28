@@ -33,3 +33,8 @@ Expand the existing site into Atlas, extension, team collection, memory pipeline
 Retain fixed navigation and depth animation. Navigation is 12 px on narrow phones and 11 px at 360 px and below, with 44 px touch height. Reduce the hero heading only on the narrowest viewports to keep the intended two lines. The document and Open Graph title are Orbit - 소개 페이지.
 
 The earlier aggregate 1 MB image budget is superseded by a 5 MB base-image budget for the expanded tour; individual bases remain below 700 KB and details below 2 MB. Responsive images are lazy-loaded and detail assets load on demand. No new runtime dependencies.
+
+
+## 2026-10-28 — Show shared exploration, remove Team AI promotion
+
+Use the separately implemented product Atlas read model as the source of the public scroll story, not fabricated participant labels over an old screenshot. Keep the website dependency-free: seven actual rendered frames, three public-document browser windows, and scroll-controlled page arrivals. At reduced motion show the final frame. The draggable eight-page personal Atlas scene remains labelled as a demonstration. Remove Team AI copy/screens per the user's request while retaining personal Orbit AI. FAQ retains native details/summary semantics with interruptible measured-height animation.

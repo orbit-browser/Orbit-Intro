@@ -1,0 +1,106 @@
+{
+  "productBase": "059aa45",
+  "productBranch": "feat/team-atlas-contributors",
+  "mode": "Actual product components with synthetic public-document visits; not authenticated two-user E2E.",
+  "captureRoute": "http://127.0.0.1:5187/preview/newtab.html?scope=w-team-stream&theme=light&teamStoryFrame={0..6}#/orbit-atlas?session=s-team-stream-u-me",
+  "frames": [
+    {
+      "file": "team-atlas-frames/frame-0.webp",
+      "width": 1600,
+      "height": 760,
+      "bytes": 33846,
+      "sourceSha256": "db370ee3257010f5bf6e1fe10ede8ef0c024ddf1bbc802e7e47da1d33d605741",
+      "frame": 0
+    },
+    {
+      "file": "team-atlas-frames/frame-1.webp",
+      "width": 1600,
+      "height": 760,
+      "bytes": 104010,
+      "sourceSha256": "cedfd354a8845ce076d9b8087d468377594d5b0f6c5a8a3197f36b7fe73d23c3",
+      "frame": 1
+    },
+    {
+      "file": "team-atlas-frames/frame-2.webp",
+      "width": 1600,
+      "height": 760,
+      "bytes": 143084,
+      "sourceSha256": "a16b94993d446336b836135477ec0b759fb9a21f674db2feb69dea7ca2d6acfb",
+      "frame": 2
+    },
+    {
+      "file": "team-atlas-frames/frame-3.webp",
+      "width": 1600,
+      "height": 760,
+      "bytes": 178430,
+      "sourceSha256": "677ebd537cfa84af992fd61bf2dd21e878cf12985b8207c5e0caacc7a8a56d77",
+      "frame": 3
+    },
+    {
+      "file": "team-atlas-frames/frame-4.webp",
+      "width": 1600,
+      "height": 760,
+      "bytes": 181688,
+      "sourceSha256": "08eb156b0b44c0d4aba34315bb9b3aa345a3f518dc08ec30cded14ae641934dd",
+      "frame": 4
+    },
+    {
+      "file": "team-atlas-frames/frame-5.webp",
+      "width": 1600,
+      "height": 760,
+      "bytes": 219834,
+      "sourceSha256": "ad9052b94bc9f9b1498a0e575911b15b346b7ca3b2c73f03f4fc7f7830f88fa1",
+      "frame": 5
+    },
+    {
+      "file": "team-atlas-frames/frame-6.webp",
+      "width": 1600,
+      "height": 760,
+      "bytes": 221338,
+      "sourceSha256": "16a6cb2355be2ae4154bd2254b47b5c75b36dc7af14259a5b033d18f79178535",
+      "frame": 6
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events",
+      "file": "mdn-sse.jpg",
+      "recorded_at": "2026-10-28T11:05:08.783Z",
+      "sha256": "9c599fb38fce359b52df7e830c98e7030fc9103a9ce7d7a767605c5aa724b5fa"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/structured-outputs",
+      "file": "openai-structured.jpg",
+      "recorded_at": "2026-10-28T11:05:08.788Z",
+      "sha256": "284b113c08cd70a1c93b94bc73ce051c9f47aee983d43d7a2b7f1e6874c3ed7e"
+    },
+    {
+      "url": "https://fastapi.tiangolo.com/tutorial/dependencies/dependencies-with-yield/",
+      "final_url": "https://fastapi.tiangolo.com/tutorial/dependencies/dependencies-with-yield/",
+      "file": "fastapi-dependencies.jpg",
+      "recorded_at": "2026-10-28T11:05:16.675Z",
+      "sha256": "21aa24741dd3150bd35c01dc10e2c1f992e8eeca2f048ec3af68246ebefb2b2f"
+    },
+    {
+      "url": "https://platform.openai.com/docs/guides/streaming-responses",
+      "final_url": "https://developers.openai.com/api/docs/guides/streaming-responses?api-mode=responses",
+      "file": "openai-streaming.jpg",
+      "recorded_at": "2026-10-28T11:05:22.280Z",
+      "sha256": "a99b403845ab675d67cb284bb6e1050c43e98f971d9bb0cc1d69fb74e11e9ca6"
+    },
+    {
+      "url": "https://fastapi.tiangolo.com/advanced/custom-response/#streamingresponse",
+      "final_url": "https://fastapi.tiangolo.com/advanced/custom-response/#streamingresponse",
+      "file": "fastapi-streaming.jpg",
+      "recorded_at": "2026-10-28T11:05:27.516Z",
+      "sha256": "0ac88683a15b5e0fe5b7239e789c6a7bbb2dd616b801830b9b6cb9803b5374b4"
+    },
+    {
+      "url": "https://fastapi.tiangolo.com/tutorial/background-tasks/",
+      "final_url": "https://fastapi.tiangolo.com/tutorial/background-tasks/",
+      "file": "fastapi-background.jpg",
+      "recorded_at": "2026-10-28T11:05:32.751Z",
+      "sha256": "9627679680da11a0c530be175bb6529a8049350d79ebf2692edf0a5f1849e042"
+    }
+  ]
+}

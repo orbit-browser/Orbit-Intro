@@ -1,3 +1,14 @@
+import { mountAtlasDemo } from "./atlas-demo.js";
+import { mountTeamStory } from "./team-story.js";
+import { renderTeamAtlasFrame } from "./team-atlas-frames.js";
+import { enhanceQuestions } from "./questions.js";
+
+mountAtlasDemo(document.querySelector(".atlas-demo"));
+mountTeamStory(document.querySelector(".team-story"), {
+  renderAtlasFrame: renderTeamAtlasFrame,
+});
+enhanceQuestions(document.querySelector(".product-questions"));
+
 const root = document.documentElement;
 root.classList.add("js");
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
@@ -159,7 +170,6 @@ const gallerySelectors = {
   capture: ".capture-composition img",
   search: ".search-composition img",
   restore: ".restore-composition img",
-  team: ".team-proof img[data-detail]",
   atlas: ".atlas-wide img[data-detail]",
   "atlas-detail": ".atlas-close img[data-detail]",
   extension: ".extension-live img[data-detail]",

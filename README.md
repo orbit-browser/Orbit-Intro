@@ -47,3 +47,8 @@ Do not commit `dist/`, browser profiles, screenshots, credentials or the private
 - This is an introduction site; no public installer, account registration or interactive product backend is represented as available.
 
 See [content evidence](docs/ContentEvidence.md), [design and motion decisions](docs/DecisionLog.md), and [work log](docs/WorkLog.md). Font licenses are bundled in `src/assets/fonts/licenses/`.
+
+
+The Atlas chapter supports direct dragging through eight approved public pages. The team chapter is a scroll-controlled, labelled demonstration: three member browsers feed seven frames captured from the implemented product's joint Atlas. Team AI promotion has been removed; past-session sharing, opt-in storage and Atlas are the focus.
+
+Additional checks: `node tools/check-interactions.mjs` for drag/keyboard/FAQ, `node tools/check-browser.mjs` for responsive browser/layout/details. Actual two-account collaboration requires signing in to the local test profiles and is not inferred from preview footage.

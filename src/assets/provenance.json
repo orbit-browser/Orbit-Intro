@@ -445,34 +445,6 @@
       "backend": "Latest application 059aa45 preview fixtures, not live user data."
     },
     {
-      "file": "screens/team-atlas.webp",
-      "width": 1920,
-      "height": 1333,
-      "bytes": 332556,
-      "source": "artifacts/product-tour-2026-10-28/team-atlas.png",
-      "sourceSha256": "8733d53478fd313fa8b4912ee1cbb5d95ac5a8fcf1d5b1c210fbe6d5dcfe58fb",
-      "variants": [
-        {
-          "file": "screens/team-atlas-small.webp",
-          "width": 960,
-          "height": 667,
-          "bytes": 119772,
-          "source": "artifacts/product-tour-2026-10-28/team-atlas.png",
-          "sourceSha256": "8733d53478fd313fa8b4912ee1cbb5d95ac5a8fcf1d5b1c210fbe6d5dcfe58fb"
-        },
-        {
-          "file": "screens/team-atlas-detail.webp",
-          "width": 3600,
-          "height": 2500,
-          "bytes": 799442,
-          "source": "artifacts/product-tour-2026-10-28/team-atlas.png",
-          "sourceSha256": "8733d53478fd313fa8b4912ee1cbb5d95ac5a8fcf1d5b1c210fbe6d5dcfe58fb"
-        }
-      ],
-      "processing": "Lossless responsive resize; no UI text, controls or member data composited into the capture.",
-      "backend": "Latest application 059aa45 preview fixtures, not live user data."
-    },
-    {
       "file": "screens/team-collect-start.webp",
       "width": 1000,
       "height": 281,
@@ -506,6 +478,34 @@
         1775
       ],
       "detailUncropped": true
+    },
+    {
+      "file": "screens/team-atlas.webp",
+      "width": 1920,
+      "height": 1333,
+      "bytes": 370880,
+      "source": "artifacts/team-atlas-frames/banner-joint-atlas.png",
+      "sourceSha256": "71e0e6504b0eee5ad9530d2ef8c344061ed63d6fd97fecba827d175306b6d2d9",
+      "variants": [
+        {
+          "file": "screens/team-atlas-small.webp",
+          "width": 960,
+          "height": 667,
+          "bytes": 132098,
+          "source": "artifacts/team-atlas-frames/banner-joint-atlas.png",
+          "sourceSha256": "71e0e6504b0eee5ad9530d2ef8c344061ed63d6fd97fecba827d175306b6d2d9"
+        },
+        {
+          "file": "screens/team-atlas-detail.webp",
+          "width": 3600,
+          "height": 2500,
+          "bytes": 895530,
+          "source": "artifacts/team-atlas-frames/banner-joint-atlas.png",
+          "sourceSha256": "71e0e6504b0eee5ad9530d2ef8c344061ed63d6fd97fecba827d175306b6d2d9"
+        }
+      ],
+      "processing": "Lossless resize of actual product joint Atlas; no UI compositing.",
+      "backend": "059aa45 + feat/team-atlas-contributors; synthetic public-doc visits, not live user data."
     }
   ],
   "notice": "Product screens use demonstration fixture data. Named demo users are not real Orbit team member profiles.",

@@ -8,7 +8,7 @@ ranges=[]
 for block in base.split('@font-face'):
  if "'Noto Sans KR'" not in block: continue
  for a,b in re.findall(r'U\+([0-9A-F]+)(?:-([0-9A-F]+))?',block,re.I): ranges.append((int(a,16),int(b or a,16)))
-content=(root/'src/index.html').read_text()+(root/'src/main.js').read_text()
+content=(root/'src/index.html').read_text()+''.join(p.read_text() for p in (root/'src').glob('*.js'))
 chars=sorted({c for c in content if '가'<=c<='힣' and not any(a<=ord(c)<=b for a,b in ranges)})
 if not chars: raise SystemExit('No additional Korean glyphs required')
 params=urllib.parse.urlencode({'family':'Noto Sans KR:wght@300..900','display':'swap','text':''.join(chars)})

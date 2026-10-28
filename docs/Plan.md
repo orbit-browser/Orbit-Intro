@@ -1,3 +1,12 @@
+# 2026-10-28 — Interactive Atlas and accumulating team sessions
+
+- Goal: replace the large static Atlas overview with draggable multi-page session exploration; replace cramped Team AI proof with a dynamic team-session accumulation story. Rename retrieval/return headings and animate FAQ expansion.
+- Evidence: real AtlasGallery uses a continuous perspective strip, inertia and snapping without autoplay. Reuse the eight approved public page assets; actual screenshots remain available as evidence. The accompanying product branch now groups related collected source sessions in an authorized, read-only workspace Atlas projection, with page contributors. Capture that actual component using labelled synthetic public-page visits; never claim an authenticated two-account live test from previews.
+- Scope: Orbit-Intro only. Root owns index.html, main.js, Atlas module/CSS, FAQ, tests and integration. Requested design lead owns new team-story.js and team-story.css only; no nested delegation or overlapping edits.
+- Sequence: plan, inspect active banner dependencies and clear obsolete generated outputs to restore disk headroom; implement Atlas interaction and team accumulation; integrate and visually inspect; verify pointer/touch/keyboard/reduced-motion, FAQ rapid toggles, responsive bounds, content/font/build; publish and check live.
+- Product implementation is isolated in feat/team-atlas-contributors and separately tested; this website adds no API calls or credentials. No paid AI calls or modifications to the other six finalized banners. Keep the working header and hero. Screenshots and generated output cleanup are separate from source and product data.
+- Completion: user can drag pages in a session and watch actual-per-member team records accumulate; copy and FAQ updated; all checks and publication verified.
+
 # 2026-10-28 — Full product tour and team collection (published)
 
 - Goal: introduce the real Atlas, Chrome sidepanel, capture, session context, Orbit AI, restoration and team collection. Set document/OG title to `Orbit - 소개 페이지`.
@@ -54,3 +63,6 @@ A dependency-free static site (HTML/CSS/ES modules) with a small Node build and 
 ## Risks and completion
 
 GitHub Pages base path is /Orbit-Intro/. Team identities are verified by the user/report; the public YouTube demonstration has been checked. No public install/signup is available. Link GitHub and the verified video. Complete only after live deployment works, key interactions are tested and desktop/mobile renders are visually checked.
+
+
+2026-10-28 implementation outcome: the team scene now uses the separately implemented authorized joint Atlas projection. Team AI copy/screens are removed from this website. Manual session sharing remains explained as a complementary path. The capture script needs the local product preview at port 5187; image preparation takes `ORBIT_PRODUCT_ROOT` rather than embedding a machine-specific path. Authenticated two-account E2E remains pending login.

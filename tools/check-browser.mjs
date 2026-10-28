@@ -115,7 +115,7 @@ for (const [name, width, height] of [
       "Promise.all(Array.from(document.images).map(i=>i.decode().catch(()=>null)))",
     );
     const broken = await c.evaluate(
-      "Array.from(document.images).filter(i=>!i.naturalWidth).map(i=>i.src)",
+      "Array.from(document.images).filter(i=>i.getAttribute('src')&&!i.naturalWidth).map(i=>i.src)",
     );
     assert.deepEqual(broken, [], `${name}: broken images`);
     const assets = await c.evaluate(
@@ -124,6 +124,76 @@ for (const [name, width, height] of [
     assert.ok(
       assets.every((a) => a.status === 200),
       `${name}: resource status`,
+    );
+    assert.equal(
+      await c.evaluate(
+        'document.querySelector(".site-header").getBoundingClientRect().top',
+      ),
+      0,
+      "header stays fixed after scrolling",
+    );
+    assert.deepEqual(
+      await c.evaluate(
+        '[...document.querySelectorAll("a[href*=github]")].map(a=>a.href).sort()',
+      ),
+      ["https://github.com/06-month", "https://github.com/WhiteJbb"],
+    );
+    await c.evaluate(
+      'document.querySelector("#tab-capture").click();document.querySelector("[data-gallery=capture]").click()',
+    );
+    assert.equal(
+      await c.evaluate('document.querySelector(".screen-viewer").open'),
+      true,
+    );
+    await c.evaluate('document.querySelector(".viewer-image").decode()');
+    assert.ok(
+      await c.evaluate(
+        'document.querySelector(".viewer-image").naturalWidth >= 3000',
+      ),
+    );
+    assert.equal(
+      await c.evaluate("document.activeElement.className"),
+      "viewer-close",
+    );
+    await c.evaluate('document.querySelector(".viewer-zoom").click()');
+    assert.equal(
+      await c.evaluate(
+        'document.querySelector(".viewer-zoom").getAttribute("aria-pressed")',
+      ),
+      "true",
+    );
+    await c.evaluate(
+      'document.querySelector(".viewer-zoom").click();document.querySelector(".viewer-next").click()',
+    );
+    await c.evaluate('document.querySelector(".viewer-image").decode()');
+    assert.equal(
+      await c.evaluate(
+        'document.querySelector("#screen-viewer-count").textContent',
+      ),
+      "2 / 2",
+    );
+    if (name === "desktop" || name === "mobile")
+      await c.shot(`artifacts/${name}-viewer.png`);
+    await c.send("Input.dispatchKeyEvent", {
+      type: "keyDown",
+      key: "Escape",
+      code: "Escape",
+      windowsVirtualKeyCode: 27,
+    });
+    await c.send("Input.dispatchKeyEvent", {
+      type: "keyUp",
+      key: "Escape",
+      code: "Escape",
+      windowsVirtualKeyCode: 27,
+    });
+    await sleep(50);
+    assert.equal(
+      await c.evaluate('document.querySelector(".screen-viewer").open'),
+      false,
+    );
+    assert.equal(
+      await c.evaluate("document.activeElement.dataset.gallery"),
+      "capture",
     );
     await c.evaluate('scrollTo({top:0,behavior:"instant"})');
     await sleep(100);

@@ -63,13 +63,24 @@ test("real image provenance and lightweight web formats are preserved", async ()
   for (const image of provenance.screens) {
     const info = await stat(new URL("assets/" + image.file, root));
     assert.equal(info.size, image.bytes, image.file);
-    assert.ok(info.size < 250000, "screen image must stay below 250 kB");
+    assert.ok(
+      info.size < 700000,
+      "responsive screen image must stay below 700 kB",
+    );
     assert.match(image.sourceSha256, /^[0-9a-f]{64}$/);
     imageBytes += info.size;
+    for (const variant of image.variants ?? []) {
+      const variantInfo = await stat(new URL("assets/" + variant.file, root));
+      assert.equal(variantInfo.size, variant.bytes);
+      assert.ok(
+        variantInfo.size < 2000000,
+        "on-demand detail stays below 2 MB",
+      );
+    }
   }
   assert.ok(
-    imageBytes < 1000000,
-    "all product and hero images stay below 1 MB",
+    imageBytes < 2500000,
+    "all default product and hero images stay below 2.5 MB",
   );
   for (const [, file, width, height] of html.matchAll(
     /src="\.\/assets\/([^"]+)"[^>]*width="(\d+)" height="(\d+)"/g,
@@ -113,4 +124,28 @@ test("every Korean copy character is covered by a locally served font subset", a
     [],
     "website copy must not silently fall back to a system Korean face",
   );
+});
+
+test("public links expose only the supplied individual profiles, with no project CTA or school", () => {
+  const links = [...html.matchAll(/href="(https:\/\/github.com\/[^"]+)"/g)]
+    .map((m) => m[1])
+    .sort();
+  assert.deepEqual(links, [
+    "https://github.com/06-month",
+    "https://github.com/WhiteJbb",
+  ]);
+  assert.ok(!html.includes("프로젝트 보기"));
+  assert.ok(!html.includes("국립한밭대학교"));
+});
+
+test("product detail sources resolve to higher-resolution original derivatives", async () => {
+  for (const [, path] of html.matchAll(/data-detail="(\.\/[^"]+)"/g)) {
+    assert.ok((await stat(new URL(path, root))).isFile(), path);
+    const image = provenance.screens.find((r) =>
+      path.endsWith(r.file.replace(".webp", "-detail.webp")),
+    );
+    assert.ok(image);
+    assert.ok(image.variants[1].width >= image.width);
+  }
+  assert.equal([...html.matchAll(/data-detail=/g)].length, 7);
 });

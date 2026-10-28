@@ -19,7 +19,7 @@ User confirmed names: **전준, 임동건**.
 
 The user-provided **Orbit final results report, 2026-10-23**, was reviewed without copying the PDF into this public repository:
 
-- p. 1: 전준 is team representative, affiliated with 국립한밭대학교; 임동건 is a team member. Two people total. No individual frontend/backend roles were stated.
+- p. 1: 전준 is team representative (affiliation omitted at the user’s request); 임동건 is a team member. Two people total. No individual frontend/backend roles were stated.
 - pp. 2–3: browser extension, opt-in collection, automatic sessions and personal/team exploration workflows.
 - p. 21: 2026 AI Rookie domestic AI track finalist and official demonstration video.
 - p. 30: internal real-world use/evaluation stage; external beta and Web Store release are future plans.
@@ -30,8 +30,8 @@ No award placement, accuracy figure, customer count, pricing, public install ava
 
 Checked during production:
 
-- Project: https://github.com/orbit-browser/orbit
-- Team organisation: https://github.com/orbit-browser
+- 전준: https://github.com/06-month
+- 임동건: https://github.com/WhiteJbb
 - Video: https://youtu.be/vDcOPbC3ntU — public title “AI Rookie | Orbit 팀 시연 영상”.
 
 ## Images

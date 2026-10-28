@@ -4,8 +4,6 @@ A dynamic, responsive introduction to Orbit and the people building it.
 
 **Website:** https://orbit-browser.github.io/Orbit-Intro/
 
-**Product source:** https://github.com/orbit-browser/orbit
-
 **Demonstration:** https://youtu.be/vDcOPbC3ntU
 
 ## Develop

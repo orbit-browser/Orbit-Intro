@@ -27,8 +27,8 @@ for (const [i, [id, title]] of pages.entries()) {
     const img = document.createElement("img");
     img.src = `./assets/pages/${id}.webp`;
     img.alt = title;
-    img.width = 520;
-    img.height = 624;
+    img.width = 720;
+    img.height = 864;
     img.decoding = "async";
     face.append(img);
     card.append(face);
@@ -144,3 +144,90 @@ for (const [i, tab] of tabs.entries()) {
 applyMotion();
 await document.fonts.ready;
 root.dataset.ready = "1";
+
+// Product detail uses original capture derivatives, loaded only when requested.
+const viewer = document.querySelector(".screen-viewer");
+const viewerImage = viewer.querySelector(".viewer-image");
+const viewerViewport = viewer.querySelector(".viewer-viewport");
+const viewerStatus = viewer.querySelector(".viewer-status");
+const zoomButton = viewer.querySelector(".viewer-zoom");
+let gallery = [];
+let imageIndex = 0;
+let viewerTrigger = null;
+let imageRequest = 0;
+const gallerySelectors = {
+  capture: ".capture-composition img",
+  search: ".search-composition img",
+  restore: ".restore-composition img",
+  team: ".team-screen-pair img",
+};
+function resetZoom() {
+  viewerViewport.classList.remove("is-zoomed");
+  zoomButton.setAttribute("aria-pressed", "false");
+  zoomButton.textContent = "확대";
+  viewerViewport.scrollTo(0, 0);
+}
+async function showScreen(index) {
+  imageIndex = (index + gallery.length) % gallery.length;
+  const source = gallery[imageIndex];
+  const request = ++imageRequest;
+  resetZoom();
+  viewerStatus.hidden = false;
+  viewerStatus.textContent = "불러오는 중";
+  viewerImage.hidden = true;
+  viewerImage.alt = source.alt;
+  viewer.querySelector("#screen-viewer-title").textContent = source.alt;
+  viewer.querySelector("#screen-viewer-count").textContent =
+    `${imageIndex + 1} / ${gallery.length}`;
+  viewer.querySelector(".viewer-prev").disabled = gallery.length < 2;
+  viewer.querySelector(".viewer-next").disabled = gallery.length < 2;
+  viewerImage.src = source.dataset.detail;
+  try {
+    await viewerImage.decode();
+    if (request !== imageRequest) return;
+    viewerStatus.hidden = true;
+    viewerImage.hidden = false;
+  } catch {
+    if (request === imageRequest)
+      viewerStatus.textContent =
+        "화면을 불러오지 못했습니다. 다시 열어 주세요.";
+  }
+}
+for (const trigger of document.querySelectorAll("[data-gallery]")) {
+  trigger.addEventListener("click", () => {
+    viewerTrigger = trigger;
+    gallery = [
+      ...document.querySelectorAll(gallerySelectors[trigger.dataset.gallery]),
+    ];
+    viewer.showModal();
+    document.body.classList.add("viewer-open");
+    viewer.querySelector(".viewer-close").focus();
+    showScreen(0);
+  });
+}
+viewer
+  .querySelector(".viewer-close")
+  .addEventListener("click", () => viewer.close());
+viewer
+  .querySelector(".viewer-prev")
+  .addEventListener("click", () => showScreen(imageIndex - 1));
+viewer
+  .querySelector(".viewer-next")
+  .addEventListener("click", () => showScreen(imageIndex + 1));
+zoomButton.addEventListener("click", () => {
+  const zoomed = viewerViewport.classList.toggle("is-zoomed");
+  zoomButton.setAttribute("aria-pressed", String(zoomed));
+  zoomButton.textContent = zoomed ? "축소" : "확대";
+});
+viewer.addEventListener("close", () => {
+  imageRequest += 1;
+  document.body.classList.remove("viewer-open");
+  viewerTrigger?.focus({ preventScroll: true });
+});
+viewer.addEventListener("keydown", (event) => {
+  if (viewerViewport.classList.contains("is-zoomed")) return;
+  if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+    event.preventDefault();
+    showScreen(imageIndex + (event.key === "ArrowRight" ? 1 : -1));
+  }
+});

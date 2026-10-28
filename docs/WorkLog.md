@@ -21,3 +21,13 @@
 - No application/banner files or report PDF were committed. No live product installer or signup is implied. Actual public destinations are GitHub and the verified demonstration video.
 
 Browser screenshots/results are in ignored `artifacts/`. The checked source and deployment workflow are versioned; screenshots are review artifacts, not website assets.
+
+
+## 2026-10-28 — Requested navigation, depth and screenshot refinement
+
+- Removed header GitHub, Team Orbit on GitHub and closing project CTA; linked verified individual profiles; removed school attribution. Confirmed the original repository is Public and left it unchanged as explicitly requested.
+- Fixed the header and mobile anchor offsets; retained all three mobile navigation destinations. Moved wordmark into the actual shared 3D context and preserved responsive size.
+- Re-exported original captures with sharper 720 px hero crops and lossless responsive product images. Added on-demand original-derived detail images up to 3600 px, native dialog zoom/previous/next/Escape/focus restoration, and concise real-action steps.
+- npm run check: eight tests and build pass. Four-width Chrome checks pass for fixed header, links, detail viewer, focus restoration, resource loading, overflow, tabs and motion preferences. Native Escape test required an actual virtual-key code; no application change needed.
+- Chrome's elementsFromPoint order differs from preserve-3d paint order. Added raster colour-plane checks for actual foreground/background occlusion, ignoring only a measured two-pixel antialias band at transformed edges.
+- User subsequently requested a clearer team collaboration composition; verified capture/evidence work is ongoing independently. Current requested link removal and navigation improvements are published first.

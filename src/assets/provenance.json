@@ -2,153 +2,251 @@
   "screens": [
     {
       "file": "pages/seongsan.webp",
+      "width": 720,
+      "height": 864,
+      "bytes": 92028,
       "source": "extension/preview/exhibition/assets/main03-v12/seongsan-page.png",
       "sourceSha256": "15200c19888dc35ecdf16b72f6f6361bebd07b9c3fb7d1b0290bb49093369b79",
-      "width": 520,
-      "height": 624,
-      "bytes": 36874,
-      "processing": "Resize for web; top crop only",
+      "processing": "Downsample original; top crop only; quality 94",
       "content": "Existing real public capture"
     },
     {
       "file": "pages/dining.webp",
+      "width": 720,
+      "height": 864,
+      "bytes": 113226,
       "source": "extension/preview/exhibition/assets/main03-v12/dining-page.png",
       "sourceSha256": "a27b7d892125f228b80f4351fd2a000b68b6a9a0d9ee350a626a7f6cff99a786",
-      "width": 520,
-      "height": 624,
-      "bytes": 55252,
-      "processing": "Resize for web; top crop only",
+      "processing": "Downsample original; top crop only; quality 94",
       "content": "Existing real public capture"
     },
     {
       "file": "pages/flight.webp",
+      "width": 720,
+      "height": 864,
+      "bytes": 46822,
       "source": "extension/preview/exhibition/assets/main03-v12/flight-page.png",
       "sourceSha256": "774e2a467ccfdcbe3a1f625eafc4b4d0f8458d3b8514accc6de57d8c574cd780",
-      "width": 520,
-      "height": 624,
-      "bytes": 23824,
-      "processing": "Resize for web; top crop only",
+      "processing": "Downsample original; top crop only; quality 94",
       "content": "Existing real public capture"
     },
     {
       "file": "pages/saebyeol.webp",
+      "width": 720,
+      "height": 864,
+      "bytes": 106000,
       "source": "extension/preview/exhibition/assets/main03-v12/saebyeol-page.png",
       "sourceSha256": "0e7ff9e59788c83a407e1beddf76ac74ca5a9f04e455c1e5e0329e8dbdd4d62a",
-      "width": 520,
-      "height": 624,
-      "bytes": 43414,
-      "processing": "Resize for web; top crop only",
+      "processing": "Downsample original; top crop only; quality 94",
       "content": "Existing real public capture"
     },
     {
       "file": "pages/udo.webp",
+      "width": 720,
+      "height": 864,
+      "bytes": 91428,
       "source": "extension/preview/exhibition/assets/main03-v12/udo-page.png",
       "sourceSha256": "e535e9634d3a2239981ac3f95f0e3369843febf5b552a7b21b6e07b39340f387",
-      "width": 520,
-      "height": 624,
-      "bytes": 35258,
-      "processing": "Resize for web; top crop only",
+      "processing": "Downsample original; top crop only; quality 94",
       "content": "Existing real public capture"
     },
     {
       "file": "pages/hallasan.webp",
+      "width": 720,
+      "height": 864,
+      "bytes": 131542,
       "source": "extension/preview/exhibition/assets/main03-v12/hallasan-page.png",
       "sourceSha256": "be510012d6334a8ee64fe88d0c044e75c083eaaed3d6982387ed2907e33bf67b",
-      "width": 520,
-      "height": 624,
-      "bytes": 52806,
-      "processing": "Resize for web; top crop only",
+      "processing": "Downsample original; top crop only; quality 94",
       "content": "Existing real public capture"
     },
     {
       "file": "pages/route.webp",
+      "width": 720,
+      "height": 864,
+      "bytes": 87042,
       "source": "extension/preview/exhibition/assets/main03-v12/route-page.png",
       "sourceSha256": "ce00f0539764a983dff87a745843c25aa963eedddea2314c8bd1338e577faaa2",
-      "width": 520,
-      "height": 624,
-      "bytes": 42284,
-      "processing": "Resize for web; top crop only",
+      "processing": "Downsample original; top crop only; quality 94",
       "content": "Existing real public capture"
     },
     {
       "file": "pages/seopjikoji.webp",
+      "width": 720,
+      "height": 864,
+      "bytes": 114798,
       "source": "extension/preview/exhibition/assets/main03-v12/seopjikoji-page.png",
       "sourceSha256": "bb97481b657f7e701d853bc8d042d8678ee01c3910c801cd7294f2b03c865019",
-      "width": 520,
-      "height": 624,
-      "bytes": 46796,
-      "processing": "Resize for web; top crop only",
+      "processing": "Downsample original; top crop only; quality 94",
       "content": "Existing real public capture"
     },
     {
       "file": "screens/home.webp",
+      "width": 1920,
+      "height": 1197,
+      "bytes": 272302,
       "source": "extension/preview/exhibition/assets/main01-v1/newtab-keep-exploring.png",
       "sourceSha256": "80ee1e9834c5c29942921bd8c8cbf5511e87773230466b96bc40ad515e35dc87",
-      "width": 1600,
-      "height": 997,
-      "bytes": 58510,
-      "processing": "Resize for web only",
-      "content": "Real Orbit product screen with demonstration fixtures"
+      "processing": "Downsample original; lossless WebP text",
+      "content": "Real Orbit product screen with demonstration fixtures",
+      "variants": [
+        {
+          "file": "screens/home-small.webp",
+          "width": 960,
+          "height": 598,
+          "bytes": 76814
+        },
+        {
+          "file": "screens/home-detail.webp",
+          "width": 3600,
+          "height": 2244,
+          "bytes": 800252
+        }
+      ]
     },
     {
       "file": "screens/timeline.webp",
+      "width": 1280,
+      "height": 670,
+      "bytes": 74030,
       "source": "extension/preview/exhibition/assets/main01-v2/timeline-landed.png",
       "sourceSha256": "c4e7a1973ca85234249d99fac2fc8510f6247e13815140c77cee211cca137f2d",
-      "width": 760,
-      "height": 398,
-      "bytes": 18802,
-      "processing": "Resize for web only",
-      "content": "Real Orbit product screen with demonstration fixtures"
+      "processing": "Downsample original; lossless WebP text",
+      "content": "Real Orbit product screen with demonstration fixtures",
+      "variants": [
+        {
+          "file": "screens/timeline-small.webp",
+          "width": 640,
+          "height": 335,
+          "bytes": 35038
+        },
+        {
+          "file": "screens/timeline-detail.webp",
+          "width": 3600,
+          "height": 1884,
+          "bytes": 234108
+        }
+      ]
     },
     {
       "file": "screens/orbit-ai.webp",
+      "width": 1920,
+      "height": 1045,
+      "bytes": 122374,
       "source": "extension/preview/exhibition/assets/main03-v12/retrieval-ui.png",
       "sourceSha256": "7665a8bf40ae97e0f5e1dcfb57d2e7187cfc9f68b71116cf839aa6e1f68030aa",
-      "width": 1500,
-      "height": 816,
-      "bytes": 44464,
-      "processing": "Resize for web only",
-      "content": "Real Orbit product screen with demonstration fixtures"
+      "processing": "Downsample original; lossless WebP text",
+      "content": "Real Orbit product screen with demonstration fixtures",
+      "variants": [
+        {
+          "file": "screens/orbit-ai-small.webp",
+          "width": 960,
+          "height": 523,
+          "bytes": 55434
+        },
+        {
+          "file": "screens/orbit-ai-detail.webp",
+          "width": 3600,
+          "height": 1959,
+          "bytes": 242038
+        }
+      ]
     },
     {
       "file": "screens/restore-before.webp",
+      "width": 1600,
+      "height": 472,
+      "bytes": 44696,
       "source": "extension/preview/exhibition/assets/main03-v32/restore-before.png",
       "sourceSha256": "a3624d3dea77981c8c871e184a86d510c5d9e86221ebdf0bb943c124f3757d6e",
-      "width": 1000,
-      "height": 295,
-      "bytes": 11418,
-      "processing": "Resize for web only",
-      "content": "Real Orbit product screen with demonstration fixtures"
+      "processing": "Downsample original; lossless WebP text",
+      "content": "Real Orbit product screen with demonstration fixtures",
+      "variants": [
+        {
+          "file": "screens/restore-before-small.webp",
+          "width": 800,
+          "height": 236,
+          "bytes": 21252
+        },
+        {
+          "file": "screens/restore-before-detail.webp",
+          "width": 3392,
+          "height": 1000,
+          "bytes": 34000
+        }
+      ]
     },
     {
       "file": "screens/restore-after.webp",
+      "width": 1920,
+      "height": 248,
+      "bytes": 48706,
       "source": "extension/preview/exhibition/assets/main03-v32/restore-after.png",
       "sourceSha256": "0f26946d3ee8e1029ef8d3e0bdddd101e84f23b1de207c13fe9578f15f10ffd8",
-      "width": 1500,
-      "height": 193,
-      "bytes": 15962,
-      "processing": "Resize for web only",
-      "content": "Real Orbit product screen with demonstration fixtures"
+      "processing": "Downsample original; lossless WebP text",
+      "content": "Real Orbit product screen with demonstration fixtures",
+      "variants": [
+        {
+          "file": "screens/restore-after-small.webp",
+          "width": 960,
+          "height": 124,
+          "bytes": 20870
+        },
+        {
+          "file": "screens/restore-after-detail.webp",
+          "width": 2560,
+          "height": 330,
+          "bytes": 36554
+        }
+      ]
     },
     {
       "file": "screens/team-sessions.webp",
+      "width": 1280,
+      "height": 1457,
+      "bytes": 162810,
       "source": "extension/preview/exhibition/assets/main05-v2/team-sessions.png",
       "sourceSha256": "bb6716f7bfc212175774be082531e1c525f39a4916e8d54e1ed5ffbb3cc5ca0d",
-      "width": 850,
-      "height": 968,
-      "bytes": 40252,
-      "processing": "Resize for web only",
-      "content": "Real Orbit product screen with demonstration fixtures"
+      "processing": "Downsample original; lossless WebP text",
+      "content": "Real Orbit product screen with demonstration fixtures",
+      "variants": [
+        {
+          "file": "screens/team-sessions-small.webp",
+          "width": 640,
+          "height": 729,
+          "bytes": 74916
+        },
+        {
+          "file": "screens/team-sessions-detail.webp",
+          "width": 3600,
+          "height": 4099,
+          "bytes": 489866
+        }
+      ]
     },
     {
       "file": "screens/team-ai.webp",
+      "width": 1280,
+      "height": 1591,
+      "bytes": 173844,
       "source": "extension/preview/exhibition/assets/main05-v2/team-ask.png",
       "sourceSha256": "d402302bcc6727278db85654496e37e0b74e417094163c55bf45572e882f2a80",
-      "width": 850,
-      "height": 1057,
-      "bytes": 51716,
-      "processing": "Resize for web only",
-      "content": "Real Orbit product screen with demonstration fixtures"
+      "processing": "Downsample original; lossless WebP text",
+      "content": "Real Orbit product screen with demonstration fixtures",
+      "variants": [
+        {
+          "file": "screens/team-ai-small.webp",
+          "width": 640,
+          "height": 796,
+          "bytes": 77160
+        },
+        {
+          "file": "screens/team-ai-detail.webp",
+          "width": 3520,
+          "height": 4376,
+          "bytes": 184938
+        }
+      ]
     }
   ],
   "notice": "Product screens use demonstration fixture data. Named demo users are not real Orbit team member profiles.",

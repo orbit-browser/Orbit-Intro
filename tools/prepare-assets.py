@@ -4,14 +4,26 @@ import json,hashlib,shutil,re,argparse
 parser=argparse.ArgumentParser(description='Optimise approved Orbit assets for the introduction website.')
 parser.add_argument('--source-root',type=Path,required=True,help='Orbit checkout containing the exhibition source assets')
 W=parser.parse_args().source_root.resolve();E=W/'extension/preview/exhibition/assets';OUT=Path(__file__).resolve().parents[1]/'src/assets';records=[]
-def image(source,target,maxw,crop=False):
- im=Image.open(source).convert('RGB')
- if crop:im=im.crop((0,0,im.width,min(im.height,round(im.width*1.2))))
- im.thumbnail((maxw,2000),Image.Resampling.LANCZOS);file=OUT/target;im.save(file,'WEBP',quality=88,method=6)
- records.append({'file':target,'source':str(source.relative_to(W)),'sourceSha256':hashlib.sha256(source.read_bytes()).hexdigest(),'width':im.width,'height':im.height,'bytes':file.stat().st_size,'processing':'Resize for web; top crop only' if crop else 'Resize for web only','content':'Existing real public capture' if target.startswith('pages') else 'Real Orbit product screen with demonstration fixtures'})
+def image(source, target, maxw, crop=False):
+ original = Image.open(source).convert('RGB')
+ if crop:
+  original = original.crop((0, 0, original.width, min(original.height, round(original.width * 1.2))))
+ def save(target, width, lossless):
+  im = original.copy()
+  im.thumbnail((width, width * 4), Image.Resampling.LANCZOS)
+  file = OUT / target
+  im.save(file, 'WEBP', lossless=lossless, quality=94, method=6)
+  return {'file': target, 'width': im.width, 'height': im.height, 'bytes': file.stat().st_size}
+ screen = target.startswith('screens/')
+ record = save(target, maxw, screen)
+ record.update({'source': str(source.relative_to(W)), 'sourceSha256': hashlib.sha256(source.read_bytes()).hexdigest(), 'processing': 'Downsample original; lossless WebP text' if screen else 'Downsample original; top crop only; quality 94', 'content': 'Real Orbit product screen with demonstration fixtures' if screen else 'Existing real public capture'})
+ if screen:
+  record['variants'] = [save(target.replace('.webp', '-small.webp'), maxw // 2, True), save(target.replace('.webp', '-detail.webp'), min(original.width, 3600), True)]
+ records.append(record)
 for name in ['seongsan','dining','flight','saebyeol','udo','hallasan','route','seopjikoji']:
- image(E/f'main03-v12/{name}-page.png',f'pages/{name}.webp',520,True)
-for source,name,width in [('main01-v1/newtab-keep-exploring.png','home',1600),('main01-v2/timeline-landed.png','timeline',760),('main03-v12/retrieval-ui.png','orbit-ai',1500),('main03-v32/restore-before.png','restore-before',1000),('main03-v32/restore-after.png','restore-after',1500),('main05-v2/team-sessions.png','team-sessions',850),('main05-v2/team-ask.png','team-ai',850)]:image(E/source,f'screens/{name}.webp',width)
+ image(E / f'main03-v12/{name}-page.png', f'pages/{name}.webp', 720, True)
+for source, name, width in [('main01-v1/newtab-keep-exploring.png','home',1920),('main01-v2/timeline-landed.png','timeline',1280),('main03-v12/retrieval-ui.png','orbit-ai',1920),('main03-v32/restore-before.png','restore-before',1600),('main03-v32/restore-after.png','restore-after',1920),('main05-v2/team-sessions.png','team-sessions',1280),('main05-v2/team-ask.png','team-ai',1280)]:
+ image(E / source, f'screens/{name}.webp', width)
 shutil.copytree(E/'main03-v12/fonts',OUT/'fonts',dirs_exist_ok=True)
 for f in (OUT/'fonts').glob('*.json'):f.unlink()
 shutil.copy2(E/'main03-v14/Oswald-wght.ttf',OUT/'fonts/Oswald-wght.ttf')

@@ -206,7 +206,12 @@ test("scroll story frames and member browsers use the same six verified public d
     evidence.frames.map((f) => f.frame),
     [0, 1, 2, 3, 4, 5, 6],
   );
+  assert.equal(evidence.productBase, '8902de27c8f27e84c7e0d334ddee3578ce370e33');
+  assert.ok(evidence.captureRoute.includes('snapshots=on'));
   for (const frame of evidence.frames) {
+    assert.equal(frame.layout, frame.frame ? 'unified-cards' : 'empty');
+    assert.equal(frame.cardCount, frame.frame);
+    assert.equal(frame.loadedPublicImages, frame.frame);
     assert.equal(
       (await stat(new URL("assets/" + frame.file, root))).size,
       frame.bytes,
@@ -228,18 +233,29 @@ test("actual Atlas recordings match their public capture provenance", async () =
     assert.equal(video.encoding.audioStreams, 0);
     assert.equal(video.capture.fullRotations, 1);
     assert.equal(video.sourceCaptures.length, video.capture.pageCount);
+    if (video.name === 'team') {
+      assert.equal(video.productCommit, '8902de27c8f27e84c7e0d334ddee3578ce370e33');
+      assert.equal(video.capture.layout, 'unified-cards');
+      assert.equal(video.capture.loadedPublicImages, 6);
+      assert.match(video.capture.method, /Two actual unified AtlasGallery pointer drags/);
+      assert.deepEqual(video.capture.pointerSamples.map(sample => sample.intendedPosition), [0, 3, 3, 6]);
+      assert.ok(video.capture.pointerSamples.every(sample => sample.cardCount === 6));
+      const last = video.capture.pointerSamples.at(-1);
+      assert.ok(Math.abs(Number(/translateX\(([-\d.e+]+)px\)/.exec(last.firstCardTransform)?.[1])) < .01);
+    } else assert.equal(video.productCommit, '630b6d8fdcc4e58f03f175408e9d1d5d96730dd3');
     for (const page of video.sourceCaptures) assert.ok(page.url.startsWith("https://"));
   }
 });
 
-test('the current tour uses one verified product revision and preserves privacy boundaries', () => {
+test('the current tour records the team correction without relabelling unchanged baseline images', () => {
   const revision = '630b6d8fdcc4e58f03f175408e9d1d5d96730dd3';
   assert.equal(provenance.currentProductCommit, revision);
   for (const [, file] of html.matchAll(/src="\.\/assets\/(screens\/[^" ]+\.webp)"/g)) {
     const image = provenance.screens.find(record => record.file === file);
-    assert.equal(image?.productCommit, revision, file);
+    assert.equal(image?.productCommit, file === 'screens/team-atlas.webp' ? '8902de27c8f27e84c7e0d334ddee3578ce370e33' : revision, file);
   }
-  assert.ok(html.includes('팀 서버로 업로드되지 않습니다'));
+  for (const boundary of ['기본적으로 이 기기에 저장됩니다', '팀 화면 공유를 따로 허용한 팀', '그 팀에 공유된 페이지', '인증된 팀원이 볼 수 있습니다', '내가 올린 서버 사진도 삭제됩니다', '민감한 사이트와 검색 결과는 캡처에서 제외', '모든 탭을 자동으로 공유하지 않습니다']) assert.ok(html.includes(boundary), boundary);
+  assert.doesNotMatch(html, /팀 서버로 업로드되지 않습니다/);
   assert.ok(html.includes('보고 있던 화면은 그대로'));
   assert.ok(html.includes('직접 끌 때까지'));
   assert.ok(html.includes('대회 시연 영상'));

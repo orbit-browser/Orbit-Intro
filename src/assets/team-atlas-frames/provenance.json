@@ -1,10 +1,13 @@
 {
-  "productBase": "630b6d8fdcc4e58f03f175408e9d1d5d96730dd3",
+  "productBase": "8902de27c8f27e84c7e0d334ddee3578ce370e33",
   "productBranch": "main",
-  "mode": "Actual product components with synthetic public-document visits; not authenticated two-user E2E. Team destination contains no uploaded screenshots.",
+  "mode": "Actual product components with synthetic public-document visits; not authenticated two-user E2E. Public demo image registry is isolated capture scaffolding; no screenshot upload service is represented.",
   "captureRoute": "http://127.0.0.1:5213/preview/newtab.html?scope=w-team-stream&theme=light&snapshots=on&teamStoryFrame={0..6}#/orbit-atlas?session=s-team-stream-u-me",
   "frames": [
     {
+      "layout": "empty",
+      "cardCount": 0,
+      "loadedPublicImages": 0,
       "file": "team-atlas-frames/frame-0.webp",
       "width": 1600,
       "height": 760,
@@ -13,51 +16,69 @@
       "frame": 0
     },
     {
+      "layout": "unified-cards",
+      "cardCount": 1,
+      "loadedPublicImages": 1,
       "file": "team-atlas-frames/frame-1.webp",
       "width": 1600,
       "height": 760,
-      "bytes": 83146,
-      "sourceSha256": "9d02866f05eeede80ff4876b9dd9fa981807ff1ec495a58f6ca3dfed176a88cb",
+      "bytes": 99798,
+      "sourceSha256": "dcbb346b40a1a32bb05b44c5e687707fc565c0b3729af08d8c923e4d9f7fad89",
       "frame": 1
     },
     {
+      "layout": "unified-cards",
+      "cardCount": 2,
+      "loadedPublicImages": 2,
       "file": "team-atlas-frames/frame-2.webp",
       "width": 1600,
       "height": 760,
-      "bytes": 93084,
-      "sourceSha256": "21a9a837029c3497169617df8ac246f2a09d1ea82b573dfd3e3bb39f23e27bbc",
+      "bytes": 136074,
+      "sourceSha256": "2a8533e6298155b5e53466ebb6a135d6d358ebcf926aff3a60177650e23d3664",
       "frame": 2
     },
     {
+      "layout": "unified-cards",
+      "cardCount": 3,
+      "loadedPublicImages": 3,
       "file": "team-atlas-frames/frame-3.webp",
       "width": 1600,
       "height": 760,
-      "bytes": 93332,
-      "sourceSha256": "f39e02ec1c95100d48f82d0c61390b3275f470700d984997b852291447d00548",
+      "bytes": 169256,
+      "sourceSha256": "79974ddd2a80df0c0bb94b99746a8035d69ef894f0c5501a92cab303b931e816",
       "frame": 3
     },
     {
+      "layout": "unified-cards",
+      "cardCount": 4,
+      "loadedPublicImages": 4,
       "file": "team-atlas-frames/frame-4.webp",
       "width": 1600,
       "height": 760,
-      "bytes": 92390,
-      "sourceSha256": "e790f5266fa5a8cf2e70a95e5a5430a26599af9b838ad831a7305b39b0da20e3",
+      "bytes": 169590,
+      "sourceSha256": "3cf276761fc6646211bed25f59a8d3e97dec1ecaddb26787651a57b03b2d1453",
       "frame": 4
     },
     {
+      "layout": "unified-cards",
+      "cardCount": 5,
+      "loadedPublicImages": 5,
       "file": "team-atlas-frames/frame-5.webp",
       "width": 1600,
       "height": 760,
-      "bytes": 92484,
-      "sourceSha256": "fd32e14e4ad3eb7df8b638f9ff5de9c609a06cd1891ae5c491834003649db190",
+      "bytes": 197606,
+      "sourceSha256": "4d1f438800a05b908fe27e44396647317809083eddcfb1370ea593ab54bad13b",
       "frame": 5
     },
     {
+      "layout": "unified-cards",
+      "cardCount": 6,
+      "loadedPublicImages": 6,
       "file": "team-atlas-frames/frame-6.webp",
       "width": 1600,
       "height": 760,
-      "bytes": 100972,
-      "sourceSha256": "e8d377489b491ffd6429402f0179cde1a97a327a18a890852c715d44147e615a",
+      "bytes": 196486,
+      "sourceSha256": "0feaca7b7244c9cbf1cafb6367dd65db84168004833268a501070d690a6b5cd5",
       "frame": 6
     }
   ],

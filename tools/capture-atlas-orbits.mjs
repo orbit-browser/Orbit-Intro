@@ -16,9 +16,11 @@ const ffprobe = process.env.FFPROBE ?? '/opt/homebrew/bin/ffprobe';
 const cwebp = process.env.CWEBP ?? '/opt/homebrew/bin/cwebp';
 const WIDTH = 1600, HEIGHT = 760, FRAMES = 96, FPS = 30;
 const DRAG_GAIN = 1.5;
+const productRevision = process.env.ORBIT_PRODUCT_REVISION;
+assert.match(productRevision ?? '', /^[0-9a-f]{40}$/, 'Set ORBIT_PRODUCT_REVISION to the captured component revision');
 const modes = [
   { name: 'personal', count: 8, nav: true, url: `${preview}/preview/newtab.html?scope=&theme=light&snapshots=on&personalAtlasStory=1#/orbit-atlas?session=s-jeju`, publicManifest: 'preview/out/personal-atlas-public/provenance.json' },
-  { name: 'team', count: 6, nav: false, url: `${preview}/preview/newtab.html?scope=w-team-stream&theme=light&snapshots=off&teamStoryFrame=6#/orbit-atlas?session=s-team-stream-u-me`, publicManifest: 'preview/out/team-atlas-public/provenance.json' },
+  { name: 'team', count: 6, nav: false, url: `${preview}/preview/newtab.html?scope=w-team-stream&theme=light&snapshots=on&teamStoryFrame=6#/orbit-atlas?session=s-team-stream-u-me`, publicManifest: 'preview/out/team-atlas-public/provenance.json' },
 ];
 const only = process.argv.find((argument) => argument.startsWith('--only='))?.split('=')[1];
 const hash = (buffer) => createHash('sha256').update(buffer).digest('hex');
@@ -47,27 +49,9 @@ for (const mode of modes.filter((item) => !only || item.name === only)) {
     ` });
     // Input positions still use the actual AtlasGallery handlers and transforms. Reduced motion
     // removes interpolation between sampled positions; no component, DOM or visual style is replaced.
-    if (mode.name === 'personal') await browser.send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'reduce' }] });
+    await browser.send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'reduce' }] });
     await browser.goto(mode.url, { readyFlag: false, settle: 2500 });
     await browser.evaluate('document.fonts.ready');
-    if (mode.name === 'team') {
-      for (let attempt=0;attempt<150;attempt++) {
-        if(await browser.evaluate("document.querySelector('.atlas-session-tools__pages span')?.textContent.includes('/ 6')")) break;
-        if(attempt===149) throw new Error('Six-page team orbit did not load');
-        await sleep(200);
-      }
-      await browser.evaluate("[...document.querySelectorAll('button')].find(b=>b.textContent.trim()==='다시 보지 않기')?.click();document.querySelector('[aria-label=\"다음 페이지\"]').click()");
-      await sleep(800);
-      assert.equal(await browser.evaluate("document.querySelectorAll('.atlas-gallery__capture').length"),0);
-      for(let frame=0;frame<FRAMES;frame++) {
-        if(frame%16===1) await browser.evaluate("document.querySelector('[aria-label=\"다음 페이지\"]').click()");
-        await browser.evaluate('new Promise(r=>requestAnimationFrame(r))');
-        await browser.shot(resolve(frames,`frame-${String(frame).padStart(3,'0')}.png`));
-        if(frame%16===0||frame===95) samples.push({frame,page:await browser.evaluate("document.querySelector('.atlas-session-tools__pages span').textContent")});
-      }
-      assert.equal(samples[0].page,samples.at(-1).page);
-      await writeFile(resolve(frames,'capture.json'),JSON.stringify({mode,initial:{spacing:null},samples,console:browser.consoleLines},null,2)+'\n');
-    } else {
     for (let attempt = 0; attempt < 80; attempt += 1) {
       const loaded = await browser.evaluate(`document.querySelectorAll('.atlas-gallery__card').length === ${mode.count} && [...document.querySelectorAll('.atlas-gallery__capture')].every(image => image.complete && image.naturalWidth > 0)`);
       if (loaded) break;
@@ -95,7 +79,7 @@ for (const mode of modes.filter((item) => !only || item.name === only)) {
     assert.equal(initial.count, mode.count);
     assert.equal(initial.nav, String(mode.nav));
     assert(initial.images.every((image) => image.url.includes('/preview/out/')));
-    assert.equal(initial.images.length, mode.name === 'personal' ? mode.count : 0);
+    assert.equal(initial.images.length, mode.count);
     if (mode.name === 'personal') assert(initial.body.includes('합성 탐색 시연'));
     const startX = Math.min(initial.rect.right - 8, WIDTH - 8);
     const y = initial.rect.bottom - 8;
@@ -128,7 +112,6 @@ for (const mode of modes.filter((item) => !only || item.name === only)) {
     const endOffset = Number(/translateX\(([-\d.e+]+)px\)/.exec(samples.at(-1).cards[0].transform)?.[1]);
     assert(Math.abs(endOffset) < 0.01, `First page must return to center, got ${endOffset}px`);
     await writeFile(resolve(frames, 'capture.json'), JSON.stringify({ mode, initial, samples, console: browser.consoleLines }, null, 2) + '\n');
-    }
   } finally {
     try { await browser.close(); } catch (error) {
       if (error.code !== 'ENOTEMPTY' || !error.path?.includes('orbit-intro-chrome-')) throw error;
@@ -151,10 +134,11 @@ for (const mode of modes.filter((item) => !only || item.name === only)) {
   assert.equal(stream.height, HEIGHT);
   assert.equal(Number(stream.nb_frames), FRAMES);
   assert.equal(Number(probe.format.duration), FRAMES / FPS);
+  const captureEvidence = JSON.parse(await readFile(resolve(frames, 'capture.json'), 'utf8'));
   const result = {
-    productCommit: '630b6d8fdcc4e58f03f175408e9d1d5d96730dd3', name: mode.name, file: `${mode.name}.mp4`, poster: `${mode.name}.webp`, recordedAt: new Date().toISOString(),
-    previewUrl: mode.url, content: mode.name === 'personal' ? 'Actual Orbit preview components with synthetic demonstration records and approved public page captures.' : 'Actual Orbit team orbit with synthetic records; no shared screenshots. Source captures identify the public documents in the member-browser scene.',
-    capture: { width: WIDTH, height: HEIGHT, frames: FRAMES, fps: FPS, seconds: FRAMES / FPS, pageCount: mode.count, fullRotations: 1, navigatorOpen: mode.nav, method: mode.name === 'personal' ? 'Two actual AtlasGallery pointer drags; reduced-motion interpolation disabled only in capture browser.' : 'Actual orbit page-navigation buttons, six steps returning to the first page. No shared screenshots.', spacingPx: JSON.parse(await readFile(resolve(frames, 'capture.json'), 'utf8')).initial.spacing, dragGain: mode.name === 'personal' ? DRAG_GAIN : null },
+    productCommit: productRevision, name: mode.name, file: `${mode.name}.mp4`, poster: `${mode.name}.webp`, recordedAt: new Date().toISOString(),
+    previewUrl: mode.url, content: mode.name === 'personal' ? 'Actual Orbit preview components with synthetic demonstration records and approved public page captures.' : 'Current unified Atlas components with synthetic team visits and approved public demo images. No screenshot upload service is represented.',
+    capture: { width: WIDTH, height: HEIGHT, frames: FRAMES, fps: FPS, seconds: FRAMES / FPS, pageCount: mode.count, fullRotations: 1, navigatorOpen: mode.nav, method: 'Two actual unified AtlasGallery pointer drags; reduced-motion interpolation disabled only in capture browser.', layout: 'unified-cards', loadedPublicImages: captureEvidence.initial.images.length, pointerSamples: captureEvidence.samples.map(({frame, intendedPosition, cards}) => ({frame, intendedPosition, cardCount: cards.length, firstCardTransform: cards[0].transform})), spacingPx: captureEvidence.initial.spacing, dragGain: DRAG_GAIN },
     encoding: { codec: stream.codec_name, pixelFormat: stream.pix_fmt, crf: 18, keyframeInterval: 8, faststart: true, audioStreams: 0 },
     bytes: (await stat(video)).size, sha256: hash(await readFile(video)), posterSha256: hash(await readFile(poster)), sourceCaptures,
   };

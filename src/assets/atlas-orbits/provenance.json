@@ -85,13 +85,13 @@
       ]
     },
     {
-      "productCommit": "630b6d8fdcc4e58f03f175408e9d1d5d96730dd3",
+      "productCommit": "8902de27c8f27e84c7e0d334ddee3578ce370e33",
       "name": "team",
       "file": "team.mp4",
       "poster": "team.webp",
-      "recordedAt": "2026-11-02T05:36:55.250Z",
-      "previewUrl": "http://127.0.0.1:5213/preview/newtab.html?scope=w-team-stream&theme=light&snapshots=off&teamStoryFrame=6#/orbit-atlas?session=s-team-stream-u-me",
-      "content": "Actual Orbit team orbit with synthetic records; no shared screenshots. Source captures identify the public documents in the member-browser scene.",
+      "recordedAt": "2026-11-02T09:55:31.117Z",
+      "previewUrl": "http://127.0.0.1:5213/preview/newtab.html?scope=w-team-stream&theme=light&snapshots=on&teamStoryFrame=6#/orbit-atlas?session=s-team-stream-u-me",
+      "content": "Current unified Atlas components with synthetic team visits and approved public demo images. No screenshot upload service is represented.",
       "capture": {
         "width": 1600,
         "height": 760,
@@ -101,9 +101,37 @@
         "pageCount": 6,
         "fullRotations": 1,
         "navigatorOpen": false,
-        "method": "Actual orbit page-navigation buttons, six steps returning to the first page. No shared screenshots.",
-        "spacingPx": null,
-        "dragGain": null
+        "method": "Two actual unified AtlasGallery pointer drags; reduced-motion interpolation disabled only in capture browser.",
+        "layout": "unified-cards",
+        "loadedPublicImages": 6,
+        "pointerSamples": [
+          {
+            "frame": 0,
+            "intendedPosition": 0,
+            "cardCount": 6,
+            "firstCardTransform": "translateX(0px) translateZ(0px) rotateY(0deg)"
+          },
+          {
+            "frame": 47,
+            "intendedPosition": 3,
+            "cardCount": 6,
+            "firstCardTransform": "translateX(1002px) translateZ(-706.958px) rotateY(53.5087deg)"
+          },
+          {
+            "frame": 48,
+            "intendedPosition": 3,
+            "cardCount": 6,
+            "firstCardTransform": "translateX(1002px) translateZ(-706.958px) rotateY(53.5087deg)"
+          },
+          {
+            "frame": 95,
+            "intendedPosition": 6,
+            "cardCount": 6,
+            "firstCardTransform": "translateX(0px) translateZ(0px) rotateY(0deg)"
+          }
+        ],
+        "spacingPx": 334,
+        "dragGain": 1.5
       },
       "encoding": {
         "codec": "h264",
@@ -113,9 +141,9 @@
         "faststart": true,
         "audioStreams": 0
       },
-      "bytes": 491722,
-      "sha256": "3f061a44cd8f2b3ce4088f3f7c82604127814b4669a5344db849476d93d86c21",
-      "posterSha256": "13d65d9363826cc9f3a3557090d3426835479d97fc3445dfd47ba76569a60c77",
+      "bytes": 2220750,
+      "sha256": "cfa50dc280cbc0ecd2efad93bbcd8f38e495798179bec8625e7fdd9f67c58067",
+      "posterSha256": "852dc9395d5de48217f1c4b662b5fdf3464a5b7dd94acd9cd6f6106da7b613f9",
       "sourceCaptures": [
         {
           "url": "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events",

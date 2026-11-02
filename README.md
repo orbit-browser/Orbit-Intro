@@ -55,7 +55,7 @@ Additional checks: `node tools/check-interactions.mjs` for FAQ expansion/reversa
 
 ## Current-product refresh (2026-11-02)
 
-The tour now uses product main `630b6d8`: unified personal cards, original orbit view, current home/AI/sidepanel, split restore destinations, independent collection target and explicit team sharing. Team previews retain local-only screenshot boundaries. The original printed-banner identity and URL are preserved; the linked competition video is historical.
+The tour now uses product main `630b6d8`: unified personal cards, original orbit view, current home/AI/sidepanel, split restore destinations, independent collection target and explicit team sharing. Captures are device-local by default. Separate per-team screenshot consent permits uploading existing and new captures only for pages shared with that team; authenticated current members can view them. Disabling that team’s image sharing deletes your server copies. Sensitive/search capture filters remain, and all tabs are not automatically shared. The original printed-banner identity and URL are preserved; the linked competition video is historical.
 
 To regenerate public demo assets, start the current product's isolated preview and supply approved public-page registries (personal only in the active preview). No real account or private Chrome profile is needed:
 
@@ -68,4 +68,12 @@ python tools/prepare-current-product.py
 python tools/refresh-korean-subset.py
 ```
 
-Asset tools require Pillow, fontTools/Brotli, ffmpeg/ffprobe and cwebp. They are development-only; generated public assets and provenance are committed, temporary screenshots/profiles are ignored. Personal footage records two real pointer drags; team footage uses six real orbit page-navigation steps back to the first page, with no screenshot transport.
+Asset tools require Pillow, fontTools/Brotli, ffmpeg/ffprobe and cwebp. They are development-only; generated public assets and provenance are committed, temporary screenshots/profiles are ignored. Personal footage records two real pointer drags; corrected team footage records two actual unified-gallery pointer drags over six pages, back to the first page. Approved public demo images are isolated capture scaffolding, not evidence of production screenshot transport.
+
+## Team capture correction (November 2)
+
+Team arrivals 0–6, Atlas still/detail and full-revolution recording now show actual unified cards from product `8902de2` (PR #32), with six approved public documentation images supplied through an isolated demo registry. The on-page label identifies public-page demonstrations; this is not authenticated two-account E2E or evidence of screenshot hosting. Personal captures remain at `630b6d8`.
+
+Asset preparation requires `ORBIT_PRODUCT_REVISION` (full captured commit). Run `tools/prepare-team-story.py` with `ORBIT_PRODUCT_ROOT` pointing to the approved demo fixture, `tools/prepare-current-product.py team-atlas` for only the team still, and `node tools/capture-atlas-orbits.mjs --only=team` for the actual gallery pointer traversal. `--encode-only` reuses complete recorded frames. Provenance records 0–6 loaded card counts and pointer samples across one revolution. Verify with `npm run check` and `node tools/check-team-story.mjs`.
+
+The coordinated server-sharing release updates the privacy FAQ with that separate per-team opt-in boundary. Product behavior was checked with synthetic request fixtures and actual components; no authenticated two-account production E2E is claimed. Captured asset revisions remain `8902de2` for corrected team images and `630b6d8` for unchanged personal images. Website publication and live verification are a separate release step.

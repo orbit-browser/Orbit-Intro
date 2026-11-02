@@ -1,5 +1,21 @@
 # Work log
 
+## 2026-11-02 — Prepare privacy copy for coordinated screenshot sharing
+
+- Updated the screenshot FAQ: images default to device-local; separate permission for each team allows existing/new images only for pages shared with that team; authenticated team members can view them; disabling deletes that author’s server copies. Sensitive/search capture filters remain and all tabs are not automatically shared.
+- Updated the privacy regression contract, README, ContentEvidence, DecisionLog and Plan. Kept the explicit public-demo label and captured provenance unchanged (`8902de2` team, `630b6d8` personal). Synthetic component/API checks are not authenticated two-account production E2E.
+- Validation: `npm run check` passes 13/13, font coverage and static build; `node tools/check-interactions.mjs` passes FAQ expansion/reversal/reduced motion. Additional `/tmp/orbit-intro-privacy-faq-qa.mjs` checks the changed FAQ at 1440/390 for complete copy, expanded text bounds, rapid reversal and reduced motion; both pass. `git diff --check` passes. Team-story checks were not repeated because its assets are unchanged.
+- Scope is website copy/documentation only; parent task coordinates server rollout, publication and live verification. No commit, push or publication performed here.
+
+## 2026-11-02 — Correct old team orbit imagery
+
+- Root cause: the previous website capture explicitly chose `snapshots=off`; product layout choice also depended on mixed-author local-photo eligibility. Product PR #32 (`8902de2`) separates layout from ownership while preserving private-photo guards. This website correction uses that component revision.
+- Re-encoded actual cumulative 0–6 team captures, responsive Atlas still/detail, unified-card poster and 96-frame full-revolution MP4. Six approved public documentation images come from an isolated demo registry; synthetic members and “공개 페이지 시연” label remain explicit. No real user capture, authenticated two-account E2E or screenshot hosting is claimed by these images.
+- Provenance records actual empty/unified layout, N cards and N loaded public images, plus two genuine gallery pointer drags with checkpoints 0→3→3→6 and return-to-first transform. Team revision is `8902de2`; unchanged personal assets retain `630b6d8`. Asset scripts now require `ORBIT_PRODUCT_REVISION` and selective preparation preserves baseline metadata.
+- Commands: `/tmp/orbit-intro-assets-venv/bin/python tools/prepare-team-story.py` with approved `ORBIT_PRODUCT_ROOT` and revision; the same Python `tools/prepare-current-product.py team-atlas`; `node tools/capture-atlas-orbits.mjs --only=team --encode-only` with revision/fixture root. Result: team MP4 2,220,750 bytes, 1600×760, 3.2 s, no audio; seven arrival frames total 997,014 bytes.
+- Validation: `npm run check` passes all 13 content/asset/hash/font contracts and static build. `node tools/check-team-story.mjs` passes 1440/390 desktop/mobile native wheel, keyboard, vertical touch, arrival→rotation, rewind, release, reduced-motion static and failure-poster checks. Visually reviewed frame6, poster, desktop collected scene and mobile rotation screenshot. `git diff --check` passes. Full four-width/FAQ suites were not repeated because this correction changes team media/caption only.
+- Updated README, Plan, ContentEvidence and DecisionLog. Kept hero, personal flow and banners unchanged. The subsequent coordinated screenshot-sharing release updates FAQ/privacy contracts as recorded below. No commit, push, PR, merge or publication performed in this subtask.
+
 ## 2026-11-02 — Refresh for current Orbit without breaking banner continuity
 
 - Worked on `feat/intro-current-product` from clean remote main `93244c2`; fetched again before publication and found no teammate divergence. Preserved original hero, logo, coral/ivory palette, section order, Pages URL and all printed banner files.

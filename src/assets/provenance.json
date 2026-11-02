@@ -514,29 +514,29 @@
       "file": "screens/team-atlas.webp",
       "width": 1920,
       "height": 912,
-      "bytes": 147306,
+      "bytes": 281886,
       "source": "artifacts/current-product/team-atlas.png",
-      "sourceSha256": "e8d377489b491ffd6429402f0179cde1a97a327a18a890852c715d44147e615a",
+      "sourceSha256": "0feaca7b7244c9cbf1cafb6367dd65db84168004833268a501070d690a6b5cd5",
       "variants": [
         {
           "file": "screens/team-atlas-small.webp",
           "width": 960,
           "height": 456,
-          "bytes": 48290,
+          "bytes": 91494,
           "source": "artifacts/current-product/team-atlas.png",
-          "sourceSha256": "e8d377489b491ffd6429402f0179cde1a97a327a18a890852c715d44147e615a"
+          "sourceSha256": "0feaca7b7244c9cbf1cafb6367dd65db84168004833268a501070d690a6b5cd5"
         },
         {
           "file": "screens/team-atlas-detail.webp",
           "width": 3200,
           "height": 1520,
-          "bytes": 148392,
+          "bytes": 421960,
           "source": "artifacts/current-product/team-atlas.png",
-          "sourceSha256": "e8d377489b491ffd6429402f0179cde1a97a327a18a890852c715d44147e615a"
+          "sourceSha256": "0feaca7b7244c9cbf1cafb6367dd65db84168004833268a501070d690a6b5cd5"
         }
       ],
       "processing": "Lossless responsive derivative of actual product component capture; no composited UI.",
-      "productCommit": "630b6d8fdcc4e58f03f175408e9d1d5d96730dd3",
+      "productCommit": "8902de27c8f27e84c7e0d334ddee3578ce370e33",
       "content": "Synthetic demonstration records; isolated API/Chrome doubles; not live user data.",
       "captureRoute": "Team story frame 6; see team-atlas-frames/provenance.json"
     },

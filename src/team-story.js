@@ -88,7 +88,7 @@ export function mountTeamStory(element, { renderAtlasFrame } = {}) {
   element.classList.add("team-story");
   element.innerHTML = `
     <div class="team-story__pin">
-      <div class="team-story__heading"><div><p>팀의 탐색이 쌓이는 과정 · 시연</p><h3>세 개의 브라우저. <span>하나의 팀 아틀라스.</span></h3></div><span class="team-story__scroll-cue">스크롤로 살펴보기 ${ARROW}</span></div>
+      <div class="team-story__heading"><div><p>팀의 탐색이 쌓이는 과정 · 공개 페이지 시연</p><h3>세 개의 브라우저. <span>하나의 팀 아틀라스.</span></h3></div><span class="team-story__scroll-cue">스크롤로 살펴보기 ${ARROW}</span></div>
       <div class="team-story__browsers" aria-label="세 구성원의 브라우저">
         ${TEAM_STORY_DEMO.map(
           (member, index) => `

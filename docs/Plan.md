@@ -1,3 +1,17 @@
+# 2026-11-02 — Team story must use the unified cards
+
+- Goal: correct the team Atlas section the user identified as old UI and republish it at the existing URL.
+- Cause: capture tools explicitly chose snapshots=off; additionally the product couples mixed-author snapshot permissions with the card/orbit layout, so enabling previews still renders the old orbit for a shared team session.
+- Scope: minimal upstream UI fix separates layout preference from local photo permission, keeping photo reads restricted. Re-record only team frames, poster/video and detailed team screenshot using current components and the six existing approved public demo images. Keep hero/personal scenes, copy, page order and existing backend unchanged. Clearly identify the scene as public-page demo imagery; it does not imply screenshot uploads.
+- Files: team capture/asset preparation tools, team assets/provenance, team-story caption, targeted regression checks, README/ContentEvidence/DecisionLog/WorkLog. Product change is one layout expression, its existing wiring tests and docs on a separate fix branch.
+- Sequence: verify source and ownership tests → minimal product fix/checks → stage approved demo assets → capture unified team cards and pointer traversal → verify 0–6 arrivals, modern layout in every nonempty frame, six images/participants, responsive scroll/reduced motion → squash/publish normally and verify live assets.
+- Validation: extension official tests/typecheck/build; website npm run check and affected browser story checks; rendered desktop/mobile; live assets and deployment. No authenticated user data or remote screenshot storage changes.
+- Complete when no team fallback poster/still/video presents the old orbit, cards retain page metadata/contributors, privacy assertions hold, and published Pages serves the correction.
+
+- Local outcome: product PR #32 merged as `8902de2`; team 0–6 frames, responsive still/detail, poster and 96-frame video now use unified cards. Public-registry evidence and pointer checkpoints are stored in distributable provenance. Personal images/media retain `630b6d8`. `npm run check` passes 13/13 plus build; desktop/mobile team-story checks and visual review pass. Publication remains coordinated by the parent task with the server-sharing release. FAQ is prepared for device-local defaults, separate per-team shared-page image consent, authenticated team viewing and author-copy deletion on disable. Asset provenance remains tied to the actual captured revisions. No authenticated two-account production E2E is claimed.
+
+---
+
 # 2026-11-02 — Refresh the published introduction for current Orbit
 
 - Goal: update the existing GitHub Pages site to the current product while preserving continuity with the already printed banners: original hero/logo/ivory-charcoal-coral palette, story order and core promise. User authorizes the complete update/publication. No reprint or product/backend change.

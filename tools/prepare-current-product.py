@@ -1,7 +1,7 @@
 """Encode actual current-product captures; retain verifiable source hashes."""
 from pathlib import Path
 from PIL import Image
-import json, hashlib, re, sys
+import json, hashlib, re, sys, os
 root = Path(__file__).resolve().parents[1]
 source = root / 'artifacts/current-product'
 assets = root / 'src/assets'
@@ -28,10 +28,14 @@ for name, width in names.items():
     record = save('',width)
     record.update(variants=[save('-small',width//2),save('-detail',min(3600,raw.width))],
         processing='Lossless responsive derivative of actual product component capture; no composited UI.',
-        productCommit='630b6d8fdcc4e58f03f175408e9d1d5d96730dd3',
+        productCommit=os.environ['ORBIT_PRODUCT_REVISION'],
         content='Synthetic demonstration records; isolated API/Chrome doubles; not live user data.',
-        captureRoute=captures.get(name,{}).get('url','Team story frame 6; see team-atlas-frames/provenance.json'))
-    manifest['screens']=[r for r in manifest['screens'] if r['file'] != record['file']] + [record]
+        captureRoute=('Team story frame 6; see team-atlas-frames/provenance.json' if name == 'team-atlas' else captures.get(name,{}).get('url','')))
+    existing = next((i for i, item in enumerate(manifest['screens']) if item['file'] == record['file']), None)
+    if existing is None:
+        manifest['screens'].append(record)
+    else:
+        manifest['screens'][existing] = record
     def update(match):
         tag=match[0]
         tag=re.sub(r'width="\d+"',f'width="{record["width"]}"',tag)
@@ -42,6 +46,8 @@ for name, width in names.items():
         return tag
     html=re.sub(r'<img\b[^>]*src="\./assets/screens/'+re.escape(name)+r'\.webp"[^>]*>',update,html)
     print(name,record['width'],record['height'],record['bytes'])
-manifest['currentProductCommit']='630b6d8fdcc4e58f03f175408e9d1d5d96730dd3'
+# A selective correction must not relabel unchanged baseline images.
+if len(sys.argv) == 1:
+    manifest['currentProductCommit']=os.environ['ORBIT_PRODUCT_REVISION']
 manifest_path.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
 (root/'src/index.html').write_text(html)

@@ -1,8 +1,17 @@
+# 2026-11-02 — Correct the team scene to unified cards
+
+- The previous capture incorrectly forced previews off. Product PR #32 (`8902de2`) also separates card layout choice from mixed-author local screenshot ownership. Keep existing private-photo guards.
+- Re-record only team arrivals, screenshot/detail, poster and full-revolution video. Use actual components with the existing six approved public documentation images in an isolated demo registry. Label the member scene “공개 페이지 시연”. This is illustrative demo evidence, not authenticated two-account E2E or a screenshot-upload demonstration.
+- Keep personal imagery at its original `630b6d8` revision. Team provenance explicitly records `8902de2`; selective asset preparation does not relabel unchanged files.
+- Coordinate publication with the server-sharing release. FAQ now explains device-local defaults, separate per-team consent, shared-page-only uploads, authenticated team viewing and deletion of the author’s server copies when disabled. Keep sensitive/search filters and no automatic all-tab sharing explicit. This copy is prepared for the coordinated release and is not deployment verification.
+
+---
+
 # 2026-11-02 — Current product, continuous exhibition story
 
 - Keep the published URL, original hero/brand/palette/chapter order so printed banner QR links still lead into the same product narrative. User approved refreshing and publishing the site.
 - Replace product screenshots, collection frames and recordings with current actual components. Add cards/orbit demonstration selection without changing native page scrolling. Existing detail viewer remains the full-screen inspection path.
-- Team collection chooses a workspace independently of the viewed workspace and runs until stopped. Explicit session/page sharing is a complementary path. Describe local-only screenshots accurately; do not imply uploaded team thumbnails or public installation availability.
+- Team collection chooses a workspace independently of the viewed workspace and runs until stopped. Explicit session/page sharing is a complementary path. The initial refresh described the then-local-only screenshot behavior. The coordinated screenshot-sharing release supersedes that boundary with separate per-team consent; public installation availability remains unclaimed.
 - Preserve supplied older YouTube footage under the label “대회 시연 영상”. Do not invent a newer video or display an alarming old-version notice.
 - Keep GitHub Pages and the existing dependency-free build. Capture utilities use an isolated browser and synthetic transport, not the user's signed-in profile. Asset-only Python tooling is temporary and does not add a runtime dependency.
 

@@ -107,3 +107,6 @@ Browser screenshots/results are in ignored `artifacts/`. The checked source and 
 
 ### Published validation
 Product screenshot sharing deployed as team-screenshots-20261102T100901Z and merged through orbit PR33; the introduced privacy copy now matches the released contract. Site PR2/main d21df73 deployed successfully (Pages41426658608). Nine live HTML/JS/image/video/provenance files match the reviewed source; live1440/390 scroll, keyboard, touch, rewind, reduced-motion and failed-video poster tests pass. No actual production account screenshot was uploaded during verification.
+
+## 2026-11-02 — Navigation labels
+Changed the four main-navigation labels to Atlas, Extension, Team Space and Orbit, preserving their existing section anchors. Used the standard spelling Extension for the requested English label. This is a small copy-only edit; no separate Plan change. `npm run check` passed13tests/build; isolated browser checks at1440/390/320px confirmed labels, unchanged section anchors and no overflow; git diff --check passed.

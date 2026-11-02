@@ -102,3 +102,5 @@ GitHub Pages base path is /Orbit-Intro/. Team identities are verified by the use
 
 
 2026-10-28 implementation outcome: the team scene now uses the separately implemented authorized joint Atlas projection. Team AI copy/screens are removed from this website. Manual session sharing remains explained as a complementary path. The capture script needs the local product preview at port 5187; image preparation takes `ORBIT_PRODUCT_ROOT` rather than embedding a machine-specific path. Authenticated two-account E2E remains pending login.
+
+Completion: team card correction and consent-aware privacy copy published through PR2/main d21df73; Pages and live asset/UI verification pass. Product sharing release is live; no website work remains.

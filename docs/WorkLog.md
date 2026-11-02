@@ -104,3 +104,6 @@ Browser screenshots/results are in ignored `artifacts/`. The checked source and 
 - Final static check: `npm run check` passed 12 tests and build; `git diff --check` passed. Local MP4 range request returned 206, video/mp4 and the requested 100 bytes.
 
 - Follow-up correction: the user explicitly requested removing the enable-preview notice from the introduction. Recaptured the personal scene with `tabSnapshotsEnabled:true` in the isolated preview's synthetic storage. This renders the normal enabled-state UI without CSS/DOM hiding and without changing real extension permissions.
+
+### Published validation
+Product screenshot sharing deployed as team-screenshots-20261102T100901Z and merged through orbit PR33; the introduced privacy copy now matches the released contract. Site PR2/main d21df73 deployed successfully (Pages41426658608). Nine live HTML/JS/image/video/provenance files match the reviewed source; live1440/390 scroll, keyboard, touch, rewind, reduced-motion and failed-video poster tests pass. No actual production account screenshot was uploaded during verification.

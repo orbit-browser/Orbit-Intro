@@ -1,63 +1,63 @@
 {
-  "productBase": "059aa45",
-  "productBranch": "feat/team-atlas-contributors",
-  "mode": "Actual product components with synthetic public-document visits; not authenticated two-user E2E.",
-  "captureRoute": "http://127.0.0.1:5187/preview/newtab.html?scope=w-team-stream&theme=light&teamStoryFrame={0..6}#/orbit-atlas?session=s-team-stream-u-me",
+  "productBase": "630b6d8fdcc4e58f03f175408e9d1d5d96730dd3",
+  "productBranch": "main",
+  "mode": "Actual product components with synthetic public-document visits; not authenticated two-user E2E. Team destination contains no uploaded screenshots.",
+  "captureRoute": "http://127.0.0.1:5213/preview/newtab.html?scope=w-team-stream&theme=light&snapshots=on&teamStoryFrame={0..6}#/orbit-atlas?session=s-team-stream-u-me",
   "frames": [
     {
       "file": "team-atlas-frames/frame-0.webp",
       "width": 1600,
       "height": 760,
-      "bytes": 33846,
-      "sourceSha256": "db370ee3257010f5bf6e1fe10ede8ef0c024ddf1bbc802e7e47da1d33d605741",
+      "bytes": 28204,
+      "sourceSha256": "e3eaa61af5fdffacc21dd7eb08336a7b755a7007ceb7e72801faf3bd3d1db187",
       "frame": 0
     },
     {
       "file": "team-atlas-frames/frame-1.webp",
       "width": 1600,
       "height": 760,
-      "bytes": 104010,
-      "sourceSha256": "cedfd354a8845ce076d9b8087d468377594d5b0f6c5a8a3197f36b7fe73d23c3",
+      "bytes": 83146,
+      "sourceSha256": "9d02866f05eeede80ff4876b9dd9fa981807ff1ec495a58f6ca3dfed176a88cb",
       "frame": 1
     },
     {
       "file": "team-atlas-frames/frame-2.webp",
       "width": 1600,
       "height": 760,
-      "bytes": 143084,
-      "sourceSha256": "a16b94993d446336b836135477ec0b759fb9a21f674db2feb69dea7ca2d6acfb",
+      "bytes": 93084,
+      "sourceSha256": "21a9a837029c3497169617df8ac246f2a09d1ea82b573dfd3e3bb39f23e27bbc",
       "frame": 2
     },
     {
       "file": "team-atlas-frames/frame-3.webp",
       "width": 1600,
       "height": 760,
-      "bytes": 178430,
-      "sourceSha256": "677ebd537cfa84af992fd61bf2dd21e878cf12985b8207c5e0caacc7a8a56d77",
+      "bytes": 93332,
+      "sourceSha256": "f39e02ec1c95100d48f82d0c61390b3275f470700d984997b852291447d00548",
       "frame": 3
     },
     {
       "file": "team-atlas-frames/frame-4.webp",
       "width": 1600,
       "height": 760,
-      "bytes": 181688,
-      "sourceSha256": "08eb156b0b44c0d4aba34315bb9b3aa345a3f518dc08ec30cded14ae641934dd",
+      "bytes": 92390,
+      "sourceSha256": "e790f5266fa5a8cf2e70a95e5a5430a26599af9b838ad831a7305b39b0da20e3",
       "frame": 4
     },
     {
       "file": "team-atlas-frames/frame-5.webp",
       "width": 1600,
       "height": 760,
-      "bytes": 219834,
-      "sourceSha256": "ad9052b94bc9f9b1498a0e575911b15b346b7ca3b2c73f03f4fc7f7830f88fa1",
+      "bytes": 92484,
+      "sourceSha256": "fd32e14e4ad3eb7df8b638f9ff5de9c609a06cd1891ae5c491834003649db190",
       "frame": 5
     },
     {
       "file": "team-atlas-frames/frame-6.webp",
       "width": 1600,
       "height": 760,
-      "bytes": 221338,
-      "sourceSha256": "16a6cb2355be2ae4154bd2254b47b5c75b36dc7af14259a5b033d18f79178535",
+      "bytes": 100972,
+      "sourceSha256": "e8d377489b491ffd6429402f0179cde1a97a327a18a890852c715d44147e615a",
       "frame": 6
     }
   ],

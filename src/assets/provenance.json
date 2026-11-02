@@ -81,126 +81,6 @@
       "content": "Existing real public capture"
     },
     {
-      "file": "screens/home.webp",
-      "width": 1920,
-      "height": 1197,
-      "bytes": 272302,
-      "source": "extension/preview/exhibition/assets/main01-v1/newtab-keep-exploring.png",
-      "sourceSha256": "80ee1e9834c5c29942921bd8c8cbf5511e87773230466b96bc40ad515e35dc87",
-      "processing": "Downsample original; lossless WebP text",
-      "content": "Real Orbit product screen with demonstration fixtures",
-      "variants": [
-        {
-          "file": "screens/home-small.webp",
-          "width": 960,
-          "height": 598,
-          "bytes": 76814
-        },
-        {
-          "file": "screens/home-detail.webp",
-          "width": 3600,
-          "height": 2244,
-          "bytes": 800252
-        }
-      ]
-    },
-    {
-      "file": "screens/timeline.webp",
-      "width": 1280,
-      "height": 670,
-      "bytes": 74030,
-      "source": "extension/preview/exhibition/assets/main01-v2/timeline-landed.png",
-      "sourceSha256": "c4e7a1973ca85234249d99fac2fc8510f6247e13815140c77cee211cca137f2d",
-      "processing": "Downsample original; lossless WebP text",
-      "content": "Real Orbit product screen with demonstration fixtures",
-      "variants": [
-        {
-          "file": "screens/timeline-small.webp",
-          "width": 640,
-          "height": 335,
-          "bytes": 35038
-        },
-        {
-          "file": "screens/timeline-detail.webp",
-          "width": 3600,
-          "height": 1884,
-          "bytes": 234108
-        }
-      ]
-    },
-    {
-      "file": "screens/orbit-ai.webp",
-      "width": 1920,
-      "height": 1045,
-      "bytes": 122374,
-      "source": "extension/preview/exhibition/assets/main03-v12/retrieval-ui.png",
-      "sourceSha256": "7665a8bf40ae97e0f5e1dcfb57d2e7187cfc9f68b71116cf839aa6e1f68030aa",
-      "processing": "Downsample original; lossless WebP text",
-      "content": "Real Orbit product screen with demonstration fixtures",
-      "variants": [
-        {
-          "file": "screens/orbit-ai-small.webp",
-          "width": 960,
-          "height": 523,
-          "bytes": 55434
-        },
-        {
-          "file": "screens/orbit-ai-detail.webp",
-          "width": 3600,
-          "height": 1959,
-          "bytes": 242038
-        }
-      ]
-    },
-    {
-      "file": "screens/restore-before.webp",
-      "width": 1600,
-      "height": 472,
-      "bytes": 44696,
-      "source": "extension/preview/exhibition/assets/main03-v32/restore-before.png",
-      "sourceSha256": "a3624d3dea77981c8c871e184a86d510c5d9e86221ebdf0bb943c124f3757d6e",
-      "processing": "Downsample original; lossless WebP text",
-      "content": "Real Orbit product screen with demonstration fixtures",
-      "variants": [
-        {
-          "file": "screens/restore-before-small.webp",
-          "width": 800,
-          "height": 236,
-          "bytes": 21252
-        },
-        {
-          "file": "screens/restore-before-detail.webp",
-          "width": 3392,
-          "height": 1000,
-          "bytes": 34000
-        }
-      ]
-    },
-    {
-      "file": "screens/restore-after.webp",
-      "width": 1920,
-      "height": 248,
-      "bytes": 48706,
-      "source": "extension/preview/exhibition/assets/main03-v32/restore-after.png",
-      "sourceSha256": "0f26946d3ee8e1029ef8d3e0bdddd101e84f23b1de207c13fe9578f15f10ffd8",
-      "processing": "Downsample original; lossless WebP text",
-      "content": "Real Orbit product screen with demonstration fixtures",
-      "variants": [
-        {
-          "file": "screens/restore-after-small.webp",
-          "width": 960,
-          "height": 124,
-          "bytes": 20870
-        },
-        {
-          "file": "screens/restore-after-detail.webp",
-          "width": 2560,
-          "height": 330,
-          "bytes": 36554
-        }
-      ]
-    },
-    {
       "file": "screens/team-sessions.webp",
       "width": 1280,
       "height": 1457,
@@ -363,149 +243,362 @@
     {
       "file": "screens/atlas-overview.webp",
       "width": 1920,
-      "height": 1333,
-      "bytes": 320480,
-      "source": "artifacts/product-tour-2026-10-28/atlas-development.png",
-      "sourceSha256": "210da1f2bb81f848bd0bacccdb7e4021ff332833711f383f1887e73bdd86cf44",
+      "height": 1200,
+      "bytes": 318354,
+      "source": "artifacts/current-product/atlas-overview.png",
+      "sourceSha256": "7fe4953fa049f42fcd726e0dadb4cefb1e30ae762f65fbdd7774d404ca5706b5",
       "variants": [
         {
           "file": "screens/atlas-overview-small.webp",
           "width": 960,
-          "height": 667,
-          "bytes": 114162,
-          "source": "artifacts/product-tour-2026-10-28/atlas-development.png",
-          "sourceSha256": "210da1f2bb81f848bd0bacccdb7e4021ff332833711f383f1887e73bdd86cf44"
+          "height": 600,
+          "bytes": 109842,
+          "source": "artifacts/current-product/atlas-overview.png",
+          "sourceSha256": "7fe4953fa049f42fcd726e0dadb4cefb1e30ae762f65fbdd7774d404ca5706b5"
         },
         {
           "file": "screens/atlas-overview-detail.webp",
-          "width": 2880,
+          "width": 3200,
           "height": 2000,
-          "bytes": 377556,
-          "source": "artifacts/product-tour-2026-10-28/atlas-development.png",
-          "sourceSha256": "210da1f2bb81f848bd0bacccdb7e4021ff332833711f383f1887e73bdd86cf44"
+          "bytes": 489078,
+          "source": "artifacts/current-product/atlas-overview.png",
+          "sourceSha256": "7fe4953fa049f42fcd726e0dadb4cefb1e30ae762f65fbdd7774d404ca5706b5"
         }
       ],
-      "processing": "Lossless responsive resize; no UI text, controls or member data composited into the capture.",
-      "backend": "Latest application 059aa45 preview fixtures, not live user data."
+      "processing": "Lossless responsive derivative of actual product component capture; no composited UI.",
+      "productCommit": "630b6d8fdcc4e58f03f175408e9d1d5d96730dd3",
+      "content": "Synthetic demonstration records; isolated API/Chrome doubles; not live user data.",
+      "captureRoute": "http://127.0.0.1:5213/preview/newtab.html?scope=&theme=light&snapshots=on&personalAtlasStory=1#/orbit-atlas?session=s-jeju"
     },
     {
-      "file": "screens/atlas-detail.webp",
-      "width": 1600,
-      "height": 1111,
-      "bytes": 248222,
-      "source": "artifacts/product-tour-2026-10-28/atlas-detail.png",
-      "sourceSha256": "6a27e040d42cbd1c15d56f167412fa6b337b4a2a37ca155399423d18b5002072",
+      "file": "screens/atlas-orbit.webp",
+      "width": 1920,
+      "height": 912,
+      "bytes": 128650,
+      "source": "artifacts/current-product/atlas-orbit.png",
+      "sourceSha256": "6d39bc65ce0bbd2279838281ce31e6d0d18b170232a067184bee383c5e59715a",
       "variants": [
         {
-          "file": "screens/atlas-detail-small.webp",
-          "width": 800,
-          "height": 556,
-          "bytes": 87464,
-          "source": "artifacts/product-tour-2026-10-28/atlas-detail.png",
-          "sourceSha256": "6a27e040d42cbd1c15d56f167412fa6b337b4a2a37ca155399423d18b5002072"
+          "file": "screens/atlas-orbit-small.webp",
+          "width": 960,
+          "height": 456,
+          "bytes": 41992,
+          "source": "artifacts/current-product/atlas-orbit.png",
+          "sourceSha256": "6d39bc65ce0bbd2279838281ce31e6d0d18b170232a067184bee383c5e59715a"
         },
         {
-          "file": "screens/atlas-detail-detail.webp",
-          "width": 2880,
-          "height": 2000,
-          "bytes": 361656,
-          "source": "artifacts/product-tour-2026-10-28/atlas-detail.png",
-          "sourceSha256": "6a27e040d42cbd1c15d56f167412fa6b337b4a2a37ca155399423d18b5002072"
+          "file": "screens/atlas-orbit-detail.webp",
+          "width": 3200,
+          "height": 1520,
+          "bytes": 143580,
+          "source": "artifacts/current-product/atlas-orbit.png",
+          "sourceSha256": "6d39bc65ce0bbd2279838281ce31e6d0d18b170232a067184bee383c5e59715a"
         }
       ],
-      "processing": "Lossless responsive resize; no UI text, controls or member data composited into the capture.",
-      "backend": "Latest application 059aa45 preview fixtures, not live user data."
+      "processing": "Lossless responsive derivative of actual product component capture; no composited UI.",
+      "productCommit": "630b6d8fdcc4e58f03f175408e9d1d5d96730dd3",
+      "content": "Synthetic demonstration records; isolated API/Chrome doubles; not live user data.",
+      "captureRoute": "http://127.0.0.1:5213/preview/newtab.html?scope=&theme=light&snapshots=off&personalAtlasStory=1#/orbit-atlas?session=s-jeju"
+    },
+    {
+      "file": "screens/home.webp",
+      "width": 1920,
+      "height": 1680,
+      "bytes": 143806,
+      "source": "artifacts/current-product/home.png",
+      "sourceSha256": "cfee50dce303fa5d879ff005b793d45f33e35685861260af7abcf2c7c3e4df8e",
+      "variants": [
+        {
+          "file": "screens/home-small.webp",
+          "width": 960,
+          "height": 840,
+          "bytes": 58800,
+          "source": "artifacts/current-product/home.png",
+          "sourceSha256": "cfee50dce303fa5d879ff005b793d45f33e35685861260af7abcf2c7c3e4df8e"
+        },
+        {
+          "file": "screens/home-detail.webp",
+          "width": 3200,
+          "height": 2800,
+          "bytes": 125436,
+          "source": "artifacts/current-product/home.png",
+          "sourceSha256": "cfee50dce303fa5d879ff005b793d45f33e35685861260af7abcf2c7c3e4df8e"
+        }
+      ],
+      "processing": "Lossless responsive derivative of actual product component capture; no composited UI.",
+      "productCommit": "630b6d8fdcc4e58f03f175408e9d1d5d96730dd3",
+      "content": "Synthetic demonstration records; isolated API/Chrome doubles; not live user data.",
+      "captureRoute": "http://127.0.0.1:5213/preview/newtab.html?scope=&theme=light&snapshots=on&personalAtlasStory=1#/"
+    },
+    {
+      "file": "screens/orbit-ai.webp",
+      "width": 1920,
+      "height": 1260,
+      "bytes": 96924,
+      "source": "artifacts/current-product/orbit-ai.png",
+      "sourceSha256": "cf70145b3efadd8e37b5c584a61e4d492b68006e692465f066f2b6414ca2ec39",
+      "variants": [
+        {
+          "file": "screens/orbit-ai-small.webp",
+          "width": 960,
+          "height": 630,
+          "bytes": 39956,
+          "source": "artifacts/current-product/orbit-ai.png",
+          "sourceSha256": "cf70145b3efadd8e37b5c584a61e4d492b68006e692465f066f2b6414ca2ec39"
+        },
+        {
+          "file": "screens/orbit-ai-detail.webp",
+          "width": 3200,
+          "height": 2100,
+          "bytes": 84052,
+          "source": "artifacts/current-product/orbit-ai.png",
+          "sourceSha256": "cf70145b3efadd8e37b5c584a61e4d492b68006e692465f066f2b6414ca2ec39"
+        }
+      ],
+      "processing": "Lossless responsive derivative of actual product component capture; no composited UI.",
+      "productCommit": "630b6d8fdcc4e58f03f175408e9d1d5d96730dd3",
+      "content": "Synthetic demonstration records; isolated API/Chrome doubles; not live user data.",
+      "captureRoute": "http://127.0.0.1:5213/preview/newtab.html?scope=&theme=light&snapshots=on&personalAtlasStory=1#/"
     },
     {
       "file": "screens/extension-timeline.webp",
-      "width": 1000,
-      "height": 2045,
-      "bytes": 244978,
-      "source": "artifacts/product-tour-2026-10-28/extension-sessions.png",
-      "sourceSha256": "d6e5b1bc1b4ff07918b1857df30c620b0c5413e31fee33019def71cdf0f0b68d",
+      "width": 920,
+      "height": 1880,
+      "bytes": 76862,
+      "source": "artifacts/current-product/extension-timeline.png",
+      "sourceSha256": "9127c7b115ce2beb31e384ff347cbf5882aeec0d1d4fb52f871cf005019326d8",
       "variants": [
         {
           "file": "screens/extension-timeline-small.webp",
-          "width": 500,
-          "height": 1023,
-          "bytes": 99630,
-          "source": "artifacts/product-tour-2026-10-28/extension-sessions.png",
-          "sourceSha256": "d6e5b1bc1b4ff07918b1857df30c620b0c5413e31fee33019def71cdf0f0b68d"
+          "width": 460,
+          "height": 940,
+          "bytes": 77876,
+          "source": "artifacts/current-product/extension-timeline.png",
+          "sourceSha256": "9127c7b115ce2beb31e384ff347cbf5882aeec0d1d4fb52f871cf005019326d8"
         },
         {
           "file": "screens/extension-timeline-detail.webp",
-          "width": 2640,
-          "height": 5400,
-          "bytes": 354404,
-          "source": "artifacts/product-tour-2026-10-28/extension-sessions.png",
-          "sourceSha256": "d6e5b1bc1b4ff07918b1857df30c620b0c5413e31fee33019def71cdf0f0b68d"
+          "width": 920,
+          "height": 1880,
+          "bytes": 76862,
+          "source": "artifacts/current-product/extension-timeline.png",
+          "sourceSha256": "9127c7b115ce2beb31e384ff347cbf5882aeec0d1d4fb52f871cf005019326d8"
         }
       ],
-      "processing": "Lossless responsive resize; no UI text, controls or member data composited into the capture.",
-      "backend": "Latest application 059aa45 preview fixtures, not live user data."
+      "processing": "Lossless responsive derivative of actual product component capture; no composited UI.",
+      "productCommit": "630b6d8fdcc4e58f03f175408e9d1d5d96730dd3",
+      "content": "Synthetic demonstration records; isolated API/Chrome doubles; not live user data.",
+      "captureRoute": "http://127.0.0.1:5213/preview/sidepanel.html?scope=&theme=light"
+    },
+    {
+      "file": "screens/restore-before.webp",
+      "width": 670,
+      "height": 408,
+      "bytes": 62426,
+      "source": "artifacts/current-product/restore-before.png",
+      "sourceSha256": "bd4d70d14bb8fcaf35a8074685697c88c7c46883c7a33bafa3a460d26c27bf8b",
+      "variants": [
+        {
+          "file": "screens/restore-before-small.webp",
+          "width": 336,
+          "height": 205,
+          "bytes": 29734,
+          "source": "artifacts/current-product/restore-before.png",
+          "sourceSha256": "bd4d70d14bb8fcaf35a8074685697c88c7c46883c7a33bafa3a460d26c27bf8b"
+        },
+        {
+          "file": "screens/restore-before-detail.webp",
+          "width": 670,
+          "height": 408,
+          "bytes": 62426,
+          "source": "artifacts/current-product/restore-before.png",
+          "sourceSha256": "bd4d70d14bb8fcaf35a8074685697c88c7c46883c7a33bafa3a460d26c27bf8b"
+        }
+      ],
+      "processing": "Lossless responsive derivative of actual product component capture; no composited UI.",
+      "productCommit": "630b6d8fdcc4e58f03f175408e9d1d5d96730dd3",
+      "content": "Synthetic demonstration records; isolated API/Chrome doubles; not live user data.",
+      "captureRoute": "http://127.0.0.1:5213/preview/newtab.html?scope=&theme=light&snapshots=on&personalAtlasStory=1#/orbit-atlas?session=s-jeju"
+    },
+    {
+      "file": "screens/restore-after.webp",
+      "width": 670,
+      "height": 408,
+      "bytes": 63056,
+      "source": "artifacts/current-product/restore-after.png",
+      "sourceSha256": "b93dc083e3fca2ec069b5b86e8d09b04a31b3059cc10b74f9d086e952314feb9",
+      "variants": [
+        {
+          "file": "screens/restore-after-small.webp",
+          "width": 336,
+          "height": 205,
+          "bytes": 29964,
+          "source": "artifacts/current-product/restore-after.png",
+          "sourceSha256": "b93dc083e3fca2ec069b5b86e8d09b04a31b3059cc10b74f9d086e952314feb9"
+        },
+        {
+          "file": "screens/restore-after-detail.webp",
+          "width": 670,
+          "height": 408,
+          "bytes": 63056,
+          "source": "artifacts/current-product/restore-after.png",
+          "sourceSha256": "b93dc083e3fca2ec069b5b86e8d09b04a31b3059cc10b74f9d086e952314feb9"
+        }
+      ],
+      "processing": "Lossless responsive derivative of actual product component capture; no composited UI.",
+      "productCommit": "630b6d8fdcc4e58f03f175408e9d1d5d96730dd3",
+      "content": "Synthetic demonstration records; isolated API/Chrome doubles; not live user data.",
+      "captureRoute": "http://127.0.0.1:5213/preview/newtab.html?scope=&theme=light&snapshots=on&personalAtlasStory=1#/orbit-atlas?session=s-jeju"
     },
     {
       "file": "screens/team-collect-start.webp",
-      "width": 1000,
-      "height": 281,
-      "bytes": 19228,
-      "source": "artifacts/product-tour-2026-10-28/team-collect-start-sheet.png",
-      "sourceSha256": "77c9aa3a5bc22f5a33a8a2625c82ed752af11745ec3fbaf14b1594262a512bb9",
+      "width": 760,
+      "height": 619,
+      "bytes": 22648,
+      "source": "artifacts/current-product/team-collect-start.png",
+      "sourceSha256": "f1f531b6923d28fabbb07d5c096f797a7d41924a78379bf650dc3abe5d120e7c",
       "variants": [
         {
           "file": "screens/team-collect-start-small.webp",
-          "width": 500,
-          "height": 140,
-          "bytes": 8484,
-          "source": "artifacts/product-tour-2026-10-28/team-collect-start-sheet.png",
-          "sourceSha256": "77c9aa3a5bc22f5a33a8a2625c82ed752af11745ec3fbaf14b1594262a512bb9"
+          "width": 380,
+          "height": 310,
+          "bytes": 23412,
+          "source": "artifacts/current-product/team-collect-start.png",
+          "sourceSha256": "f1f531b6923d28fabbb07d5c096f797a7d41924a78379bf650dc3abe5d120e7c"
         },
         {
           "file": "screens/team-collect-start-detail.webp",
-          "width": 2085,
-          "height": 1748,
-          "bytes": 332182,
-          "source": "artifacts/product-tour-2026-10-28/team-collect-start-sheet.png",
-          "sourceSha256": "77c9aa3a5bc22f5a33a8a2625c82ed752af11745ec3fbaf14b1594262a512bb9"
+          "width": 760,
+          "height": 619,
+          "bytes": 22648,
+          "source": "artifacts/current-product/team-collect-start.png",
+          "sourceSha256": "f1f531b6923d28fabbb07d5c096f797a7d41924a78379bf650dc3abe5d120e7c"
         }
       ],
-      "processing": "Lossless responsive resize; no UI text, controls or member data composited into the capture.",
-      "backend": "Latest application 059aa45 preview fixtures, not live user data.",
-      "crop": [
-        45,
-        1190,
-        2130,
-        1775
+      "processing": "Lossless responsive derivative of actual product component capture; no composited UI.",
+      "productCommit": "630b6d8fdcc4e58f03f175408e9d1d5d96730dd3",
+      "content": "Synthetic demonstration records; isolated API/Chrome doubles; not live user data.",
+      "captureRoute": "http://127.0.0.1:5213/preview/newtab.html?scope=&theme=light&snapshots=on&personalAtlasStory=1#/orbit-atlas?session=s-jeju"
+    },
+    {
+      "file": "screens/team-sharing.webp",
+      "width": 544,
+      "height": 970,
+      "bytes": 18460,
+      "source": "artifacts/current-product/team-sharing.png",
+      "sourceSha256": "638afdf376cc65567d8eaac71f3d72d06662bce37f4228efe6a1b008b8920749",
+      "variants": [
+        {
+          "file": "screens/team-sharing-small.webp",
+          "width": 272,
+          "height": 485,
+          "bytes": 18574,
+          "source": "artifacts/current-product/team-sharing.png",
+          "sourceSha256": "638afdf376cc65567d8eaac71f3d72d06662bce37f4228efe6a1b008b8920749"
+        },
+        {
+          "file": "screens/team-sharing-detail.webp",
+          "width": 544,
+          "height": 970,
+          "bytes": 18460,
+          "source": "artifacts/current-product/team-sharing.png",
+          "sourceSha256": "638afdf376cc65567d8eaac71f3d72d06662bce37f4228efe6a1b008b8920749"
+        }
       ],
-      "detailUncropped": true
+      "processing": "Lossless responsive derivative of actual product component capture; no composited UI.",
+      "productCommit": "630b6d8fdcc4e58f03f175408e9d1d5d96730dd3",
+      "content": "Synthetic demonstration records; isolated API/Chrome doubles; not live user data.",
+      "captureRoute": "http://127.0.0.1:5213/preview/newtab.html?scope=&theme=light&snapshots=on&personalAtlasStory=1#/orbit-atlas?session=s-jeju"
     },
     {
       "file": "screens/team-atlas.webp",
       "width": 1920,
-      "height": 1333,
-      "bytes": 370880,
-      "source": "artifacts/team-atlas-frames/banner-joint-atlas.png",
-      "sourceSha256": "71e0e6504b0eee5ad9530d2ef8c344061ed63d6fd97fecba827d175306b6d2d9",
+      "height": 912,
+      "bytes": 147306,
+      "source": "artifacts/current-product/team-atlas.png",
+      "sourceSha256": "e8d377489b491ffd6429402f0179cde1a97a327a18a890852c715d44147e615a",
       "variants": [
         {
           "file": "screens/team-atlas-small.webp",
           "width": 960,
-          "height": 667,
-          "bytes": 132098,
-          "source": "artifacts/team-atlas-frames/banner-joint-atlas.png",
-          "sourceSha256": "71e0e6504b0eee5ad9530d2ef8c344061ed63d6fd97fecba827d175306b6d2d9"
+          "height": 456,
+          "bytes": 48290,
+          "source": "artifacts/current-product/team-atlas.png",
+          "sourceSha256": "e8d377489b491ffd6429402f0179cde1a97a327a18a890852c715d44147e615a"
         },
         {
           "file": "screens/team-atlas-detail.webp",
-          "width": 3600,
-          "height": 2500,
-          "bytes": 895530,
-          "source": "artifacts/team-atlas-frames/banner-joint-atlas.png",
-          "sourceSha256": "71e0e6504b0eee5ad9530d2ef8c344061ed63d6fd97fecba827d175306b6d2d9"
+          "width": 3200,
+          "height": 1520,
+          "bytes": 148392,
+          "source": "artifacts/current-product/team-atlas.png",
+          "sourceSha256": "e8d377489b491ffd6429402f0179cde1a97a327a18a890852c715d44147e615a"
         }
       ],
-      "processing": "Lossless resize of actual product joint Atlas; no UI compositing.",
-      "backend": "059aa45 + feat/team-atlas-contributors; synthetic public-doc visits, not live user data."
+      "processing": "Lossless responsive derivative of actual product component capture; no composited UI.",
+      "productCommit": "630b6d8fdcc4e58f03f175408e9d1d5d96730dd3",
+      "content": "Synthetic demonstration records; isolated API/Chrome doubles; not live user data.",
+      "captureRoute": "Team story frame 6; see team-atlas-frames/provenance.json"
+    },
+    {
+      "file": "screens/atlas-detail.webp",
+      "width": 1600,
+      "height": 1000,
+      "bytes": 235118,
+      "source": "artifacts/current-product/atlas-detail.png",
+      "sourceSha256": "9185963d8ebaef68df350f29377f280ad3f73ff8efec55414d164c90bc0b9801",
+      "variants": [
+        {
+          "file": "screens/atlas-detail-small.webp",
+          "width": 800,
+          "height": 500,
+          "bytes": 81018,
+          "source": "artifacts/current-product/atlas-detail.png",
+          "sourceSha256": "9185963d8ebaef68df350f29377f280ad3f73ff8efec55414d164c90bc0b9801"
+        },
+        {
+          "file": "screens/atlas-detail-detail.webp",
+          "width": 3200,
+          "height": 2000,
+          "bytes": 491380,
+          "source": "artifacts/current-product/atlas-detail.png",
+          "sourceSha256": "9185963d8ebaef68df350f29377f280ad3f73ff8efec55414d164c90bc0b9801"
+        }
+      ],
+      "processing": "Lossless responsive derivative of actual product component capture; no composited UI.",
+      "productCommit": "630b6d8fdcc4e58f03f175408e9d1d5d96730dd3",
+      "content": "Synthetic demonstration records; isolated API/Chrome doubles; not live user data.",
+      "captureRoute": "http://127.0.0.1:5213/preview/newtab.html?scope=&theme=light&snapshots=on&personalAtlasStory=1#/orbit-atlas?session=s-jeju"
+    },
+    {
+      "file": "screens/timeline.webp",
+      "width": 920,
+      "height": 1880,
+      "bytes": 54348,
+      "source": "artifacts/current-product/timeline.png",
+      "sourceSha256": "271c51c7500d0d3d80bd58df8d067f9a9afba497f47127b2b9c4cc389787c8f6",
+      "variants": [
+        {
+          "file": "screens/timeline-small.webp",
+          "width": 460,
+          "height": 940,
+          "bytes": 57526,
+          "source": "artifacts/current-product/timeline.png",
+          "sourceSha256": "271c51c7500d0d3d80bd58df8d067f9a9afba497f47127b2b9c4cc389787c8f6"
+        },
+        {
+          "file": "screens/timeline-detail.webp",
+          "width": 920,
+          "height": 1880,
+          "bytes": 54348,
+          "source": "artifacts/current-product/timeline.png",
+          "sourceSha256": "271c51c7500d0d3d80bd58df8d067f9a9afba497f47127b2b9c4cc389787c8f6"
+        }
+      ],
+      "processing": "Lossless responsive derivative of actual product component capture; no composited UI.",
+      "productCommit": "630b6d8fdcc4e58f03f175408e9d1d5d96730dd3",
+      "content": "Synthetic demonstration records; isolated API/Chrome doubles; not live user data.",
+      "captureRoute": "http://127.0.0.1:5213/preview/sidepanel.html?scope=&theme=light"
     }
   ],
   "notice": "Product screens use demonstration fixture data. Named demo users are not real Orbit team member profiles.",
@@ -529,5 +622,6 @@
     "uiModified": false,
     "scope": "w-capstone",
     "backend": "preview-mock"
-  }
+  },
+  "currentProductCommit": "630b6d8fdcc4e58f03f175408e9d1d5d96730dd3"
 }

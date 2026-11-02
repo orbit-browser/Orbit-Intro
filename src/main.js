@@ -174,7 +174,8 @@ const gallerySelectors = {
   "atlas-detail": ".atlas-close img[data-detail]",
   extension: ".extension-live img[data-detail]",
   "team-atlas": ".team-atlas-screen img[data-detail]",
-  collection: ".collect-controls img[data-detail]",
+  collection: ".collect-controls:not(.share-controls) img[data-detail]",
+  sharing: ".share-controls img[data-detail]",
 };
 function resetZoom() {
   viewerViewport.classList.remove("is-zoomed");

@@ -2,85 +2,12 @@
   "notice": "Synthetic fixture records, actual Orbit UI. No real users, private snapshots, or recorded audio.",
   "videos": [
     {
-      "name": "team",
-      "file": "team.mp4",
-      "poster": "team.webp",
-      "recordedAt": "2026-10-28T11:34:05.022Z",
-      "previewUrl": "http://127.0.0.1:5187/preview/newtab.html?scope=w-team-stream&theme=light&teamStoryFrame=6#/orbit-atlas?session=s-team-stream-u-me",
-      "content": "Actual Orbit preview components with synthetic demonstration records; public page captures only.",
-      "capture": {
-        "width": 1600,
-        "height": 760,
-        "frames": 96,
-        "fps": 30,
-        "seconds": 3.2,
-        "pageCount": 6,
-        "fullRotations": 1,
-        "navigatorOpen": false,
-        "method": "Actual AtlasGallery pointer drag; reduced-motion interpolation disabled only in capture browser.",
-        "spacingPx": 220,
-        "dragGain": 1.5
-      },
-      "encoding": {
-        "codec": "h264",
-        "pixelFormat": "yuv420p",
-        "crf": 18,
-        "keyframeInterval": 8,
-        "faststart": true,
-        "audioStreams": 0
-      },
-      "bytes": 2085278,
-      "sha256": "e6e8d23c7ad9052df5c3b6e93ef0ddfc4a4e82dc21efcb93227d84859e40b4d0",
-      "posterSha256": "25bbd9d1a326075a25ad72c8d3544c402cc3377c692e5db35c8753dfcc3e608d",
-      "sourceCaptures": [
-        {
-          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events",
-          "file": "mdn-sse.jpg",
-          "recorded_at": "2026-10-28T11:05:08.783Z",
-          "sha256": "9c599fb38fce359b52df7e830c98e7030fc9103a9ce7d7a767605c5aa724b5fa"
-        },
-        {
-          "url": "https://platform.openai.com/docs/guides/structured-outputs",
-          "file": "openai-structured.jpg",
-          "recorded_at": "2026-10-28T11:05:08.788Z",
-          "sha256": "284b113c08cd70a1c93b94bc73ce051c9f47aee983d43d7a2b7f1e6874c3ed7e"
-        },
-        {
-          "url": "https://fastapi.tiangolo.com/tutorial/dependencies/dependencies-with-yield/",
-          "final_url": "https://fastapi.tiangolo.com/tutorial/dependencies/dependencies-with-yield/",
-          "file": "fastapi-dependencies.jpg",
-          "recorded_at": "2026-10-28T11:05:16.675Z",
-          "sha256": "21aa24741dd3150bd35c01dc10e2c1f992e8eeca2f048ec3af68246ebefb2b2f"
-        },
-        {
-          "url": "https://platform.openai.com/docs/guides/streaming-responses",
-          "final_url": "https://developers.openai.com/api/docs/guides/streaming-responses?api-mode=responses",
-          "file": "openai-streaming.jpg",
-          "recorded_at": "2026-10-28T11:05:22.280Z",
-          "sha256": "a99b403845ab675d67cb284bb6e1050c43e98f971d9bb0cc1d69fb74e11e9ca6"
-        },
-        {
-          "url": "https://fastapi.tiangolo.com/advanced/custom-response/#streamingresponse",
-          "final_url": "https://fastapi.tiangolo.com/advanced/custom-response/#streamingresponse",
-          "file": "fastapi-streaming.jpg",
-          "recorded_at": "2026-10-28T11:05:27.516Z",
-          "sha256": "0ac88683a15b5e0fe5b7239e789c6a7bbb2dd616b801830b9b6cb9803b5374b4"
-        },
-        {
-          "url": "https://fastapi.tiangolo.com/tutorial/background-tasks/",
-          "final_url": "https://fastapi.tiangolo.com/tutorial/background-tasks/",
-          "file": "fastapi-background.jpg",
-          "recorded_at": "2026-10-28T11:05:32.751Z",
-          "sha256": "9627679680da11a0c530be175bb6529a8049350d79ebf2692edf0a5f1849e042"
-        }
-      ]
-    },
-    {
+      "productCommit": "630b6d8fdcc4e58f03f175408e9d1d5d96730dd3",
       "name": "personal",
       "file": "personal.mp4",
       "poster": "personal.webp",
-      "recordedAt": "2026-10-28T11:43:14.501Z",
-      "previewUrl": "http://127.0.0.1:5187/preview/newtab.html?scope=&theme=light&personalAtlasStory=1#/orbit-atlas?session=s-jeju",
+      "recordedAt": "2026-11-02T05:33:46.354Z",
+      "previewUrl": "http://127.0.0.1:5213/preview/newtab.html?scope=&theme=light&snapshots=on&personalAtlasStory=1#/orbit-atlas?session=s-jeju",
       "content": "Actual Orbit preview components with synthetic demonstration records; public page captures only.",
       "capture": {
         "width": 1600,
@@ -91,8 +18,8 @@
         "pageCount": 8,
         "fullRotations": 1,
         "navigatorOpen": true,
-        "method": "Actual AtlasGallery pointer drag; reduced-motion interpolation disabled only in capture browser.",
-        "spacingPx": 220,
+        "method": "Two actual AtlasGallery pointer drags; reduced-motion interpolation disabled only in capture browser.",
+        "spacingPx": 334,
         "dragGain": 1.5
       },
       "encoding": {
@@ -103,9 +30,9 @@
         "faststart": true,
         "audioStreams": 0
       },
-      "bytes": 1944401,
-      "sha256": "e1e54cdf8baf506d0fb9ffd5a5c2fb2a963e916f170916adf3ee876b878e6603",
-      "posterSha256": "5003c020048a080d17d8f4be1e94a94e3e16401812e8de3c7e3e3c1f5f63ef17",
+      "bytes": 1549910,
+      "sha256": "b2807dfc3a4e670b3c2a226ab081131f9c24af9e6e8318ad5f57386ab88c7b91",
+      "posterSha256": "4869d8e103d10d3363261fb8c32e2f6d1551272c73ef535943255709600208f3",
       "sourceCaptures": [
         {
           "url": "https://m.visitjeju.net/kr/detail/view?contentsid=CONT_000000000500349&menuId=DOM_700000000010795",
@@ -154,6 +81,81 @@
           "file": "seopjikoji.webp",
           "recorded_at": "2026-10-28T11:28:52.128585+00:00",
           "sha256": "01bd1b7efb783a8afc2dc6a3bc2c46157067422adf5838d298c92b7b09a555f9"
+        }
+      ]
+    },
+    {
+      "productCommit": "630b6d8fdcc4e58f03f175408e9d1d5d96730dd3",
+      "name": "team",
+      "file": "team.mp4",
+      "poster": "team.webp",
+      "recordedAt": "2026-11-02T05:36:55.250Z",
+      "previewUrl": "http://127.0.0.1:5213/preview/newtab.html?scope=w-team-stream&theme=light&snapshots=off&teamStoryFrame=6#/orbit-atlas?session=s-team-stream-u-me",
+      "content": "Actual Orbit team orbit with synthetic records; no shared screenshots. Source captures identify the public documents in the member-browser scene.",
+      "capture": {
+        "width": 1600,
+        "height": 760,
+        "frames": 96,
+        "fps": 30,
+        "seconds": 3.2,
+        "pageCount": 6,
+        "fullRotations": 1,
+        "navigatorOpen": false,
+        "method": "Actual orbit page-navigation buttons, six steps returning to the first page. No shared screenshots.",
+        "spacingPx": null,
+        "dragGain": null
+      },
+      "encoding": {
+        "codec": "h264",
+        "pixelFormat": "yuv420p",
+        "crf": 18,
+        "keyframeInterval": 8,
+        "faststart": true,
+        "audioStreams": 0
+      },
+      "bytes": 491722,
+      "sha256": "3f061a44cd8f2b3ce4088f3f7c82604127814b4669a5344db849476d93d86c21",
+      "posterSha256": "13d65d9363826cc9f3a3557090d3426835479d97fc3445dfd47ba76569a60c77",
+      "sourceCaptures": [
+        {
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events",
+          "file": "mdn-sse.jpg",
+          "recorded_at": "2026-10-28T11:05:08.783Z",
+          "sha256": "9c599fb38fce359b52df7e830c98e7030fc9103a9ce7d7a767605c5aa724b5fa"
+        },
+        {
+          "url": "https://platform.openai.com/docs/guides/structured-outputs",
+          "file": "openai-structured.jpg",
+          "recorded_at": "2026-10-28T11:05:08.788Z",
+          "sha256": "284b113c08cd70a1c93b94bc73ce051c9f47aee983d43d7a2b7f1e6874c3ed7e"
+        },
+        {
+          "url": "https://fastapi.tiangolo.com/tutorial/dependencies/dependencies-with-yield/",
+          "final_url": "https://fastapi.tiangolo.com/tutorial/dependencies/dependencies-with-yield/",
+          "file": "fastapi-dependencies.jpg",
+          "recorded_at": "2026-10-28T11:05:16.675Z",
+          "sha256": "21aa24741dd3150bd35c01dc10e2c1f992e8eeca2f048ec3af68246ebefb2b2f"
+        },
+        {
+          "url": "https://platform.openai.com/docs/guides/streaming-responses",
+          "final_url": "https://developers.openai.com/api/docs/guides/streaming-responses?api-mode=responses",
+          "file": "openai-streaming.jpg",
+          "recorded_at": "2026-10-28T11:05:22.280Z",
+          "sha256": "a99b403845ab675d67cb284bb6e1050c43e98f971d9bb0cc1d69fb74e11e9ca6"
+        },
+        {
+          "url": "https://fastapi.tiangolo.com/advanced/custom-response/#streamingresponse",
+          "final_url": "https://fastapi.tiangolo.com/advanced/custom-response/#streamingresponse",
+          "file": "fastapi-streaming.jpg",
+          "recorded_at": "2026-10-28T11:05:27.516Z",
+          "sha256": "0ac88683a15b5e0fe5b7239e789c6a7bbb2dd616b801830b9b6cb9803b5374b4"
+        },
+        {
+          "url": "https://fastapi.tiangolo.com/tutorial/background-tasks/",
+          "final_url": "https://fastapi.tiangolo.com/tutorial/background-tasks/",
+          "file": "fastapi-background.jpg",
+          "recorded_at": "2026-10-28T11:05:32.751Z",
+          "sha256": "9627679680da11a0c530be175bb6529a8049350d79ebf2692edf0a5f1849e042"
         }
       ]
     }

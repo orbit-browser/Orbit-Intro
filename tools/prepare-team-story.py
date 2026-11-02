@@ -13,6 +13,6 @@ public=Path(os.environ['ORBIT_PRODUCT_ROOT'])/'extension/preview/out/team-atlas-
 pages=assets/'team-pages';pages.mkdir(exist_ok=True)
 for r in json.loads((public/'provenance.json').read_text()):
  im=Image.open(public/r['file']).convert('RGB');im.thumbnail((720,1000),Image.Resampling.LANCZOS);dest=pages/(Path(r['file']).stem+'.webp');im.save(dest,'WEBP',quality=90,method=6)
-record={'productBase':'059aa45','productBranch':'feat/team-atlas-contributors','mode':'Actual product components with synthetic public-document visits; not authenticated two-user E2E.','captureRoute':'http://127.0.0.1:5187/preview/newtab.html?scope=w-team-stream&theme=light&teamStoryFrame={0..6}#/orbit-atlas?session=s-team-stream-u-me','frames':record,'pages':json.loads((public/'provenance.json').read_text())}
+record={'productBase':'630b6d8fdcc4e58f03f175408e9d1d5d96730dd3','productBranch':'main','mode':'Actual product components with synthetic public-document visits; not authenticated two-user E2E. Team destination contains no uploaded screenshots.','captureRoute':'http://127.0.0.1:5213/preview/newtab.html?scope=w-team-stream&theme=light&snapshots=on&teamStoryFrame={0..6}#/orbit-atlas?session=s-team-stream-u-me','frames':record,'pages':json.loads((public/'provenance.json').read_text())}
 (out/'provenance.json').write_text(json.dumps(record,ensure_ascii=False,indent=2))
 print('Frame bytes',sum(r['bytes'] for r in record['frames']))

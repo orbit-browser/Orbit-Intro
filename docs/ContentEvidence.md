@@ -11,11 +11,17 @@ Primary source: the Orbit application repository, its README and current exhibit
 - Collaboration: past sessions can be shared explicitly; opt-in new team exploration accumulates in a shared Atlas with contributors. Team AI is not promoted on the introduction page.
 - Stack: Chrome MV3, WXT, React, TypeScript; FastAPI, PostgreSQL and Qdrant.
 
-Latest application main `059aa45` confirms team collection windows, per-device opt-in, selected duration, pause/stop, exclusions and automatic sharing of each member’s sessions. `sync_pipeline` partitions records by user and workspace; `session_updater` rejects cross-owner appends. The accompanying local product branch `feat/team-atlas-contributors` now adds an authorized read projection over related collected source sessions, preserving original ownership. The UI combines their visits and shows exact contributors; unrelated and manually shared sessions remain separate. This is not a new destructive cross-owner stored session.
+Current published product main is `630b6d8fdcc4e58f03f175408e9d1d5d96730dd3` (November 2). Its application tree matches the local capture checkout. Evidence inspected: `VariantAtlasReplica`, `AtlasGallery`, `AtlasPageCard`, `AtlasDetail`, `AtlasOpenControl`, `useAtlasContextMenu`, `TeamCollectControl`, `tab-snapshots`, and the folder-classification policy and tests. Product files remain untouched.
 
-The product tour now covers the Atlas session/page design, folders and restore, Chrome sidepanel expanded sessions, personal AI retrieval, team Atlas and collection controls. Actual application preview was launched and operated to capture these screens. It uses demo fixtures and approved page-image mappings; it is not evidence of a two-account shared-backend test. The personal Atlas recording shows the explicitly requested preview-enabled state of an isolated synthetic fixture. Real extension settings and browser permissions are not changed by the capture.
+- Personal Atlas combines captured image, page metadata and opening actions into one card. Its original orbit remains available when previews are off. Selected session context stays above the detail pane.
+- Restore offers current-window/new-window destinations. Session/page menus explicitly select a team to share with; workspace browsing selection does not start collection.
+- The flag selects a collection team, shows consent information, and starts collection until stopped (or all Chrome windows close). Membership/owner eligibility and sensitive/excluded URL rules still apply. Duration selection is gone.
+- Preview capture is optional, local to this device, and not uploaded to the team server. Mixed-author team sessions currently render orbit/page information rather than shared screenshots. The updated team frames and video preserve this actual behavior. The separate member-browser illustrations show their public source pages, not uploaded team images.
+- Folder auto-classification needs at least two fresh manually placed examples; ambiguous cases become suggestions. An empty folder name alone does not classify history.
 
-Collection-control base images crop the actual time selector; their detail view retains the full consent sheet. Editorial author labels and connecting graphics sit outside screenshots. The new participant badges and joint session shown in the Atlas are rendered by the implemented product components from the new DTO; they are not painted onto a screenshot. The six visits are explicitly synthetic demonstration records.
+All renewed product screenshots and video frames are actual current components operated in an isolated preview with synthetic records and API/Chrome doubles. Only previously approved public-page images enter the personal capture map. Screens are not live backend or authenticated two-account E2E evidence. No DOM text/style was replaced to fabricate controls. `tools/capture-current-product.mjs`, `capture-team-atlas.mjs` and `capture-atlas-orbits.mjs` record sources; responsive WebP derivatives preserve source hashes and product revision. Detail images retain original resolution and load on demand.
+
+The original hero, logo, palette, section order and printed banners remain unchanged. The supplied YouTube link is retained as **대회 시연 영상**: historical footage, not a new product recording.
 
 ## Team and project status
 
@@ -48,13 +54,13 @@ The product screens contain **demonstration data**. 김오르빗, 박지은 and 
 
 Locally served Inter, Noto Sans KR, JetBrains Mono and Oswald. Their upstream SIL Open Font License notices are included in `src/assets/fonts/licenses/`.
 
-## Interactive exploration and team story, 2026-10-28
+## Historical implementation: October 28 (screens superseded November 2)
 
 The introduction no longer exposes Team AI text or its answer screen. The personal Orbit AI section remains. The eight-page Atlas demonstration is a recording of the real internal product UI, operated with pointer dragging during capture and scrubbed by native page scrolling on this introduction site. It makes one complete revolution and returns to its starting page. It is labelled as a demonstration; reduced motion keeps a static real screen.
 
 The team story shows three synthetic members and their six actual public documentation captures. Scrolling first selects frames 0–6 captured from the real product preview, then advances a full revolution of that same six-page gallery. Reverse scrolling rewinds both phases. `assets/team-atlas-frames/provenance.json` records the product base/branch, exact route, source checksums and public page URLs. No private application source, secrets, report PDF, user browsing records or API access is published. This scene is not a live authenticated multi-account integration test.
 
 
-## Actual Atlas revolutions, 2026-10-28
+## Historical recording method: October 28
 
 `assets/atlas-orbits/provenance.json` records the actual preview routes, public page mappings and recording metadata. The MP4 files have no audio and no automatic playback; the website seeks the recording to native scroll position. These are public demonstration recordings, not a live embedded application. Personal Atlas now shows the preview-enabled fixture state, so the introduction has no enable-preview prompt. The original peach team background and the seven exhibition banners are unchanged.

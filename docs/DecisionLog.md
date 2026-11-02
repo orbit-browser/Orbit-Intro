@@ -1,3 +1,13 @@
+# 2026-11-02 — Current product, continuous exhibition story
+
+- Keep the published URL, original hero/brand/palette/chapter order so printed banner QR links still lead into the same product narrative. User approved refreshing and publishing the site.
+- Replace product screenshots, collection frames and recordings with current actual components. Add cards/orbit demonstration selection without changing native page scrolling. Existing detail viewer remains the full-screen inspection path.
+- Team collection chooses a workspace independently of the viewed workspace and runs until stopped. Explicit session/page sharing is a complementary path. Describe local-only screenshots accurately; do not imply uploaded team thumbnails or public installation availability.
+- Preserve supplied older YouTube footage under the label “대회 시연 영상”. Do not invent a newer video or display an alarming old-version notice.
+- Keep GitHub Pages and the existing dependency-free build. Capture utilities use an isolated browser and synthetic transport, not the user's signed-in profile. Asset-only Python tooling is temporary and does not add a runtime dependency.
+
+---
+
 # Decisions
 
 ## 2026-10-28 — Static, motion-led editorial website

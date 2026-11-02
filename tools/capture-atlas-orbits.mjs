@@ -9,16 +9,16 @@ import assert from 'node:assert/strict';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const artifactRoot = resolve(root, 'artifacts/atlas-orbits');
 const outputRoot = resolve(root, 'src/assets/atlas-orbits');
-const preview = process.env.ATLAS_PREVIEW_BASE ?? 'http://127.0.0.1:5187';
+const preview = process.env.ATLAS_PREVIEW_BASE ?? 'http://127.0.0.1:5213';
 const fixtureRoot = process.env.ATLAS_FIXTURE_ROOT ?? resolve(root, '../orbit/Orbit/worktrees/feat-team-atlas-contributors/extension');
 const ffmpeg = process.env.FFMPEG ?? '/opt/homebrew/bin/ffmpeg';
 const ffprobe = process.env.FFPROBE ?? '/opt/homebrew/bin/ffprobe';
 const cwebp = process.env.CWEBP ?? '/opt/homebrew/bin/cwebp';
 const WIDTH = 1600, HEIGHT = 760, FRAMES = 96, FPS = 30;
-const SPACING = 220, DRAG_GAIN = 1.5;
+const DRAG_GAIN = 1.5;
 const modes = [
-  { name: 'personal', count: 8, nav: true, url: `${preview}/preview/newtab.html?scope=&theme=light&personalAtlasStory=1#/orbit-atlas?session=s-jeju`, publicManifest: 'preview/out/personal-atlas-public/provenance.json' },
-  { name: 'team', count: 6, nav: false, url: `${preview}/preview/newtab.html?scope=w-team-stream&theme=light&teamStoryFrame=6#/orbit-atlas?session=s-team-stream-u-me`, publicManifest: 'preview/out/team-atlas-public/provenance.json' },
+  { name: 'personal', count: 8, nav: true, url: `${preview}/preview/newtab.html?scope=&theme=light&snapshots=on&personalAtlasStory=1#/orbit-atlas?session=s-jeju`, publicManifest: 'preview/out/personal-atlas-public/provenance.json' },
+  { name: 'team', count: 6, nav: false, url: `${preview}/preview/newtab.html?scope=w-team-stream&theme=light&snapshots=off&teamStoryFrame=6#/orbit-atlas?session=s-team-stream-u-me`, publicManifest: 'preview/out/team-atlas-public/provenance.json' },
 ];
 const only = process.argv.find((argument) => argument.startsWith('--only='))?.split('=')[1];
 const hash = (buffer) => createHash('sha256').update(buffer).digest('hex');
@@ -47,11 +47,29 @@ for (const mode of modes.filter((item) => !only || item.name === only)) {
     ` });
     // Input positions still use the actual AtlasGallery handlers and transforms. Reduced motion
     // removes interpolation between sampled positions; no component, DOM or visual style is replaced.
-    await browser.send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'reduce' }] });
+    if (mode.name === 'personal') await browser.send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'reduce' }] });
     await browser.goto(mode.url, { readyFlag: false, settle: 2500 });
     await browser.evaluate('document.fonts.ready');
+    if (mode.name === 'team') {
+      for (let attempt=0;attempt<150;attempt++) {
+        if(await browser.evaluate("document.querySelector('.atlas-session-tools__pages span')?.textContent.includes('/ 6')")) break;
+        if(attempt===149) throw new Error('Six-page team orbit did not load');
+        await sleep(200);
+      }
+      await browser.evaluate("[...document.querySelectorAll('button')].find(b=>b.textContent.trim()==='다시 보지 않기')?.click();document.querySelector('[aria-label=\"다음 페이지\"]').click()");
+      await sleep(800);
+      assert.equal(await browser.evaluate("document.querySelectorAll('.atlas-gallery__capture').length"),0);
+      for(let frame=0;frame<FRAMES;frame++) {
+        if(frame%16===1) await browser.evaluate("document.querySelector('[aria-label=\"다음 페이지\"]').click()");
+        await browser.evaluate('new Promise(r=>requestAnimationFrame(r))');
+        await browser.shot(resolve(frames,`frame-${String(frame).padStart(3,'0')}.png`));
+        if(frame%16===0||frame===95) samples.push({frame,page:await browser.evaluate("document.querySelector('.atlas-session-tools__pages span').textContent")});
+      }
+      assert.equal(samples[0].page,samples.at(-1).page);
+      await writeFile(resolve(frames,'capture.json'),JSON.stringify({mode,initial:{spacing:null},samples,console:browser.consoleLines},null,2)+'\n');
+    } else {
     for (let attempt = 0; attempt < 80; attempt += 1) {
-      const loaded = await browser.evaluate(`document.querySelectorAll('.atlas-gallery__card img').length === ${mode.count} && [...document.querySelectorAll('.atlas-gallery__card img')].every(image => image.complete && image.naturalWidth > 0)`);
+      const loaded = await browser.evaluate(`document.querySelectorAll('.atlas-gallery__card').length === ${mode.count} && [...document.querySelectorAll('.atlas-gallery__capture')].every(image => image.complete && image.naturalWidth > 0)`);
       if (loaded) break;
       if (attempt === 79) throw new Error(`${mode.name}: actual gallery images did not load`);
       await sleep(150);
@@ -71,39 +89,46 @@ for (const mode of modes.filter((item) => !only || item.name === only)) {
       const gallery = document.querySelector('.atlas-gallery');
       const rect = gallery.getBoundingClientRect();
       return { rect: rect.toJSON(), body: document.body.innerText, count: gallery.querySelectorAll('.atlas-gallery__card').length,
-        images: [...gallery.querySelectorAll('img')].map(image => ({ url: image.currentSrc, width: image.naturalWidth, height: image.naturalHeight })),
+        spacing: gallery.querySelector('.atlas-gallery__card').offsetWidth + 24, images: [...gallery.querySelectorAll('.atlas-gallery__capture')].map(image => ({ url: image.currentSrc, width: image.naturalWidth, height: image.naturalHeight })),
         nav: document.querySelector('.sidebar-toggle').getAttribute('aria-pressed') };
     })()`);
     assert.equal(initial.count, mode.count);
     assert.equal(initial.nav, String(mode.nav));
     assert(initial.images.every((image) => image.url.includes('/preview/out/')));
+    assert.equal(initial.images.length, mode.name === 'personal' ? mode.count : 0);
     if (mode.name === 'personal') assert(initial.body.includes('합성 탐색 시연'));
     const startX = Math.min(initial.rect.right - 8, WIDTH - 8);
-    const y = mode.nav ? initial.rect.bottom - 8 : initial.rect.top + 20;
-    const endX = startX - mode.count * SPACING / DRAG_GAIN;
-    assert(endX >= 0, 'Drag must remain inside the captured browser viewport');
-    const target = await browser.evaluate(`({ gallery: Boolean(document.elementFromPoint(${startX}, ${y})?.closest('.atlas-gallery')), element: document.elementFromPoint(${startX}, ${y})?.className })`);
-    assert(target.gallery, `Start of drag must target the actual gallery, found ${target.element}`);
-    await browser.send('Input.dispatchMouseEvent', { type: 'mouseMoved', x: startX, y });
-    await browser.send('Input.dispatchMouseEvent', { type: 'mousePressed', x: startX, y, button: 'left', buttons: 1, clickCount: 1 });
-    for (let frame = 0; frame < FRAMES; frame += 1) {
-      const position = mode.count * frame / (FRAMES - 1);
-      const x = startX - position * SPACING / DRAG_GAIN;
-      await browser.send('Input.dispatchMouseEvent', { type: 'mouseMoved', x, y, buttons: 1 });
-      await browser.evaluate('new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))');
-      const path = resolve(frames, `frame-${String(frame).padStart(3, '0')}.png`);
-      await browser.shot(path);
-      if ([0, 47, 48, 95].includes(frame)) {
-        const state = await browser.evaluate(`({ cards: [...document.querySelectorAll('.atlas-gallery__card')].map(card => ({ title: card.title, transform: card.style.transform, opacity: card.style.opacity })), count: document.querySelector('.atlas-rail__count')?.textContent })`);
-        samples.push({ frame, intendedPosition: position, ...state });
+    const y = initial.rect.bottom - 8;
+    const spacing = initial.spacing;
+    const segmentPages = mode.count / 2;
+    assert(startX - segmentPages * spacing / DRAG_GAIN >= initial.rect.left, 'Drag stays inside the gallery');
+    for (let segment = 0; segment < 2; segment++) {
+      await browser.send('Input.dispatchMouseEvent', { type: 'mouseMoved', x: startX, y });
+      await browser.send('Input.dispatchMouseEvent', { type: 'mousePressed', x: startX, y, button: 'left', buttons: 1, clickCount: 1 });
+      for (let localFrame = 0; localFrame < FRAMES / 2; localFrame++) {
+        const frame = segment * FRAMES / 2 + localFrame;
+        const localPosition = segmentPages * localFrame / (FRAMES / 2 - 1);
+        const position = segment * segmentPages + localPosition;
+        const x = startX - localPosition * spacing / DRAG_GAIN;
+        await browser.send('Input.dispatchMouseEvent', { type: 'mouseMoved', x, y, buttons: 1 });
+        await browser.evaluate('new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))');
+        await browser.shot(resolve(frames, `frame-${String(frame).padStart(3, '0')}.png`));
+        if ([0, 47, 48, 95].includes(frame)) {
+          const state = await browser.evaluate(`({ cards: [...document.querySelectorAll('.atlas-gallery__card')].map(card => ({ title: card.title, transform: card.style.transform, opacity: card.style.opacity })) })`);
+          samples.push({ frame, intendedPosition: position, ...state });
+        }
+        if (frame % 24 === 0 || frame === FRAMES - 1) console.log(`${mode.name}: ${frame + 1}/${FRAMES} frames`);
       }
-      if (frame % 24 === 0 || frame === FRAMES - 1) console.log(`${mode.name}: ${frame + 1}/${FRAMES} frames`);
+      const x = startX - segmentPages * spacing / DRAG_GAIN;
+      // A stationary final event clears pointer inertia before the next genuine drag.
+      await browser.send('Input.dispatchMouseEvent', { type: 'mouseMoved', x, y, buttons: 1 });
+      await browser.send('Input.dispatchMouseEvent', { type: 'mouseReleased', x, y, button: 'left', buttons: 0, clickCount: 1 });
+      await sleep(100);
     }
-    // The same first page is centered at both endpoints; releasing would invoke inertia,
-    // so the controlled drag stays down until the isolated browser is closed.
     const endOffset = Number(/translateX\(([-\d.e+]+)px\)/.exec(samples.at(-1).cards[0].transform)?.[1]);
     assert(Math.abs(endOffset) < 0.01, `First page must return to center, got ${endOffset}px`);
     await writeFile(resolve(frames, 'capture.json'), JSON.stringify({ mode, initial, samples, console: browser.consoleLines }, null, 2) + '\n');
+    }
   } finally {
     try { await browser.close(); } catch (error) {
       if (error.code !== 'ENOTEMPTY' || !error.path?.includes('orbit-intro-chrome-')) throw error;
@@ -127,9 +152,9 @@ for (const mode of modes.filter((item) => !only || item.name === only)) {
   assert.equal(Number(stream.nb_frames), FRAMES);
   assert.equal(Number(probe.format.duration), FRAMES / FPS);
   const result = {
-    name: mode.name, file: `${mode.name}.mp4`, poster: `${mode.name}.webp`, recordedAt: new Date().toISOString(),
-    previewUrl: mode.url, content: 'Actual Orbit preview components with synthetic demonstration records; public page captures only.',
-    capture: { width: WIDTH, height: HEIGHT, frames: FRAMES, fps: FPS, seconds: FRAMES / FPS, pageCount: mode.count, fullRotations: 1, navigatorOpen: mode.nav, method: 'Actual AtlasGallery pointer drag; reduced-motion interpolation disabled only in capture browser.', spacingPx: SPACING, dragGain: DRAG_GAIN },
+    productCommit: '630b6d8fdcc4e58f03f175408e9d1d5d96730dd3', name: mode.name, file: `${mode.name}.mp4`, poster: `${mode.name}.webp`, recordedAt: new Date().toISOString(),
+    previewUrl: mode.url, content: mode.name === 'personal' ? 'Actual Orbit preview components with synthetic demonstration records and approved public page captures.' : 'Actual Orbit team orbit with synthetic records; no shared screenshots. Source captures identify the public documents in the member-browser scene.',
+    capture: { width: WIDTH, height: HEIGHT, frames: FRAMES, fps: FPS, seconds: FRAMES / FPS, pageCount: mode.count, fullRotations: 1, navigatorOpen: mode.nav, method: mode.name === 'personal' ? 'Two actual AtlasGallery pointer drags; reduced-motion interpolation disabled only in capture browser.' : 'Actual orbit page-navigation buttons, six steps returning to the first page. No shared screenshots.', spacingPx: JSON.parse(await readFile(resolve(frames, 'capture.json'), 'utf8')).initial.spacing, dragGain: mode.name === 'personal' ? DRAG_GAIN : null },
     encoding: { codec: stream.codec_name, pixelFormat: stream.pix_fmt, crf: 18, keyframeInterval: 8, faststart: true, audioStreams: 0 },
     bytes: (await stat(video)).size, sha256: hash(await readFile(video)), posterSha256: hash(await readFile(poster)), sourceCaptures,
   };

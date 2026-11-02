@@ -1,5 +1,16 @@
 # Work log
 
+## 2026-11-02 — Refresh for current Orbit without breaking banner continuity
+
+- Worked on `feat/intro-current-product` from clean remote main `93244c2`; fetched again before publication and found no teammate divergence. Preserved original hero, logo, coral/ivory palette, section order, Pages URL and all printed banner files.
+- Replaced 10 existing visible product screens and added real orbit/share views using product main `630b6d8`'s component tree. Synthetic API/Chrome fixtures ran in temporary headless profiles. Personal preview images are approved public sources; no real account, browser history or private capture was accessed. Timeline additionally needs the local event queue, so populated that isolated queue with the same demo fixtures before recording the actual component.
+- Re-recorded personal unified-card traversal and all seven cumulative team frames. Team navigation uses actual orbit controls without remote screenshots. Updated responsive lossless WebP variants, video checksums, source hashes, product revision and local Korean font subset. Videos are 1,549,910 and 491,722 bytes, down from approximately 4 MB combined to 2 MB.
+- Added accessible cards/orbit selection preserving scroll position, current restore-before/after composition and explicit session/page sharing. Replaced duration/pause language with independent team choice and until-off collection. Added accurate local screenshot/optional preview and folder-example FAQ. Kept supplied historical video labelled as competition footage.
+- Validation: `npm run check` passes 13 tests, syntax and build; `node tools/check-browser.mjs` passes 320/390/768/1440 widths, image loading, no overflow, detail dialog/focus, tabs and motion; `node tools/check-interactions.mjs` passes FAQ transitions/reversal/reduced motion; `node tools/check-team-story.mjs` passes wheel/keyboard/touch/rewind/release, cards/orbit switching, reduced motion and failed-video poster fallback. Additional desktop/mobile sharing viewer checks pass. Visually reviewed refreshed desktop/mobile sections and raw captures.
+- Resolved capture/test issues before release: waited for loaded product data rather than timed loading screens; used real selection buttons for page detail; seeded the timeline's local queue; respected mixed-author team screenshot eligibility; native Enter simulation includes carriage-return text; temporary font tooling includes Brotli. These did not require product changes.
+- Updated Plan, ContentEvidence, DecisionLog, FontSubset and README. The capture preview is illustrative, not evidence of authenticated two-account backend E2E. No public installer or team screenshot hosting is claimed. Application checkout remains clean.
+- Publication: normal feature push and reviewed squash PR to existing Pages workflow; live deployment verification follows the merge. Previous site remains recoverable from `93244c2`.
+
 ## 2026-10-28 — Initial Orbit introduction
 
 - Cloned the supplied empty public Orbit-Intro repository and confirmed authenticated administrative permission. Implemented only in this repository on `feat/orbit-introduction`; application and exhibition assets were read-only references.

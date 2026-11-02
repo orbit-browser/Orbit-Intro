@@ -44,7 +44,7 @@ test("public copy keeps verified identities, consent and sharing boundaries", ()
     "임동건",
     "팀대표",
     "수집은 사용자가 켠 뒤",
-    "내가 고른 세션만",
+    "내가 고른 세션이나 페이지만",
     "Orbit AI",
   ])
     assert.ok(html.includes(copy), copy);
@@ -230,4 +230,18 @@ test("actual Atlas recordings match their public capture provenance", async () =
     assert.equal(video.sourceCaptures.length, video.capture.pageCount);
     for (const page of video.sourceCaptures) assert.ok(page.url.startsWith("https://"));
   }
+});
+
+test('the current tour uses one verified product revision and preserves privacy boundaries', () => {
+  const revision = '630b6d8fdcc4e58f03f175408e9d1d5d96730dd3';
+  assert.equal(provenance.currentProductCommit, revision);
+  for (const [, file] of html.matchAll(/src="\.\/assets\/(screens\/[^" ]+\.webp)"/g)) {
+    const image = provenance.screens.find(record => record.file === file);
+    assert.equal(image?.productCommit, revision, file);
+  }
+  assert.ok(html.includes('팀 서버로 업로드되지 않습니다'));
+  assert.ok(html.includes('보고 있던 화면은 그대로'));
+  assert.ok(html.includes('직접 끌 때까지'));
+  assert.ok(html.includes('대회 시연 영상'));
+  assert.doesNotMatch(html, /남은\s+시간을 확인|시간을 정해 시작|모든 탭 열기 버튼/);
 });

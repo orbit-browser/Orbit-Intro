@@ -2163,6 +2163,13 @@ h1 em,
   max-width: 1000px;
   margin-inline: auto;
 }
+.share-controls { margin-top: 72px; padding-top: 60px; border-top: 1px solid #2b25211c; }
+.share-controls .tour-screen { max-width: 300px; }
+.restore-composition { flex-direction:column; gap:12px; padding:24px 12px 40px; }
+.restore-composition .restore-before,.restore-composition .restore-after { position:relative; inset:auto; width:min(78%,380px); }
+.restore-composition .restore-before { align-self:flex-start; }
+.restore-composition .restore-after { align-self:flex-end; }
+.restore-composition .restore-arrow { position:static; align-self:center; font-size:38px; line-height:.8; }
 .collect-controls p {
   font-size: 15px;
   line-height: 1.9;

@@ -2,6 +2,14 @@
 .atlas-demo__pin { position:sticky; top:110px; }
 .atlas-demo__label { display:flex; justify-content:space-between; gap:20px; padding:0 2px 15px; font-size:12px; color:#78695d; }
 .atlas-demo__cue { color:#a26f54; }
+.atlas-demo__views { display:flex; align-items:center; gap:6px; margin-bottom:14px; }
+.atlas-demo__views button { padding:9px 16px; border:1px solid #2b252120; border-radius:24px; color:#78695d; background:transparent; font:inherit; font-size:12px; cursor:pointer; transition:background .2s,color .2s; }
+.atlas-demo__views button[aria-pressed="true"] { background:#2b2521; border-color:#2b2521; color:#fff; }
+.atlas-demo__views button:focus-visible { outline:2px solid #f07550; outline-offset:3px; }
+.atlas-demo__views > span { margin-left:auto; color:#78695d; font-size:11px; }
+.atlas-demo__cards,.atlas-demo__orbit { width:100%; height:100%; object-fit:contain; }
+.atlas-demo__cards { position:relative; }
+.atlas-demo [hidden] { display:none; }
 .atlas-demo__media { position:relative; width:100%; aspect-ratio:1600/760; max-height:calc(100svh - 210px); min-height:250px; overflow:hidden; border:1px solid #2b252125; border-radius:12px; background:#fefaf6; box-shadow:0 24px 70px #3d2a1a0f; }
 .scroll-video,.scroll-video__poster { display:block; width:100%; height:100%; object-fit:contain; object-position:center; }
 .scroll-video { position:absolute; inset:0; opacity:0; pointer-events:none; }
@@ -15,6 +23,9 @@
  .atlas-demo { height:calc(100svh + 1400px); margin-top:28px; }
  .atlas-demo__pin { top:94px; }
  .atlas-demo__label { font-size:9px; gap:10px; }
+ .atlas-demo__views > span { display:none; }
+ .atlas-demo__views button { padding:7px 13px; font-size:11px; }
+ .atlas-demo__orbit { object-fit:cover; object-position:50% center; }
  .atlas-demo__media { min-height:min(450px, calc(100svh - 210px)); max-height:calc(100svh - 200px); border-radius:7px; }
  .atlas-demo__media .scroll-video,.atlas-demo__media .scroll-video__poster { object-fit:cover; object-position:50% center; }
  .atlas-demo__status { font-size:10px; }

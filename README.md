@@ -52,3 +52,20 @@ See [content evidence](docs/ContentEvidence.md), [design and motion decisions](d
 The Atlas chapter follows native vertical scrolling through one full revolution recorded from the actual internal UI. The team chapter first collects six visits from three member browsers into the real joint Atlas, then scrolls through its full revolution. Both are labelled demonstrations using synthetic sessions and approved public pages. Team AI promotion has been removed; past-session sharing, opt-in storage and Atlas are the focus.
 
 Additional checks: `node tools/check-interactions.mjs` for FAQ expansion/reversal, `node tools/check-team-story.mjs` for native scroll/keyboard/touch, video seeking, collection before rotation, rewind, section release and reduced motion, `node tools/check-browser.mjs` for responsive browser/layout/details. Actual two-account collaboration requires signing in to the local test profiles and is not inferred from preview footage.
+
+## Current-product refresh (2026-11-02)
+
+The tour now uses product main `630b6d8`: unified personal cards, original orbit view, current home/AI/sidepanel, split restore destinations, independent collection target and explicit team sharing. Team previews retain local-only screenshot boundaries. The original printed-banner identity and URL are preserved; the linked competition video is historical.
+
+To regenerate public demo assets, start the current product's isolated preview and supply approved public-page registries (personal only in the active preview). No real account or private Chrome profile is needed:
+
+```sh
+ATLAS_PREVIEW_BASE=http://127.0.0.1:5213 node tools/capture-current-product.mjs
+ATLAS_PREVIEW_BASE=http://127.0.0.1:5213 node tools/capture-team-atlas.mjs
+ATLAS_PREVIEW_BASE=http://127.0.0.1:5213 ATLAS_FIXTURE_ROOT=/path/to/approved-fixtures/extension node tools/capture-atlas-orbits.mjs
+ORBIT_PRODUCT_ROOT=/path/to/approved-fixtures python tools/prepare-team-story.py
+python tools/prepare-current-product.py
+python tools/refresh-korean-subset.py
+```
+
+Asset tools require Pillow, fontTools/Brotli, ffmpeg/ffprobe and cwebp. They are development-only; generated public assets and provenance are committed, temporary screenshots/profiles are ignored. Personal footage records two real pointer drags; team footage uses six real orbit page-navigation steps back to the first page, with no screenshot transport.
